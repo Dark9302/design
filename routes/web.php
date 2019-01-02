@@ -21,3 +21,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     //公司信息页面
     Route::get('company','AdminController@companyInf');
 });
+/**前台页面**/
+Route::group(['prefix'=>'vis','namespace'=>'Index'],function (){
+    //前台主页
+    Route::get('/','IndexController@Index');
+});
