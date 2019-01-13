@@ -21,3 +21,22 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     //公司信息页面
     Route::get('company','AdminController@companyInf');
 });
+/**前台页面**/
+Route::group(['namespace'=>'Index'],function (){
+    //前台主页
+    Route::get('/','IndexController@Index');
+    //公司简介
+    Route::get('/company','IndexController@Company');
+    //案例列表
+    Route::get('/case','IndexController@CaseList');
+    //案例详情
+    Route::get('/caseInf','IndexController@CaseInf');
+    //新闻资讯列表
+    Route::get('/news','IndexController@NewsList');
+    //新闻资讯详情
+    Route::get('/newsInf','IndexController@NewsInf');
+    //在线反馈
+    Route::get('/feedback','IndexController@FeedBack');
+    //联系我们
+    Route::get('/contact','IndexController@Contact');
+});
