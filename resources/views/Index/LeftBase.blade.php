@@ -327,30 +327,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="met-links text-center">
-				<div class="container">
-					<ol class="breadcrumb">
-						<li>友情链接 :</li>
-	
-						<li><a href="#" title="" target="_blank">中国建筑装饰网</a></li>
-	
-						<li><a href="#" title="" target="_blank">中国建筑与室内设计师网</a></li>
-	
-						<li><a href="#" title="" target="_blank">极设计</a></li>
-	
-						<li><a href="#" title="" target="_blank">素材火</a></li>
-	
-						<li><a href="#" title="" target="_blank">网站建设</a></li>
-	
-					</ol>
-				</div>
-			</div>
 			<footer>
 				<div class="container text-center">
 					<p>装饰公司 版权所有 2008-2017 湘ICP备8888888 </p>
 					<p>电话：0731-12345678 12345678  QQ:88888888 999999  Email:admin@admin.com</p>
-	
-					<div class="powered_by_metinfo">Powered&nbsp;by&nbsp;<a href="#" target="_blank" title="素材火">素材火</a></div>
 	
 				</div>
 			</footer>
