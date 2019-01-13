@@ -22,7 +22,7 @@
 			<li><span>关于我们</span>
 				<ul>
 					<li class=""><a href="#"  title="关于我们">关于我们</a></li>
-					<li><a href="/company"  title="公司简介">公司简介</a></li>
+					<li><a href="/about"  title="公司简介">公司简介</a></li>
 					<li><a href="/cutural"  title="企业文化">企业文化</a></li>
 					<li><a href="/company"  title="装修流程">装修流程</a></li>
 					<li><a href="/feedback"  title="在线反馈">在线反馈</a></li>
@@ -122,7 +122,126 @@
 				</div>
 			</div>
 		</nav>
+		<div id="page">
+
 	    @yield('content')
+	    <div class="hidden-lg hidden-md">
+
+				<div class="met-column-nav  ">
+					<div class="container">
+						<div class="row">
+
+							<div class="col-md-12 sidebar_tile">
+								<div class="row">
+									@yield('eontent')
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+			
+			
+			<div class="eco-leftnav">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-xs-12 pull-left">
+							<div class="met-all-bar">
+								<div class="hidden-xs hidden-sm">
+
+									<h4>搜索</h4>
+									<form method="get" action="search.html">
+										<input type="hidden" name="lang" value="cn">
+										<input type="text" name="searchword" placeholder="Search">
+										<button type="submit"><span class="sg-Search"></span></button>
+									</form>
+									@yield('dontent')
+									
+								</div>
+
+								<h4 data-plugin="appear" data-animate="slide-bottom" data-repeat="false">推荐产品</h4>
+								<div class="row product_item" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
+									<ul>
+
+										<li class="single_product_item col-xs-4 col-sm-4">
+											<a href="showproduct.html" title="商务会所" target='_self'><img class="cover-image" src="upload/l1389849064.jpg" alt="商务会所" title="商务会所"></a>
+											<p>商务会所</p>
+											<a href="showproduct.html" title="商务会所" target='_self'>MORE</a>
+										</li>
+
+										<li class="single_product_item col-xs-4 col-sm-4">
+											<a href="showproduct.html" title="商务会所" target='_self'><img class="cover-image" src="upload/l1389849617.jpg" alt="商务会所" title="商务会所"></a>
+											<p>商务会所</p>
+											<a href="showproduct.html" title="商务会所" target='_self'>MORE</a>
+										</li>
+
+										<li class="single_product_item col-xs-4 col-sm-4">
+											<a href="showproduct.html" title="客厅" target='_self'><img class="cover-image" src="upload/l1389850762.jpg" alt="客厅" title="客厅"></a>
+											<p>客厅</p>
+											<a href="showproduct.html" title="客厅" target='_self'>MORE</a>
+										</li>
+
+									</ul>
+								</div>
+
+								<div class="clear"></div>
+
+								<h4 data-plugin="appear" data-animate="slide-bottom" data-repeat="false">推荐新闻</h4>
+								<ul class="post_item" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
+
+									<li>Sep 17, 2016
+										<a href="shownews.html" title="低碳建筑首选天然石材 环保健康受欢迎" target='_self'>低碳建筑首选天然石材 环保健康受欢迎</a>
+									</li>
+
+									<li>Sep 17, 2016
+										<a href="shownews.html" title="装修旺季促销建材家居景气指数回升" target='_self'>装修旺季促销建材家居景气指数回升</a>
+									</li>
+
+									<li>Sep 17, 2016
+										<a href="shownews.html" title="全球原木材原料严重紧缺危及建材行业" target='_self'>全球原木材原料严重紧缺危及建材行业</a>
+									</li>
+
+									<li>Jan 14, 2014
+										<a href="shownews.html" title="将文化融入设计 以设计推动创新" target='_self'>将文化融入设计 以设计推动创新</a>
+									</li>
+
+									<li>Jan 15, 2014
+										<a href="shownews.html" title="我国玻璃纤维产业规模居世界第一位" target='_self'>我国玻璃纤维产业规模居世界第一位</a>
+									</li>
+
+								</ul>
+
+								<h4 data-plugin="appear" data-animate="slide-bottom" data-repeat="false">热门关键词</h4>
+								<ul class="clouds" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
+
+									<li>
+										<a href="search.html" title="卧室装修" target='_self'>卧室装修</a>
+									</li>
+
+									<li>
+										<a href="search.html" title="酒店装修" target='_self'>酒店装修</a>
+									</li>
+
+									<li>
+										<a href="search.html" title="会所装修" target='_self'>会所装修</a>
+									</li>
+
+									<li>
+										<a href="search.html" title="房屋精装" target='_self'>房屋精装</a>
+									</li>
+
+								</ul>
+
+							</div>
+						</div>
+						@yield('bontent')
+					</div>
+				</div>
+			</div>
 	    <div class="ecofootbg">
 			<div class="met-footnav-eco">
 				<div class="container">
@@ -208,10 +327,31 @@
 					</div>
 				</div>
 			</div>
+			<div class="met-links text-center">
+				<div class="container">
+					<ol class="breadcrumb">
+						<li>友情链接 :</li>
+	
+						<li><a href="#" title="" target="_blank">中国建筑装饰网</a></li>
+	
+						<li><a href="#" title="" target="_blank">中国建筑与室内设计师网</a></li>
+	
+						<li><a href="#" title="" target="_blank">极设计</a></li>
+	
+						<li><a href="#" title="" target="_blank">素材火</a></li>
+	
+						<li><a href="#" title="" target="_blank">网站建设</a></li>
+	
+					</ol>
+				</div>
+			</div>
 			<footer>
 				<div class="container text-center">
-					<p>保定喜迎门工程装饰有限公司 版权所有 2008-2017 湘ICP备8888888 </p>
-					<p>电话：0731-12345678 12345678  QQ:88888888 999999  Email:admin@admin.com</p>	
+					<p>装饰公司 版权所有 2008-2017 湘ICP备8888888 </p>
+					<p>电话：0731-12345678 12345678  QQ:88888888 999999  Email:admin@admin.com</p>
+	
+					<div class="powered_by_metinfo">Powered&nbsp;by&nbsp;<a href="#" target="_blank" title="素材火">素材火</a></div>
+	
 				</div>
 			</footer>
 		</div>

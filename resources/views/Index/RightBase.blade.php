@@ -123,6 +123,64 @@
 			</div>
 		</nav>
 	    @yield('content')
+	            <div class="col-md-3">
+                    <div class="row">
+
+                        <div class="met-news-bar">
+
+                            <form method='get' action="search.html">
+                                <input type='hidden' name='lang' value='cn'/>
+                                <input type='hidden' name='class1' value='2'/>
+                                <div class="form-group">
+                                    <div class="input-search">
+                                        <button type="submit" class="input-search-btn"><i class="icon wb-search"
+                                                                                          aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" class="form-control" name="searchword" placeholder="Search">
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="recommend news-list-md">
+                                <h3>为您推荐</h3>
+                                <ul class="list-group list-group-bordered">
+
+                                    <li class="list-group-item"><a href="/newsInf" title="低碳建筑首选天然石材 环保健康受欢迎"
+                                                                   target='_self'>低碳建筑首选天然石材 环保健康受欢迎</a></li>
+
+                                    <li class="list-group-item"><a href="/newsInf" title="装修旺季促销建材家居景气指数回升"
+                                                                   target='_self'>装修旺季促销建材家居景气指数回升</a></li>
+
+                                    <li class="list-group-item"><a href="/newsInf" title="全球原木材原料严重紧缺危及建材行业"
+                                                                   target='_self'>全球原木材原料严重紧缺危及建材行业</a></li>
+
+                                    <li class="list-group-item"><a href="/newsInf" title="将文化融入设计 以设计推动创新"
+                                                                   target='_self'>将文化融入设计 以设计推动创新</a></li>
+
+                                    <li class="list-group-item"><a href="/newsInf" title="我国玻璃纤维产业规模居世界第一位"
+                                                                   target='_self'>我国玻璃纤维产业规模居世界第一位</a></li>
+
+                                </ul>
+                            </div>
+
+                            <ul class="column">
+                                <li><a href="news.html" title="所有文章" target='_self'>所有文章</a></li>
+
+                                <li><a href="news.html" title="公司新闻">公司新闻</a></li>
+
+
+                                <li><a href="news.html" class="active" title="行业动态">行业动态</a></li>
+
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 	    <div class="ecofootbg">
 			<div class="met-footnav-eco">
 				<div class="container">

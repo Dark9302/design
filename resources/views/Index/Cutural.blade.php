@@ -9,13 +9,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="title">
-					<h1>公司简介</h1>
+					<h1>企业文化</h1>
 				</div>
 				<div class="breadcumb">
 					<i class="fa fa-home"></i>
 					<a href="index.html" title="首页">首页</a> &gt;
 					<a href="about.html">关于我们</a> >
-					<a href="about.html">公司简介</a>
+					<a href="about.html">企业文化</a>
 				</div>
 			</div>
 		</div>
@@ -30,13 +30,13 @@
 
 		<li class="dropdown">
 
-			<a href="about.html" title="公司简介" class="link active">公司简介</a>
+			<a href="about.html" title="公司简介" class="link ">公司简介</a>
 
 		</li>
 
 		<li class="dropdown">
 
-			<a href="/cutural" title="企业文化" class="link ">企业文化</a>
+			<a href="/cutural" title="企业文化" class="link active">企业文化</a>
 
 		</li>
 
@@ -65,12 +65,12 @@
 	<ul class="category_item met_aside_list">
 
 		<li>
-			<a href="about.html" class='active' title="公司简介" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;公司简介</a>
+			<a href="about.html"  title="公司简介" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;公司简介</a>
 
 		</li>
 
 		<li>
-			<a href="/cutural" title="企业文化" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;企业文化</a>
+			<a href="/cutural" class='active' title="企业文化" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;企业文化</a>
 
 		</li>
 
@@ -94,7 +94,7 @@
 @section('bontent')
 <div class="col-md-9 col-xs-12 pull-right">
 	<div class="section-title-style">
-		<h2>公司简介</h2>
+		<h2>企业文化</h2>
 	</div>
 
 	<section class="met-show animsition">
