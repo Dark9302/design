@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Default Examples</title>
+		<style>
+			form {
+				margin: 0;
+			}
+			textarea {
+				display: block;
+			}
+		</style>
+		<link rel="stylesheet" href="../themes/default/default.css" />
+		<script charset="utf-8" src="../kindeditor-min.js"></script>
+		<script charset="utf-8" src="../lang/zh_CN.js"></script>
+		<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', {
+					allowFileManager : true
+				});
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<h3>默认模式</h3>
+                <form>
+			<textarea name="content" style="width:800px;height:400px;visibility:hidden;"></textarea>
+			<p>
+				<input type="button" name="getHtml" value="取得HTML" />
+				
+			</p>
+                        <textarea name="content1" style="width:800px;height:400px;visibility:hidden;">
+                            <script>
+			var editor;
+			KindEditor.ready(function(K) {
+				
+				K('input[name=getHtml]').click(function(e) {
+					document.write(editor.html());
+                                        
+				});
+				
+			});
+		</script>
+                        </textarea>
+			<p>
+		</form>
+	</body>
+</html>

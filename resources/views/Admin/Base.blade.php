@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @section('css')
     <!--[if lt IE 9]>
     <script type="text/javascript" src="{{asset('js/admin/lib/html5shiv.js')}}"></script>
@@ -33,6 +34,9 @@
 <script type="text/javascript" src="{{asset('js/admin/lib/layer/2.4/layer.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/admin/static/h-ui/js/H-ui.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/admin/static/h-ui.admin/js/H-ui.admin.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/admin/main.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/public.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/config.js')}}"></script>
 @show
 {{--私有js--}}
 @section('js')

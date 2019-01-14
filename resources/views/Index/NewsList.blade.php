@@ -422,34 +422,41 @@
                         <h4>底部图文</h4>
                         <div class="gallery">
 
-                            <a href="showproduct.html" title="商务会所" target='_self'><img
-                                        data-original="upload/f1389849064.jpg" alt="商务会所" title="商务会所"></a>
+                            <a href="showproduct.html" title="商务会所" target='_self'>
+                                <img data-original="upload/f1389849064.jpg" alt="商务会所" title="商务会所">
+                            </a>
 
-                            <a href="showproduct.html" title="商务会所" target='_self'><img
-                                        data-original="upload/f1389849617.jpg" alt="商务会所" title="商务会所"></a>
+                            <a href="showproduct.html" title="商务会所" target='_self'>
+                                <img data-original="upload/f1389849617.jpg" alt="商务会所" title="商务会所">
+                            </a>
 
-                            <a href="showproduct.html" title="客厅" target='_self'><img
-                                        data-original="upload/f1389850762.jpg" alt="客厅" title="客厅"></a>
+                            <a href="showproduct.html" title="客厅" target='_self'>
+                                <img data-original="upload/f1389850762.jpg" alt="客厅" title="客厅">
+                            </a>
 
-                            <a href="showproduct.html" title="卧室" target='_self'><img
-                                        data-original="upload/f1389852216.jpg" alt="卧室" title="卧室"></a>
+                            <a href="showproduct.html" title="卧室" target='_self'>
+                                <img data-original="upload/f1389852216.jpg" alt="卧室" title="卧室">
+                            </a>
 
-                            <a href="showproduct.html" title="别墅" target='_self'><img
-                                        data-original="upload/f1389852083.jpg" alt="别墅" title="别墅"></a>
+                            <a href="showproduct.html" title="别墅" target='_self'>
+                                <img data-original="upload/f1389852083.jpg" alt="别墅" title="别墅">
+                            </a>
 
-                            <a href="showproduct.html" title="公寓" target='_self'><img
-                                        data-original="upload/f1389852374.jpg" alt="公寓" title="公寓"></a>
+                            <a href="showproduct.html" title="公寓" target='_self'>
+                                <img data-original="upload/f1389852374.jpg" alt="公寓" title="公寓">
+                            </a>
 
-                            <a href="showproduct.html" title="医疗美容" target='_self'><img
-                                        data-original="upload/f1389862805.jpg" alt="医疗美容" title="医疗美容"></a>
+                            <a href="showproduct.html" title="医疗美容" target='_self'>
+                                <img data-original="upload/f1389862805.jpg" alt="医疗美容" title="医疗美容">
+                            </a>
 
-                            <a href="showproduct.html" title="医疗体检" target='_self'><img
-                                        data-original="upload/f1389863570.jpg" alt="医疗体检" title="医疗体检"></a>
+                            <a href="showproduct.html" title="医疗体检" target='_self'>
+                                <img data-original="upload/f1389863570.jpg" alt="医疗体检" title="医疗体检">
+                            </a>
 
-                            <a href="showproduct.html" title="体育中心-游泳馆" target='_self'><img
-                                        data-original="upload/f1389720952.jpg" alt="体育中心-游泳馆" title="体育中心-游泳馆"></a>
-
-
+                            <a href="showproduct.html" title="体育中心-游泳馆" target='_self'>
+                                <img data-original="upload/f1389720952.jpg" alt="体育中心-游泳馆" title="体育中心-游泳馆">
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12 list  text-left masonry-item">
@@ -458,8 +465,7 @@
 
                             <li><i class="icon pe-map-marker"></i>广东省广州市天河区276号</li>
 
-                            <li><i class="icon pe-call"></i><a href="tel:86-12345678901" title="86-12345678901">86-12345678901</a>
-                            </li>
+                            <li><i class="icon pe-call"></i><a href="tel:86-12345678901" title="86-12345678901">86-12345678901</a></li>
 
                             <li><i class="icon pe-mail"></i>123456789@qq.com</li>
 
