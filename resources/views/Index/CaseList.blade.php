@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>html5响应式装饰公司网站模板</title>
+    <title>保定喜迎门装饰工程有限公司</title>
     <meta name="renderer" content="webkit">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">

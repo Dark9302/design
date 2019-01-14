@@ -20,7 +20,78 @@ class IndexController extends Controller
     public function Company(){
         return view('Index.Company');
     }
-
+	/**公司文化
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Cutural(){
+        return view('Index.Cutural');
+    }
+    /**在线反馈
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function FeedBack(){
+        return view('Index.FeedBack');
+    }
+    /**联系我们
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Contact(){
+        return view('Index.Contact');
+    }
+    /**地图
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Map(){
+        return view('Index.Map');
+    }
+    /**欧式装修
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function ProductOs(){
+        return view('Index.ProductOs');
+    }
+    /**中式装修
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function ProductZs(){
+        return view('Index.ProductZs');
+    }
+    /**精装装修
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function ProductJz(){
+        return view('Index.ProductJz');
+    }
+    /**简装装修
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function ProductJian(){
+        return view('Index.ProductJian');
+    }
+    /**装修展示
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function ShowProduct(){
+        return view('Index.ShowProduct');
+    }
+    /**装修小常识
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Know(){
+        return view('Index.Know');
+    }
+    /**设计团队
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Team(){
+        return view('Index.Team');
+    }
+    /**招聘
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Job(){
+        return view('Index.Job');
+    }
     /**案例列表
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -49,17 +120,5 @@ class IndexController extends Controller
         return view('Index.NewsInf');
     }
 
-    /**在线反馈
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function FeedBack(){
-        return view('Index.FeedBack');
-    }
-
-    /**联系我们页面
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function Contact(){
-        return view('Index.Contact');
-    }
+    
 }

@@ -33,6 +33,30 @@ Route::group(['namespace'=>'Index'],function (){
     Route::get('/','IndexController@Index');
     //公司简介
     Route::get('/company','IndexController@Company');
+    //公司文化
+    Route::get('/cutural','IndexController@Cutural');
+    //在线反馈
+    Route::get('/feedback','IndexController@FeedBack');
+    //联系我们
+    Route::get('/contact','IndexController@Contact');
+     //地图
+    Route::get('/map','IndexController@Map');
+     //欧式装修
+    Route::get('/productos','IndexController@ProductOs');
+     //中式装修
+    Route::get('/productzs','IndexController@ProductZs');
+     //精装装修
+    Route::get('/productjz','IndexController@ProductJz');
+     //简装装修
+    Route::get('/productjian','IndexController@ProductJian');
+     //装修展示
+    Route::get('/showproduct','IndexController@ShowProduct');
+     //装修小常识
+    Route::get('/know','IndexController@Know');
+    //设计团队
+    Route::get('/team','IndexController@Team');
+    //招聘
+    Route::get('/job','IndexController@Job');
     //案例列表
     Route::get('/case','IndexController@CaseList');
     //案例详情
@@ -41,8 +65,4 @@ Route::group(['namespace'=>'Index'],function (){
     Route::get('/news','IndexController@NewsList');
     //新闻资讯详情
     Route::get('/newsInf','IndexController@NewsInf');
-    //在线反馈
-    Route::get('/feedback','IndexController@FeedBack');
-    //联系我们
-    Route::get('/contact','IndexController@Contact');
 });
