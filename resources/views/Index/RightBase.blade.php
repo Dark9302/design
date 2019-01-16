@@ -1,9 +1,9 @@
-<html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta name="renderer" content="webkit">
     <meta charset="UTF-8">
-    <!--<meta name="csrf-token" content="{{ csrf_token() }}">-->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 	<meta name="generator" content=""  data-variable=",,,,,zstyle" />
@@ -133,8 +133,8 @@
                                 <input type='hidden' name='class1' value='2'/>
                                 <div class="form-group">
                                     <div class="input-search">
-                                        <button type="submit" class="input-search-btn"><i class="icon wb-search"
-                                                                                          aria-hidden="true"></i>
+                                        <button type="submit" class="input-search-btn">
+                                        	<i class="icon wb-search" aria-hidden="true"></i>
                                         </button>
                                         <input type="text" class="form-control" name="searchword" placeholder="Search">
                                     </div>
