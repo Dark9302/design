@@ -116,16 +116,35 @@ class IndexController extends Controller
 
         $list = $article->getArticleList($type);
 
+        //文章推荐
+        $topFive = $article->getTopFive();
+
         return view('Index.NewsList')
+            ->with('topFive',$topFive)
             ->with('list',$list);
     }
 
     /**公司新闻详情列表
+     * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function NewsInf(){
-        return view('Index.NewsInf');
-    }
+    public function NewsInf($id){
+        $article = new ArticleService();
 
-    
+        //浏览次数加一
+        $article->addOne($id);
+        //获取文章详情
+        $inf = $article->getSingleArticle($id);
+
+        //上一条和下一条
+        $preAndNext = $article->getPreAndNext($id,$inf->type);
+
+        //文章推荐
+        $topFive = $article->getTopFive();
+
+        return view('Index.NewsInf')
+            ->with('inf',$inf)->with('topFive',$topFive)
+            ->with('pre',$preAndNext['pre'])
+            ->with('next',$preAndNext['next']);
+    }
 }

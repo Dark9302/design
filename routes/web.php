@@ -72,5 +72,5 @@ Route::group(['namespace'=>'Index'],function (){
     //新闻资讯列表
     Route::get('/news/{type?}','IndexController@NewsList');
     //新闻资讯详情
-    Route::get('/newsInf','IndexController@NewsInf');
+    Route::get('/newsInf/{id}','IndexController@NewsInf');
 });

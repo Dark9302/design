@@ -39,10 +39,23 @@ class ArticleController extends Controller
         $article = new ArticleService();
         //获取传递过来的输入内容
         $inf = $request->all();
+        //获取上传图片
+        $pic = $request->file('artPic');
 
-        $addRes = $article->addArticle($inf['title'],$inf['introduction'],$inf['content'],$inf['type']);
+        //得到图片名
+        $name=$pic->getClientOriginalName();
+        //得到图片后缀
+        $ext=$pic->getClientOriginalExtension();
+        $fileName=md5(uniqid($name));
+        //生成新的的文件名
+        $fileName=$fileName.'.'.$ext;
+        $bool=\Storage::disk('pic')->put($fileName,file_get_contents($pic->getRealPath()));
+        //返回文件路径存贮在数据库
+        $picUrl='storage/upload/'.$fileName;
 
-        if($addRes !== false){
+        $addRes = $article->addArticle($inf['title'],$inf['introduction'],$inf['content'],$inf['type'],$picUrl);
+
+        if($addRes !== false && $bool){
             return response()->json('添加成功');
         }else{
             return response()->json('添加失败！');
@@ -71,9 +84,23 @@ class ArticleController extends Controller
         //获取传递过来的内容
         $param = $request->all();
 
-        $res = $article->editArticle($param['id'],$param['title'],$param['introduction'],$param['content'],$param['type']);
+        //获取上传图片
+        $pic = $request->file('artPic');
 
-        if($res !== false){
+        //得到图片名
+        $name=$pic->getClientOriginalName();
+        //得到图片后缀
+        $ext=$pic->getClientOriginalExtension();
+        $fileName=md5(uniqid($name));
+        //生成新的的文件名
+        $fileName=$fileName.'.'.$ext;
+        $bool=\Storage::disk('pic')->put($fileName,file_get_contents($pic->getRealPath()));
+        //返回文件路径存贮在数据库
+        $picUrl='storage/upload/'.$fileName;
+
+        $res = $article->editArticle($param['id'],$param['title'],$param['introduction'],$param['content'],$param['type'],$picUrl);
+
+        if($res !== false && $bool){
             return response()->json('修改成功');
         }else{
             return response()->json('修改失败！');

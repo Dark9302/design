@@ -46,7 +46,9 @@ class ArticleDao extends Model
      * @return Model|null|static
      */
     public function getSingleArticle(array $con){
-        return $this->where($con)->first();
+        return $this->select('id','title','content','type','introduction',
+            DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked','pic')
+            ->where($con)->first();
     }
 
     /**文章添加
@@ -80,5 +82,49 @@ class ArticleDao extends Model
      */
     public function delMoreArticle(array $con){
         return $this->whereIn('id',$con)->delete();
+    }
+
+    /**加一操作
+     * @param array $con
+     * @return int
+     */
+    public function addOne(array $con){
+        return $this->where($con)->increment('looked');
+    }
+
+    /**上一条
+     * @param $id
+     * @param $type
+     * @return Model|null|static
+     */
+    public function perOne($id,$type){
+        return $this->select('id','title')
+            ->where('id','<',$id)
+            ->where('type','=',$type)
+            ->orderBy('id','desc')->limit('1')
+            ->first();
+    }
+
+    /**一下条
+     * @param $id
+     * @param $type
+     * @return Model|null|static
+     */
+    public function nextOne($id,$type){
+        return $this->select('id','title')
+            ->where('id','>',$id)
+            ->where('type','=',$type)
+            ->orderBy('id')->limit('1')
+            ->first();
+    }
+
+    /**获取top5
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getTopFive(){
+        return $this->select('id','title')
+            ->orderBy('id','desc')
+            ->limit('5')
+            ->get();
     }
 }
