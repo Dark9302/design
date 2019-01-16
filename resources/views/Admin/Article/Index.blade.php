@@ -11,15 +11,15 @@
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
     </nav>
     <div class="page-container">
-        <div class="text-c">
-            <form action="#" method="get">
-                <input type="text" name="article" id="article" placeholder="请输入文章名称/ID/关键词" style="width:250px" class="input-text">
-                <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜文章</button>
-            </form>
-        </div>
+        {{--<div class="text-c">--}}
+            {{--<form action="#" method="get">--}}
+                {{--<input type="text" name="article" id="article" placeholder="请输入文章名称/ID/关键词" style="width:250px" class="input-text">--}}
+                {{--<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜文章</button>--}}
+            {{--</form>--}}
+        {{--</div>--}}
         <div class="cl pd-5 bg-1 bk-gray mt-20">
             <span class="l">
-                <a href="javascript:;" onclick="delMore('{:U('Admin/Article/deleteMoreArticle')}','chec')" class="btn btn-danger radius">
+                <a href="javascript:;" onclick="delMore('delMoreArticle','chec')" class="btn btn-danger radius">
                     <i class="Hui-iconfont">&#xe6e2;</i> 批量删除
                 </a>
                 <a class="btn btn-primary radius" onClick="product_add('添加文章','addArticle')" href="javascript:;">
@@ -52,14 +52,16 @@
                                 <td>公司新闻</td>
                             @elseif($val->type == 2)
                                 <td>行业动态</td>
+                            @elseif($val->type == 3)
+                                <td>装修小常识</td>
                             @endif
                             <td>{{$val->time}}</td>
                             <td>{{$val->looked}}</td>
                             <td class="f-14 td-manage">
-                                <a style="text-decoration:none" class="ml-5" onClick="edit('文章编辑','{:U('Admin/Article/editArticle',array('id'=>$vo['id']))}','10001')" href="javascript:;" title="编辑">
+                                <a style="text-decoration:none" class="ml-5" onClick="edit('文章编辑','editArticle/{{$val->id}}','10001')" href="javascript:;" title="编辑">
                                     <i class="Hui-iconfont">&#xe6df;</i>
                                 </a>
-                                <a style="text-decoration:none" class="ml-5" onClick="del(this,'{$vo.id}','{:U('Admin/Article/deleteSingleArticle')}')" href="javascript:;" title="删除">
+                                <a style="text-decoration:none" class="ml-5" onClick="del(this,'{{$val->id}}','delArticle')" href="javascript:;" title="删除">
                                     <i class="Hui-iconfont">&#xe6e2;</i>
                                 </a>
                             </td>

@@ -26,6 +26,14 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::get('addArticle','ArticleController@add');
     //执行文章添加
     Route::post('doAddArticle','ArticleController@doAdd');
+    //文章编辑页面
+    Route::get('editArticle/{id}','ArticleController@edit');
+    //执行文章编辑
+    Route::post('doEdit','ArticleController@doEdit');
+    //删除单条文章
+    Route::post('delArticle','ArticleController@delSingleArticle');
+    //删除多条文章
+    Route::post('delMoreArticle','ArticleController@delMoreArticle');
 });
 /**前台页面**/
 Route::group(['namespace'=>'Index'],function (){
@@ -62,7 +70,7 @@ Route::group(['namespace'=>'Index'],function (){
     //案例详情
     Route::get('/caseInf','IndexController@CaseInf');
     //新闻资讯列表
-    Route::get('/news','IndexController@NewsList');
+    Route::get('/news/{type?}','IndexController@NewsList');
     //新闻资讯详情
     Route::get('/newsInf','IndexController@NewsInf');
 });

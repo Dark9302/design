@@ -12,8 +12,8 @@
                     <h1>装修小常识</h1>
                 </div>
                 <div class="breadcumb">
-                    <i class="fa fa-home"></i> <a href="index.html" title="首页">首页</a> &gt; <a
-                            href="news.html">装修小常识</a>
+                    <i class="fa fa-home"></i>
+                    <a href="index.html" title="首页">首页</a> &gt; <a href="news.html">装修小常识</a>
                 </div>
             </div>
         </div>

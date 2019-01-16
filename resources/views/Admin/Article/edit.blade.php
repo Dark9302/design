@@ -5,11 +5,18 @@
 @endsection
 @section('content')
     <div class="page-container">
-        <form class="form form-horizontal" id="article-add" enctype="multipart/form-data" method="post">
+        <form class="form form-horizontal" id="article-edit" enctype="multipart/form-data" method="post">
             <div class="row cl">
+                <input type="hidden" value="{{$art->id}}" id="id">
                 <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章名称：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" class="input-text" value="" placeholder="" name="artName" id="artName">
+                    <input type="text" class="input-text" value="{{$art->title}}" placeholder="" name="artName" id="artName">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章简介：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{{$art->introduction}}" placeholder="" name="artIntr" id="artIntr">
                 </div>
             </div>
             <div class="row cl">
@@ -17,8 +24,19 @@
                 <div class="formControls col-xs-8 col-sm-9">
 				<span class="select-box">
                     <select name="artType" id="artType" class="select">
-                        <option value="1">公司新闻</option>
-                        <option value="2">行业动态</option>
+                        @if($art->type == 1)
+                            <option value="1" selected>公司新闻</option>
+                            <option value="2">行业动态</option>
+                            <option value="3">装修小常识</option>
+                        @elseif($art->type == 2)
+                            <option value="1">公司新闻</option>
+                            <option value="2" selected>行业动态</option>
+                            <option value="3">装修小常识</option>
+                        @else
+                            <option value="1">公司新闻</option>
+                            <option value="2">行业动态</option>
+                            <option value="3" selected>装修小常识</option>
+                        @endif
                     </select>
 				</span>
                 </div>
@@ -26,7 +44,7 @@
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <textarea name="artInf" id="artInf" cols="" rows="" class="textarea" style="height:400px;width:100%;"></textarea>
+                    <textarea name="artInf" id="artInf" cols="" rows="" class="textarea" style="height:400px;width:100%;">{{$art->content}}</textarea>
                 </div>
             </div>
             <div class="row cl">
@@ -51,5 +69,43 @@
                 afterBlur: function(){this.sync();}
             });
         });
+
+        //表单验证
+        $("#article-edit").validate({
+            rules:{
+                artName:{
+                    required : true
+                }, artIntr:{
+                    required : true
+                }
+            },
+            onkeyup:false,
+            success:"valid",
+            submitHandler:function(form){
+                var id = $("#id").val();
+                var artName = $("#artName").val();
+                var artIntr = $("#artIntr").val();
+                var artType = $("#artType").val();
+                var artInf = $("#artInf").val();
+                $(form).ajaxSubmit({
+                    url:"{{url('admin/doEdit')}}",
+                    type:"post",
+                    data:{
+                        'id':id,'title':artName,'introduction':artIntr,'content':artInf,'type':artType
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    dataType:"json",
+                    success:function(data){
+                        if(data=='修改成功'){
+                            parent.window.location.reload();
+                        }else{
+                            layer.alert(data,{icon:5});
+                        }
+                    }
+                })
+            }
+        })
     </script>
 @endsection

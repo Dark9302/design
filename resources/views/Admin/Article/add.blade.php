@@ -13,12 +13,19 @@
                 </div>
             </div>
             <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章简介：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" name="artIntr" id="artIntr">
+                </div>
+            </div>
+            <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章类型：</label>
                 <div class="formControls col-xs-8 col-sm-9">
 				<span class="select-box">
                     <select name="artType" id="artType" class="select">
                         <option value="1">公司新闻</option>
                         <option value="2">行业动态</option>
+                        <option value="3">装修小常识</option>
                     </select>
 				</span>
                 </div>
@@ -57,19 +64,22 @@
             rules:{
                 artName:{
                     required : true
+                },artIntr:{
+                    required : true
                 }
             },
             onkeyup:false,
             success:"valid",
             submitHandler:function(form){
                 var artName = $("#artName").val();
+                var artIntr = $("#artIntr").val();
                 var artType = $("#artType").val();
                 var artInf = $("#artInf").val();
                 $(form).ajaxSubmit({
                     url:"doAddArticle",
                     type:"post",
                     data:{
-                        'title':artName,'content':artInf,'type':artType
+                        'title':artName,'introduction':artIntr,'content':artInf,'type':artType
                     },
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

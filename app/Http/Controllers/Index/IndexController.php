@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Index;
 
+use App\Model\Service\ArticleService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -106,11 +107,17 @@ class IndexController extends Controller
         return view('Index.CaseInf');
     }
 
-    /**公司新闻列表
+    /**新闻列表
+     * @param string $type
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function NewsList(){
-        return view('Index.NewsList');
+    public function NewsList($type = ''){
+        $article = new ArticleService();
+
+        $list = $article->getArticleList($type);
+
+        return view('Index.NewsList')
+            ->with('list',$list);
     }
 
     /**公司新闻详情列表
