@@ -39,9 +39,10 @@ class ArticleService extends Model
      * @param $intr
      * @param $content
      * @param $type
+     * @param $picture
      * @return bool
      */
-    public function addArticle($title,$intr,$content,$type){
+    public function addArticle($title,$intr,$content,$type,$picture){
         $article = new ArticleDao();
         //组合添加条件
         $data['title'] = $title;
@@ -49,6 +50,7 @@ class ArticleService extends Model
         $data['content'] = $content;
         $data['type'] = $type;
         $data['time'] = time();
+        $data['pic'] = $picture;
 
         $addRes = $article->addArticle($data);
 
@@ -76,9 +78,10 @@ class ArticleService extends Model
      * @param $intr
      * @param $content
      * @param $type
+     * @param $picture
      * @return bool
      */
-    public function editArticle($id,$title,$intr,$content,$type){
+    public function editArticle($id,$title,$intr,$content,$type,$picture){
         $article = new ArticleDao();
 
         //组合更新条件
@@ -88,6 +91,7 @@ class ArticleService extends Model
         $data['content'] = $content;
         $data['type'] = $type;
         $data['time'] = time();
+        $data['pic'] = $picture;
 
         $upRes = $article->editArticle($con,$data);
 
@@ -118,5 +122,45 @@ class ArticleService extends Model
         $delRes = $article->delMoreArticle($data);
 
         return $delRes;
+    }
+
+    /**执行加一操作
+     * @param $id
+     * @return int
+     */
+    public function addOne($id){
+        $article = new ArticleDao();
+        //组合查询条件
+        $con['id'] = $id;
+
+        $res = $article->addOne($con);
+
+        return $res;
+    }
+
+    /**上一条和下一条
+     * @param $id
+     * @param $type
+     * @return array
+     */
+    public function getPreAndNext($id,$type){
+        $article = new ArticleDao();
+
+        $pre = $article->perOne($id,$type);
+
+        $next = $article->nextOne($id,$type);
+
+        return array('pre'=>$pre,'next'=>$next);
+    }
+
+    /**获取文章推荐
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getTopFive(){
+        $article = new ArticleDao();
+
+        $topFive = $article->getTopFive();
+
+        return $topFive;
     }
 }

@@ -31,6 +31,12 @@
                 </div>
             </div>
             <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">文章大图：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="file" value="" placeholder="" name="artPic" id="artPic">
+                </div>
+            </div>
+            <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
                 <div class="formControls col-xs-8 col-sm-9">
                     <textarea name="artInf" id="artInf" cols="" rows="" class="textarea" style="height:400px;width:100%;"></textarea>

@@ -150,24 +150,11 @@
                 <div class="recommend news-list-md">
                     <h3>为您推荐</h3>
                     <ul class="list-group list-group-bordered">
-
-                        <li class="list-group-item"><a href="/newsInf" title="低碳建筑首选天然石材 环保健康受欢迎"
-                                                       target='_self'>低碳建筑首选天然石材 环保健康受欢迎</a></li>
-
-                        <li class="list-group-item"><a href="/newsInf" title="装修旺季促销建材家居景气指数回升"
-                                                       target='_self'>装修旺季促销建材家居景气指数回升</a></li>
-
-                        <li class="list-group-item"><a href="/newsInf" title="全球原木材原料严重紧缺危及建材行业"
-                                                       target='_self'>全球原木材原料严重紧缺危及建材行业</a></li>
-
+                        @foreach($topFive as $val)
                         <li class="list-group-item">
-                            <a href="/newsInf" title="将文化融入设计 以设计推动创新" target='_self'>将文化融入设计 以设计推动创新</a>
+                            <a href="{{url('newsInf',['id'=>$val->id])}}" title="{{$val->title}}" target='_self'>{{$val->title}}</a>
                         </li>
-
-                        <li class="list-group-item">
-                            <a href="/newsInf" title="我国玻璃纤维产业规模居世界第一位" target='_self'>我国玻璃纤维产业规模居世界第一位</a>
-                        </li>
-
+                        @endforeach
                     </ul>
                 </div>
                 <ul class="column">

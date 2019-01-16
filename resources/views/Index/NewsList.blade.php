@@ -28,7 +28,7 @@
                                 @foreach($list as $val)
                                     <li>
                                         <h4>
-                                            <a href="{{url('newsInf')}}" title="{{$val->title}}" target='_self'>{{$val->title}}</a>
+                                            <a href="{{url('newsInf',['id'=>$val->id])}}" title="{{$val->title}}" target='_self'>{{$val->title}}</a>
                                         </h4>
                                         <p class="des">{{$val->introduction}}</p>
                                         <p class="info">
