@@ -27,24 +27,15 @@ function add(title,url,w,h){
  * */
 function del(obj,id,url){
     layer.confirm('确认要删除吗？',function(index){
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data:{'id':id},
-            dataType: 'json',
-            success: function(data){
-                if(data=='删除成功'){
-                    $(obj).parents("tr").remove();
-                    var num=$('#strong').html();
-                    $('#strong').html(num-1);
-                    layer.msg('已删除!',{icon:1,time:1000});
-                }else{
-                    layer.alert(data,{icon:5});
-                }
-            },
-            error:function(data){
-                console.log(data.msg);
-            },
+        $.web.ajax(url,{'id':id}).done(function (data) {
+            if(data=='删除成功'){
+                $(obj).parents("tr").remove();
+                var num=$('#strong').html();
+                $('#strong').html(num-1);
+                layer.msg('已删除!',{icon:1,time:1000});
+            }else{
+                layer.alert(data,{icon:5});
+            }
         });
     });
 }
@@ -66,22 +57,13 @@ function delMore(url,cla){
     })
     if(ids[0]){
         layer.confirm('确认要删除吗？',function(index){
-            $.ajax({
-                url:url,
-                type:"post",
-                data:{'ids':ids},
-                dataType:"json",
-                success: function(data){
-                    if(data=='删除成功'){
-                        location.reload();
-                    }else{
-                        layer.alert(data,{icon:5});
-                    }
-                },
-                error:function(data) {
-                    console.log(data.msg);
-                },
-            })
+            $.web.ajax(url,{'ids':ids}).done(function (data) {
+                if(data=='删除成功'){
+                    location.reload();
+                }else{
+                    layer.alert(data,{icon:5});
+                }
+            });
         })
     }else{
         layer.alert('未检测到选中项',{icon:5});
@@ -100,22 +82,13 @@ function delMore1(url,cla){
     })
     if(ids[0]){
         layer.confirm('确认要删除吗？',function(index){
-            $.ajax({
-                url:url,
-                type:"post",
-                data:{'ids':ids},
-                dataType:"json",
-                success: function(data){
-                    if(data=='删除成功'){
-                        location.reload();
-                    }else{
-                        layer.alert(data,{icon:5});
-                    }
-                },
-                error:function(data) {
-                    console.log(data.msg);
-                },
-            })
+            $.web.ajax(url,{'id':ids}).done(function (data) {
+                if(data=='删除成功'){
+                    location.reload();
+                }else{
+                    layer.alert(data,{icon:5});
+                }
+            });
         })
     }else{
         layer.alert('未检测到选中项',{icon:5});
