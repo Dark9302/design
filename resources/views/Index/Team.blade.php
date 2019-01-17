@@ -13,8 +13,8 @@
 				</div>
 				<div class="breadcumb">
 					<i class="fa fa-home"></i>
-					<a href="index.html" title="首页">首页</a> &gt;
-					<a href="case.html">设计团队</a>
+					<a href={{url('/index')}} title="首页">首页</a> &gt;
+					<a href={{url('/team')}}>设计团队</a>
 				</div>
 			</div>
 		</div>
@@ -34,7 +34,7 @@
 
 					<li class="widget ">
 						<div class="cover overlay overlay-hover">
-							<img class="cover-image overlay-scale" src="upload/x1474449984.jpg" style='height:299px;' alt="医院病房" />
+							<img class="cover-image overlay-scale" src="upload/x1474449984.jpg" style='height:299px;' alt="首席设计师" />
 							<div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
 								<div class="vertical-align-middle">
 									<div class="widget-time widget-divider">
@@ -42,7 +42,7 @@
 									</div>
 									<h3 class="widget-title margin-bottom-20">梁超</h3>
 
-									<a href='showcase.html' title='医院病房' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
+									<a href={{url('/teaminf')}} title='首席设计师' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
 
 								</div>
 							</div>
@@ -51,7 +51,7 @@
 
 					<li class="widget ">
 						<div class="cover overlay overlay-hover">
-							<img class="cover-image overlay-scale" src="upload/x1474449696.jpg" style='height:299px;' alt="医院病房" />
+							<img class="cover-image overlay-scale" src="upload/x1474449696.jpg" style='height:299px;' alt="首席设计师" />
 							<div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
 								<div class="vertical-align-middle">
 									<div class="widget-time widget-divider">
@@ -59,7 +59,7 @@
 									</div>
 									<h3 class="widget-title margin-bottom-20">玛卡嘉怡</h3>
 
-									<a href='showcase.html' title='医院病房' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
+									<a href={{url('/teaminf')}} title='首席设计师' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
 
 								</div>
 							</div>
@@ -68,7 +68,7 @@
 					
 					<li class="widget ">
 						<div class="cover overlay overlay-hover">
-							<img class="cover-image overlay-scale" src="upload/x1474449689.jpg" style='height:299px;' alt="医院病房" />
+							<img class="cover-image overlay-scale" src="upload/x1474449689.jpg" style='height:299px;' alt="专家设计师" />
 							<div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
 								<div class="vertical-align-middle">
 									<div class="widget-time widget-divider">
@@ -76,7 +76,7 @@
 									</div>
 									<h3 class="widget-title margin-bottom-20">李启胜</h3>
 
-									<a href='showcase.html' title='医院病房' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
+									<a href={{url('/teaminf')}} title='专家设计师' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
 
 								</div>
 							</div>
@@ -85,7 +85,7 @@
 					
 					<li class="widget ">
 						<div class="cover overlay overlay-hover">
-							<img class="cover-image overlay-scale" src="upload/x1474450852.jpg" style='height:299px;' alt="医院病房" />
+							<img class="cover-image overlay-scale" src="upload/x1474450852.jpg" style='height:299px;' alt="专家设计师" />
 							<div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
 								<div class="vertical-align-middle">
 									<div class="widget-time widget-divider">
@@ -93,7 +93,7 @@
 									</div>
 									<h3 class="widget-title margin-bottom-20">张恒伟</h3>
 
-									<a href='showcase.html' title='医院病房' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
+									<a href={{url('/teaminf')}} title='专家设计师' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
 
 								</div>
 							</div>

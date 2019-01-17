@@ -1,0 +1,44 @@
+.sheji{
+	background-color: #ffffff;
+    padding: 8px;
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+.info h3{
+	margin: 0px;
+}
+.mcl{
+	margin-top: 0px;
+}
+.teaminfo{
+	margin-bottom: 0px !important;
+}
+.teaminfo_text{
+	color: rgb(94, 115, 135); 
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Roboto, Arial, sans-serif; 
+	line-height: 21px;
+	font-size: 14px;
+}
+.met-editor{
+	padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.guanzhu{
+	font-size: 14px;
+}
+.team_title{
+	font-size: 20px;
+	text-shadow: rgba(0,0,0,.15) 0 0 1px;
+	font-weight: 400;
+    line-height: 1.2;
+    color: #37474f;
+}
+.met-shownews .met-shownews-body{
+	box-shadow:none !important;
+}
+.met-index-body{
+	padding: 30px 30px 15px !important;
+}
+.met-index-product .project-item:hover .project-descr{
+	margin-top: 0px !important;
+}

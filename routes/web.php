@@ -63,6 +63,8 @@ Route::group(['namespace'=>'Index'],function (){
     Route::get('/know','IndexController@Know');
     //设计团队
     Route::get('/team','IndexController@Team');
+    //设计师详情
+    Route::get('/teaminf','IndexController@TeamInf');
     //招聘
     Route::get('/job','IndexController@Job');
     //案例列表

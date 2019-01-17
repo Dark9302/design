@@ -149,7 +149,7 @@
 	</div>
 	<div class="met-index-product met-index-body">
 		<div class="container">
-			<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="product.html" title="专家团队" target='_self'>专家团队</a></h3>
+			<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="product.html" title="设计团队" target='_self'>设计团队</a></h3>
 			<p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">我们有强大的服务团队，为企业提供一对一订制服务</p>
 			<div class="row">
 				<div class="col-md-12">
@@ -308,28 +308,28 @@
 
 	<div class="met-index-case met-index-body">
 		<div class="container">
-			<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="case.html" title="客户案例" target='_self'>客户案例</a></h3>
+			<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="case.html" title="装修案例" target='_self'>装修案例</a></h3>
 			<p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">我们整理了部分客户案例供您欣赏</p>
 		</div>
 		<ul class="nav nav-tabs invisible daohang"  data-plugin="appear" data-animate="fade" data-repeat="false">
 			<li class="active">
-				<a href="#caselist" title="全部" data-toggle="tab" data-num='10' data-filter="*">全部</a>
+				<a href={{url('/productos')}} title="全部" data-toggle="tab" data-num='10' data-filter="*">全部</a>
 			</li>
 
 			<li>
-				<a href="#caselist" title="精装修房" data-toggle="tab" data-filter="list_29">精装修房</a>
+				<a href={{url('/productos')}} title="欧式装修" data-toggle="tab" data-filter="list_29">欧式装修</a>
 			</li>
 
 			<li>
-				<a href="#caselist" title="酒店会所" data-toggle="tab" data-filter="list_30">酒店会所</a>
+				<a href={{url('/productzs')}} title="中式装修" data-toggle="tab" data-filter="list_30">中式装修</a>
 			</li>
 
 			<li>
-				<a href="#caselist" title="公共设施" data-toggle="tab" data-filter="list_31">公共设施</a>
+				<a href={{url('/productjz')}} title="精装装修" data-toggle="tab" data-filter="list_31">精装装修</a>
 			</li>
 
 			<li>
-				<a href="#caselist" title="办公医疗" data-toggle="tab" data-filter="list_32">办公医疗</a>
+				<a href={{url('/productjian')}} title="简装装修" data-toggle="tab" data-filter="list_32">简装装修</a>
 			</li>
 
 		</ul>
@@ -711,38 +711,10 @@
 			<div class="row">
 
 				<div class="partner col-lg-6 col-md-6">
-					<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="news.html"  title="合作伙伴"  target='_self'>合作伙伴</a></h3>
+					<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="news.html"  title="公司地址"  target='_self'>公司地址</a></h3>
 					<p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false"> 欢迎更多的公司成为我们的合作伙伴</p>
 					<div class="row">
-						<ul>
-
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294620.png" title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294444.png"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294613.png"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294245.png"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294012.png"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474295710.jpg"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294944.jpg"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294847.jpg"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474295111.jpg"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474295248.jpg"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294700.png"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-							<li class="col-lg-4 col-md-4  col-sm-4 col-xs-6"><a href="shownews.html"  title="合作伙伴" target='_self'><img class="cover-image" src="upload/1474294620.png"  title="合作伙伴" alt="合作伙伴"></a></li>
-
-
-						</ul>
+						<iframe src="/map" style="border: none;width: 100%;height: 500px;"></iframe>
 					</div>
 				</div>
 

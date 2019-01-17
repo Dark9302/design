@@ -87,6 +87,12 @@ class IndexController extends Controller
     public function Team(){
         return view('Index.Team');
     }
+    /**设计师详情
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function TeamInf(){
+        return view('Index.TeamInf');
+    }
     /**招聘
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
