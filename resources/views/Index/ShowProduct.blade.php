@@ -129,7 +129,7 @@
 				<div class="row">
 					<div class="panel product-hot">
 						<div class="panel-body">
-						<h4 class="example-title">热门推荐</h4>
+						<h4 class="example-title">相关设计师</h4>
 							<div class="row">
 
 								<div class="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10">

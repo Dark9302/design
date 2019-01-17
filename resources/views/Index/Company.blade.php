@@ -24,37 +24,34 @@
 @endsection
 @section('eontent')
 <ul class="met-column-nav-ul">
-		<li>
-			<a href="about.html" class="link" title="关于我们">关于我们</a>
-		</li>
 
 		<li class="dropdown">
 
-			<a href="about.html" title="公司简介" class="link active">公司简介</a>
-
-		</li>
-
-		<li class="dropdown">
-
-			<a href="/cutural" title="企业文化" class="link ">企业文化</a>
+			<a href={{url('/company')}} title="公司简介" class="link active">公司简介</a>
 
 		</li>
 
 		<li class="dropdown">
 
-			<a href="about.html" title="装修流程" class="link ">装修流程</a>
+			<a href={{url('/cutural')}} title="企业文化" class="link ">企业文化</a>
 
 		</li>
 
 		<li class="dropdown">
 
-			<a href="/feedback" title="在线反馈" class="link ">在线反馈</a>
+			<a href={{url('/about')}} title="装修流程" class="link ">装修流程</a>
 
 		</li>
 
 		<li class="dropdown">
 
-			<a href="contact.html" title="联系我们" class="link ">联系我们</a>
+			<a href={{url('/feedback')}} title="在线反馈" class="link ">在线反馈</a>
+
+		</li>
+
+		<li class="dropdown">
+
+			<a href={{url('/contact')}} title="联系我们" class="link ">联系我们</a>
 
 		</li>
 
@@ -65,27 +62,27 @@
 	<ul class="category_item met_aside_list">
 
 		<li>
-			<a href="about.html" class='active' title="公司简介" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;公司简介</a>
+			<a href={{url('/company')}} class='active' title="公司简介" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;公司简介</a>
 
 		</li>
 
 		<li>
-			<a href="/cutural" title="企业文化" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;企业文化</a>
+			<a href={{url('/cutural')}} title="企业文化" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;企业文化</a>
 
 		</li>
 
 		<li>
-			<a href="about.html" title="装修流程" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;装修流程</a>
+			<a href={{url('/about')}} title="装修流程" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;装修流程</a>
 
 		</li>
 
 		<li>
-			<a href="/feedback" title="在线反馈" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;在线反馈</a>
+			<a href={{url('/feedback')}} title="在线反馈" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;在线反馈</a>
 
 		</li>
 
 		<li>
-			<a href="contact.html" title="联系我们" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;联系我们</a>
+			<a href={{url('/contact')}} title="联系我们" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;联系我们</a>
 
 		</li>
 
