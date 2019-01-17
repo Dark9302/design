@@ -71,6 +71,7 @@
             <dd>
                 <ul>
                     <li><a data-href="product-brand.html" data-title="案例列表" href="javascript:void(0)">案例列表</a></li>
+                    <li><a data-href="product-brand.html" data-title="案例分类" href="javascript:void(0)">案例分类</a></li>
                 </ul>
             </dd>
         </dl>

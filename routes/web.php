@@ -34,6 +34,16 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::post('delArticle','ArticleController@delSingleArticle');
     //删除多条文章
     Route::post('delMoreArticle','ArticleController@delMoreArticle');
+    //案例信息页面
+    Route::get('case','CaseController@index');
+    //案例添加页面
+    Route::get('addCase','CaseController@add');
+    //案例编辑页面
+    Route::get('editCase/{id}','CaseController@edit');
+    //案例分类页面
+    Route::get('type','CaseController@type');
+    //案例添加页面
+    Route::get('addType','CaseController@addType');
 });
 /**前台页面**/
 Route::group(['namespace'=>'Index'],function (){
