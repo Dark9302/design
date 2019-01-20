@@ -19,11 +19,11 @@
         {{--</div>--}}
         <div class="cl pd-5 bg-1 bk-gray mt-20">
             <span class="l">
-                <a href="javascript:;" onclick="delMore('delMoreArticle','chec')" class="btn btn-danger radius">
+                <a href="javascript:;" onclick="delMore('delMoreCase','chec')" class="btn btn-danger radius">
                     <i class="Hui-iconfont">&#xe6e2;</i> 批量删除
                 </a>
-                <a class="btn btn-primary radius" onClick="product_add('添加案例','addArticle')" href="javascript:;">
-                    <i class="Hui-iconfont">&#xe600;</i> 添加文章
+                <a class="btn btn-primary radius" onClick="product_add('添加案例','addCase')" href="javascript:;">
+                    <i class="Hui-iconfont">&#xe600;</i> 添加案例
                 </a>
             </span>
             <span class="r">共有数据：<strong id="strong">{{$num}}</strong> 条</span>
@@ -35,9 +35,10 @@
                     <th width="25"><input type="checkbox" name="" value=""></th>
                     <th width="80">ID</th>
                     <th width="100">标题</th>
-                    <th width="80">分类</th>
-                    <th width="120">发布时间</th>
-                    <th width="75">浏览次数</th>
+                    <th width="100">简介</th>
+                    <th width="80">风格</th>
+                    <th width="75">面积</th>
+                    <th width="120">相关设计师</th>
                     <th width="120">操作</th>
                 </tr>
                 </thead>
@@ -48,20 +49,15 @@
                             <td><input type="checkbox" value="" class="chec" name=""></td>
                             <td>{{$val->id}}</td>
                             <td class="text-c">{{$val->title}}</td>
-                            @if($val->type == 1)
-                                <td>公司新闻</td>
-                            @elseif($val->type == 2)
-                                <td>行业动态</td>
-                            @elseif($val->type == 3)
-                                <td>装修小常识</td>
-                            @endif
-                            <td>{{$val->time}}</td>
+                            <td class="over">{{$val->content}}</td>
+                            <td>{{$val->type_name}}</td>
+                            <td>{{$val->area}}</td>
                             <td>{{$val->looked}}</td>
                             <td class="f-14 td-manage">
-                                <a style="text-decoration:none" class="ml-5" onClick="edit('案列编辑','editArticle/{{$val->id}}','10001')" href="javascript:;" title="编辑">
+                                <a style="text-decoration:none" class="ml-5" onClick="edit('案列编辑','editCase/{{$val->id}}','10001')" href="javascript:;" title="编辑">
                                     <i class="Hui-iconfont">&#xe6df;</i>
                                 </a>
-                                <a style="text-decoration:none" class="ml-5" onClick="del(this,'{{$val->id}}','delArticle')" href="javascript:;" title="删除">
+                                <a style="text-decoration:none" class="ml-5" onClick="del(this,'{{$val->id}}','delCase')" href="javascript:;" title="删除">
                                     <i class="Hui-iconfont">&#xe6e2;</i>
                                 </a>
                             </td>
@@ -69,7 +65,7 @@
                     @endforeach
                 @else
                     <tr class="text-c">
-                        <td colspan="7">暂时没有记录！</td>
+                        <td colspan="8">暂时没有记录！</td>
                     </tr>
                 @endif
                 </tbody>

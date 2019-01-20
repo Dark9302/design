@@ -70,8 +70,8 @@
             <dt><i class="Hui-iconfont">&#xe620;</i>案例管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="product-brand.html" data-title="案例列表" href="javascript:void(0)">案例列表</a></li>
-                    <li><a data-href="product-brand.html" data-title="案例分类" href="javascript:void(0)">案例分类</a></li>
+                    <li><a data-href="case" data-title="案例列表" href="javascript:void(0)">案例列表</a></li>
+                    <li><a data-href="type" data-title="案例分类" href="javascript:void(0)">案例分类</a></li>
                 </ul>
             </dd>
         </dl>
@@ -79,7 +79,7 @@
             <dt><i class="Hui-iconfont">&#xe60d;</i>设计师管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="member-list.html" data-title="设计师列表" href="javascript:;">设计师列表</a></li>
+                    <li><a data-href="designer" data-title="设计师列表" href="javascript:;">设计师列表</a></li>
                 </ul>
             </dd>
         </dl>

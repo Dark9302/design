@@ -91,7 +91,9 @@ class ArticleService extends Model
         $data['content'] = $content;
         $data['type'] = $type;
         $data['time'] = time();
-        $data['pic'] = $picture;
+        if($picture){
+            $data['pic'] = $picture;
+        }
 
         $upRes = $article->editArticle($con,$data);
 

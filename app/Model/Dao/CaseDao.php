@@ -10,11 +10,30 @@ class CaseDao extends Model
 
     public $timestamps = false;
 
+    /**获取单条案例
+     * @param array $con
+     * @return Model|null|static
+     */
+    public function getSingleCase(array $con){
+        return $this->where($con)->first();
+    }
+
+    /**获取多条案例
+     * @param array $con
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getMoreCase(array $con){
+        return $this->whereIn('id',$con)->get();
+    }
+
     /**获取案例列表
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getCaseList(){
-        return $this->get();
+        return $this->select('case.id','case.title','dict_dict.title as type_name','case.content','area','recommend')
+            ->join('dict_dict','dict_dict.id','=','case.type')
+            ->orderBy('case.id')
+            ->get();
     }
 
     /**添加案例
