@@ -14,7 +14,12 @@ class IndexController extends Controller
     public function Index(){
         return view('Index.Index');
     }
-
+	/**搜索页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function search(){
+        return view('Index.Search');
+    }
     /**公司简介
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -26,6 +31,12 @@ class IndexController extends Controller
      */
     public function Cutural(){
         return view('Index.Cutural');
+    }
+    /**装修流程
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function Process(){
+        return view('Index.Process');
     }
     /**在线反馈
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -80,6 +91,18 @@ class IndexController extends Controller
      */
     public function Know(){
         return view('Index.Know');
+    }
+    /**项目活动
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function activity(){
+        return view('Index.Activity');
+    }
+    /**项目活动详情
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function activityinf(){
+        return view('Index.ActivityInf');
     }
     /**设计团队
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

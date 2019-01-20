@@ -85,43 +85,43 @@
 	<div class="met-index-service met-index-body">
 		<div class="container services-bg">
 			<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="product.html" title="我们的服务" target='_self'>我们的服务</a></h3>
-			<p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">我们为不同行业提供专业的装修服务</p>
+			<p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">为您的爱家提供专业的装修服务</p>
 			<div class="row">
 				<div class="col-lg-6 col-md-12" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
-					<a href="product.html" title="精装修房" target='_self'>
+					<a href="{{url('/productos')}}" title="装修案例" target='_self'>
 						<div class="services-box" >
-							<img data-original="upload//1474115103x.jpg"  title="精装修房" alt="精装修房" >
+							<img data-original="upload//1474115103x.jpg"  title="装修案例" alt="装修案例" >
 							<div class="content">
-								<h4>精装修房</h4>
+								<h4>装修案例</h4>
 								<p>本设计从现在人的角度，以现在手法融合东方古典美学，天人合一的居住理念，结合客户审美取向，空间灯具，家私及饰品相当另类。汇聚东方文化的宽阔气度，打造崭新的新东方主义，放眼国际的顶级居住空间。更置中国人的</p>
 							</div>
 						</div>
 					</a>
-					<a href="product.html" title="酒店会所" target='_self'>
+					<a href="{{url('/news/3')}}" title="装修常识" target='_self'>
 						<div class="services-box" >
-							<img data-original="upload/1389849617x.jpg"  title="酒店会所" alt="酒店会所" >
+							<img data-original="upload/1389849617x.jpg"  title="装修常识" alt="装修常识" >
 							<div class="content">
-								<h4>酒店会所</h4>
+								<h4>装修常识</h4>
 								<p>本会所的设计从传统的英伦绅士俱乐部深沉而又丰富的色调中获得灵感。舒适，稍带些世故，有着传统感和历史感，力求传达出一种温暖而阳刚的主题，打造温暖柔软的轮廓，塑造会所空间安静放松的环境。历史感和当代细节的</p>
 							</div>
 						</div>
 					</a>
 				</div>
 				<div class='col-lg-6 col-md-12'>
-					<a href="product.html" title="公共设施" target='_self'>
+					<a href="{{url('/activity')}}" title="项目活动" target='_self'>
 						<div class="services-box" >
-							<img data-original="upload/1389720775x.jpg"  title="公共设施" alt="公共设施" >
+							<img data-original="upload/1389720775x.jpg"  title="项目活动" alt="项目活动" >
 							<div class="content">
-								<h4>公共设施</h4>
+								<h4>项目活动</h4>
 								<p>本案设计含大堂、电梯间、过道、会议室、办公室、活动中心、娱乐室、食堂、包厢等功能区域及配套。作为一个办公活动空间的专业个案，在平面规划中自始至终遵循实用、功能需求和人性化管理充分结合的原则。既结合办公</p>
 							</div>
 						</div>
 					</a>
-					<a href="product.html" title="办公医疗" target='_self'>
+					<a href="{{url('/news/2')}}" title="行业动态" target='_self'>
 						<div class="services-box" >
-							<img data-original="upload/1389848073x.jpg"  title="办公医疗" alt="办公医疗" >
+							<img data-original="upload/1389848073x.jpg"  title="行业动态" alt="行业动态" >
 							<div class="content">
-								<h4>办公医疗</h4>
+								<h4>行业动态</h4>
 								<p>本案设计为现代风格，米黄色调贯穿整个空间，蓝色和绿色加以做点缀，突出现代风格的实用性和灵活性特点。一层大厅及公共空间是人流向最密集的地方，为明确功能的区分，通过吊顶造型、地面材料对区域进行划分和导引，</p>
 							</div>
 						</div>
@@ -149,7 +149,7 @@
 	</div>
 	<div class="met-index-product met-index-body">
 		<div class="container">
-			<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="product.html" title="设计团队" target='_self'>设计团队</a></h3>
+			<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="product.html" title="项目活动" target='_self'>项目活动</a></h3>
 			<p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">我们有强大的服务团队，为企业提供一对一订制服务</p>
 			<div class="row">
 				<div class="col-md-12">
@@ -617,6 +617,8 @@
 
 	<div class="met-index-cases met-index-body"    data-bg="templates/zstyle/min/img/cases_bg.jpg" bg-repeat="false">
 		<div class="container">
+			<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="product.html" title="设计团队" target='_self'>设计团队</a></h3>
+			<p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">我们有强大的服务团队，为企业提供一对一订制服务</p>
 			<div class="owl-carousel" data-plugin="appear" data-animate="fade" data-repeat="false">
 
 

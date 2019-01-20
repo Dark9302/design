@@ -1,0 +1,11 @@
+.huodong{
+	margin-bottom: 9px;
+    color: grey;
+    border-bottom: 1px solid;
+}
+.teaminfo_text{
+	color: rgb(94, 115, 135); 
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Roboto, Arial, sans-serif; 
+	line-height: 21px;
+	font-size: 14px;
+}

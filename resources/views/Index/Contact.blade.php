@@ -13,9 +13,9 @@
 				</div>
 				<div class="breadcumb">
 					<i class="fa fa-home"></i>
-					<a href="index.html" title="首页">首页</a> &gt;
-					<a href="about.html">关于我们</a> >
-					<a href="contact.html">联系我们</a>
+					<a href="{{url('/')}}" title="首页">首页</a> &gt;
+					<a href="{{url('/company')}}">关于我们</a> >
+					<a href="{{url('/contact')}}">联系我们</a>
 				</div>
 			</div>
 		</div>
@@ -24,72 +24,42 @@
 @endsection
 @section('eontent')
 <ul class="met-column-nav-ul">
-		<li>
-			<a href="about.html" class="link" title="关于我们">关于我们</a>
-		</li>
-
-		<li class="dropdown">
-
-			<a href="about.html" title="公司简介" class="link ">公司简介</a>
-
-		</li>
-
-		<li class="dropdown">
-
-			<a href="/cutural" title="企业文化" class="link ">企业文化</a>
-
-		</li>
-
-		<li class="dropdown">
-
-			<a href="about.html" title="装修流程" class="link ">装修流程</a>
-
-		</li>
-
-		<li class="dropdown">
-
-			<a href="/feedback" title="在线反馈" class="link ">在线反馈</a>
-
-		</li>
-
-		<li class="dropdown">
-
-			<a href="contact.html" title="联系我们" class="link active">联系我们</a>
-
-		</li>
-
-	</ul>
+	<li class="dropdown">
+		<a href="{{url('/company')}}" title="公司简介" class="link ">公司简介</a>
+	</li>
+	<li class="dropdown">
+		<a href="{{url('/cutural')}}" title="企业文化" class="link ">企业文化</a>
+	</li>
+	<li class="dropdown">
+		<a href="{{url('/process')}}" title="装修流程" class="link ">装修流程</a>
+	</li>
+	<li class="dropdown">
+		<a href="{{url('/feedback')}}" title="在线反馈" class="link ">在线反馈</a>
+	</li>
+	<li class="dropdown">
+		<a href="{{url('/contact')}}" title="联系我们" class="link active">联系我们</a>
+	</li>
+</ul>
 @endsection
 @section('dontent')
 <h4>关于我们<span class="sidebaran glyphicon glyphicon-th-list"></span></h4>
-	<ul class="category_item met_aside_list">
-
-		<li>
-			<a href="about.html"  title="公司简介" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;公司简介</a>
-
-		</li>
-
-		<li>
-			<a href="/cutural" title="企业文化" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;企业文化</a>
-
-		</li>
-
-		<li>
-			<a href="about.html" title="装修流程" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;装修流程</a>
-
-		</li>
-
-		<li>
-			<a href="/feedback" title="在线反馈" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;在线反馈</a>
-
-		</li>
-
-		<li>
-			<a href="contact.html" class='active'  title="联系我们" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;联系我们</a>
-
-		</li>
-
-	</ul>
+<ul class="category_item met_aside_list">
+	<li>
+		<a href="{{url('/company')}}"  title="公司简介" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;公司简介</a>
+	</li>
+	<li>
+		<a href="{{url('/cutural')}}"  title="企业文化" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;企业文化</a>
+	</li>
+	<li>
+		<a href="{{url('/process')}}"  title="装修流程" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;装修流程</a>
+	</li>
+	<li>
+		<a href="{{url('/feedback')}}" title="在线反馈" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;在线反馈</a>
+	</li>
+	<li>
+		<a href="{{url('/contact')}}" class='active' title="联系我们" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;联系我们</a>
+	</li>
+</ul>
 @endsection
 @section('bontent')
 <div class="col-md-9 col-xs-12 pull-right">

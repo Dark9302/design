@@ -82,7 +82,7 @@
 						</div>
 						
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
-							地址 : 中国
+							报价 : 3200元
 						</div>
 						
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">

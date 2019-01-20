@@ -12,7 +12,9 @@
 						<h1>在线招聘</h1>
 					</div>
 					<div class="breadcumb">
-						<i class="fa fa-home"></i> <a href="index.html" title="首页">首页</a> &gt; <a href="job.html" >在线招聘</a>
+						<i class="fa fa-home"></i>
+						<a href="{{url('/')}}" title="首页">首页</a> &gt;
+						<a href="{{url('/job')}}">在线招聘</a>
 					</div>
 				</div>
 			</div>
@@ -52,7 +54,8 @@
 </div>
 		<hr>
 		<div class="widget-body-footer margin-top-0">
-			<a class="btn btn-outline btn-squared btn-primary" href="mailto:123456789@qq.com">在线应聘</a>
+			<a class="btn btn-outline btn-squared btn-primary" href="mailto:123456789@qq.com" title="投递邮箱：infohxl@126.com">投递简历</a>
+			<a class="btn btn-outline btn-squared btn-primary" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes" title="客服QQ：978738230">QQ咨询</a>
 		</div>
 	</div>
 </div>
@@ -77,7 +80,8 @@
 </div>
 		<hr>
 		<div class="widget-body-footer margin-top-0">
-			<a class="btn btn-outline btn-squared btn-primary" href="mailto:123456789@qq.com">在线应聘</a>
+			<a class="btn btn-outline btn-squared btn-primary" href="mailto:123456789@qq.com" title="投递邮箱：infohxl@126.com">投递简历</a>
+			<a class="btn btn-outline btn-squared btn-primary" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes" title="客服QQ：978738230">QQ咨询</a>
 		</div>
 	</div>
 </div>
@@ -104,7 +108,8 @@
 </div>
 		<hr>
 		<div class="widget-body-footer margin-top-0">
-			<a class="btn btn-outline btn-squared btn-primary" href="mailto:123456789@qq.com">在线应聘</a>
+			<a class="btn btn-outline btn-squared btn-primary" href="mailto:123456789@qq.com" title="投递邮箱：infohxl@126.com">投递简历</a>
+			<a class="btn btn-outline btn-squared btn-primary" href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes" title="客服QQ：978738230">QQ咨询</a>
 		</div>
 	</div>
 </div>
