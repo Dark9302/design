@@ -7,75 +7,30 @@
 		<div  class="rev_slider_wrapper" >
 			<div class="tp-banner rev_slider tp-overflow-hidden" data-alias="showcase-carousel"  eco_arrows_open="true" eco_arrows="hermes"  eco_arrows_margin="20" eco_bullets_open="true" eco_bullets="uranus"  eco_bullets_direction="horizontal" eco_bullets_align_hor="center" eco_bullets_align_vert="bottom" eco_bullets_offset_hor="0" eco_bullets_offset_vert="20"  data-version="5.2.5.4">
 				<ul>
-					<li data-transition="boxslide" data-slotamount="random" data-masterspeed="1000" data-thumb="upload/1474302297.jpg" data-link="#"  data-slideindex="back" data-saveperformance="off"  data-title="我们可以提供" >
-						<img src="upload/1474302297.jpg"  alt="我们可以提供" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
+					<li data-transition="boxslide" data-slotamount="random" data-masterspeed="1000" data-thumb="upload/1474302297.jpg" data-link="#"  data-slideindex="back" data-saveperformance="off"  data-title="保定喜迎门装修工程有限公司" >
+						<img src="upload/1474302297.jpg"  alt="保定喜迎门装修工程有限公司" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
 
-						<div class="tp-caption lfb tp-resizeme ecoslidert" data-x="center" data-hoffset="['0','0','0','0']" data-y="center" data-voffset="['-80','-80','-80','-60']" data-fontsize="['46','46','46','28']" data-lineheight="['46','46','46','28']" data-start="1000" data-transform_idle="o:1;"data-transform_in="y:top;s:1500;e:Power3.easeOut;"data-transform_out="y:top;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none" style="color:; background:transparent;padding:0px;">我们可以提供</div>
-						<div class="tp-caption lfb tp-resizeme ecodesc" data-x="center" data-hoffset="['0','0','0','0']" data-y="center" data-voffset="['10','10','10','15']" data-fontsize="['32','32','32','24']" data-lineheight="['46','46','46','38']" data-start="1500" data-transform_idle="o:1;"data-transform_in="x:left;s:1500;e:Power3.easeOut;"data-transform_out="x:left;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none" style="color:">更优质的服务</div>
+						<div class="tp-caption lfb tp-resizeme ecoslidert" data-x="center" data-hoffset="['0','0','0','0']" data-y="center" data-voffset="['-80','-80','-80','-60']" data-fontsize="['46','46','46','28']" data-lineheight="['46','46','46','28']" data-start="1000" data-transform_idle="o:1;"data-transform_in="y:top;s:1500;e:Power3.easeOut;"data-transform_out="y:top;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none" style="color:; background:transparent;padding:0px;">保定喜迎门装修工程有限公司</div>
+						<div class="tp-caption lfb tp-resizeme ecodesc" data-x="center" data-hoffset="['0','0','0','0']" data-y="center" data-voffset="['10','10','10','15']" data-fontsize="['32','32','32','24']" data-lineheight="['46','46','46','38']" data-start="1500" data-transform_idle="o:1;"data-transform_in="x:left;s:1500;e:Power3.easeOut;"data-transform_out="x:left;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none" style="color:">为您提供优质的装修服务</div>
 						<div class="tp-caption sfb tp-resizeme" data-x="center" data-hoffset="['0','0','0','0']" data-y="center" data-voffset="['100','100','100','80']" data-fontsize="['16','16','16','14']" data-lineheight="['16','16','16','14']" data-start="2000" data-transform_idle="o:1;"data-transform_in="x:right;s:1500;e:Power3.easeOut;"data-transform_out="x:right;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none" >
-							<a href="#" style="color:; border-color:;" class="banner-btn">查看更多<i class="fa fa-arrow-circle-right"></i></a>
+							<a href="{{url('/company')}}" style="color:; border-color:;" class="banner-btn">查看公司简介<i class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</li>
-					<li data-transition="boxslide" data-slotamount="random" data-masterspeed="1000" data-thumb="upload/1474302764.jpg" data-link="#"  data-slideindex="back" data-saveperformance="off"  data-title="我们可以提供" >
-						<img src="upload/1474302764.jpg"  alt="我们可以提供" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
-						<div class="tp-caption lfb tp-resizeme ecoslidert"
-							 data-x="left" data-hoffset="['0','100','100','100']"
-							 data-y="center" data-voffset="['-80','-80','-80','-60']"
-							 data-fontsize="['46','46','46','28']"
-							 data-lineheight="['46','46','46','28']"
-							 data-start="1000"
-							 data-transform_idle="o:1;"
-							 data-transform_in="y:top;s:1500;e:Power3.easeOut;"
-							 data-transform_out="y:top;s:1000;e:Power2.easeIn;"
-							 data-splitin="none"
-							 data-splitout="none"
-							 style="color:; background:transparent;padding:0px;">我们可以提供</div>
-
-						<div class="tp-caption lfb tp-resizeme ecodesc"
-							 data-x="left" data-hoffset="['0','100','100','100']"
-							 data-y="center" data-voffset="['10','10','10','15']"
-							 data-fontsize="['32','32','32','24']"
-							 data-lineheight="['46','46','46','38']"
-							 data-start="1500"
-							 data-transform_idle="o:1;"
-							 data-transform_in="x:left;s:1500;e:Power3.easeOut;"
-							 data-transform_out="x:left;s:1000;e:Power2.easeIn;"
-							 data-splitin="none"
-							 data-splitout="none" style="">更优质的服务</div>
-
-						<div class="tp-caption sfb tp-resizeme"
-							 data-x="left" data-hoffset="['0','100','100','100']"
-							 data-y="center" data-voffset="['100','100','100','80']"
-							 data-fontsize="['16','16','16','14']"
-							 data-lineheight="['16','16','16','14']"
-							 data-start="2000"
-							 data-transform_idle="o:1;"
-							 data-transform_in="x:right;s:1500;e:Power3.easeOut;"
-							 data-transform_out="x:right;s:1000;e:Power2.easeIn;"
-							 data-splitin="none"
-							 data-splitout="none" >
-							<a href="#" style="color:; border-color:;" class="banner-btn">查看更多<i class="fa fa-arrow-circle-right"></i></a>
+					<li data-transition="boxslide" data-slotamount="random" data-masterspeed="1000" data-thumb="upload/1474302764.jpg" data-link="#"  data-slideindex="back" data-saveperformance="off"  data-title="为您提供" >
+						<img src="upload/1474302764.jpg"  alt="给您提供" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
+						<div class="tp-caption lfb tp-resizeme ecoslidert" data-x="right" data-hoffset="['0','100','100','100']" data-y="center" data-voffset="['-80','-80','-80','-60']" data-fontsize="['46','46','46','28']" data-lineheight="['46','46','46','28']" data-start="1000" data-transform_idle="o:1;" data-transform_in="y:top;s:1500;e:Power3.easeOut;" data-transform_out="y:top;s:1000;e:Power2.easeIn;" data-splitin="none" data-splitout="none" style="color:; background:transparent;padding:0px;">给您提供</div>
+						<div class="tp-caption lfb tp-resizeme ecodesc" data-x="right" data-hoffset="['0','100','100','100']" data-y="center" data-voffset="['10','10','10','15']" data-fontsize="['32','32','32','24']" data-lineheight="['46','46','46','38']" data-start="1500" data-transform_idle="o:1;" data-transform_in="x:left;s:1500;e:Power3.easeOut;" data-transform_out="x:left;s:1000;e:Power2.easeIn;" data-splitin="none" data-splitout="none" style="">最新的行业资讯</div>
+						<div class="tp-caption sfb tp-resizeme" data-x="right" data-hoffset="['0','100','100','100']" data-y="center" data-voffset="['100','100','100','80']" data-fontsize="['16','16','16','14']" data-lineheight="['16','16','16','14']" data-start="2000" data-transform_idle="o:1;" data-transform_in="x:right;s:1500;e:Power3.easeOut;" data-transform_out="x:right;s:1000;e:Power2.easeIn;" data-splitin="none" data-splitout="none" >
+							<a href="{{url('/news/2')}}" style="color:; border-color:;" class="banner-btn">查看资讯<i class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</li>
-					<li data-transition="boxslide" data-slotamount="random" data-masterspeed="1000" data-thumb="upload/1474302290.jpg"  data-saveperformance="off"  data-title="我们可以提供" >
-						<img src="upload/1474302290.jpg"  alt="我们可以提供" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
-
-						<div class="tp-caption lfb tp-resizeme ecoslidert"
-							 data-x="right" data-hoffset="['0','100','100','100']"
-							 data-y="center" data-voffset="['-80','-80','-80','-60']"
-							 data-fontsize="['46','46','46','28']"
-							 data-lineheight="['46','46','46','28']"
-							 data-start="1000"
-							 data-transform_idle="o:1;"data-transform_in="y:top;s:1500;e:Power3.easeOut;"data-transform_out="y:top;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none"
-							 style="color:; background:transparent;padding:0px;">我们可以提供</div>
-
-						<div class="tp-caption lfb tp-resizeme ecodesc"
-							 data-x="right" data-hoffset="['0','100','100','100']"
-							 data-y="center" data-voffset="['10','10','10','15']"
-							 data-fontsize="['32','32','32','24']"
-							 data-lineheight="['46','46','46','38']"
-							 data-start="1500"
-							 data-transform_idle="o:1;"data-transform_in="x:left;s:1500;e:Power3.easeOut;"data-transform_out="x:left;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none" style="color:">更优质的服务</div>
+					<li data-transition="boxslide" data-slotamount="random" data-masterspeed="1000" data-thumb="upload/1474302290.jpg"  data-saveperformance="off"  data-title="为您提供" >
+						<img src="upload/1474302290.jpg"  alt="为您提供" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
+						<div class="tp-caption lfb tp-resizeme ecoslidert" data-x="left" data-hoffset="['0','100','100','100']" data-y="center" data-voffset="['-80','-80','-80','-60']" data-fontsize="['46','46','46','28']" data-lineheight="['46','46','46','28']" data-start="1000" data-transform_idle="o:1;"data-transform_in="y:top;s:1500;e:Power3.easeOut;"data-transform_out="y:top;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none" style="color:; background:transparent;padding:0px;">为您提供</div>
+						<div class="tp-caption lfb tp-resizeme ecodesc" data-x="left" data-hoffset="['0','100','100','100']" data-y="center" data-voffset="['10','10','10','15']" data-fontsize="['32','32','32','24']" data-lineheight="['46','46','46','38']" data-start="1500" data-transform_idle="o:1;"data-transform_in="x:left;s:1500;e:Power3.easeOut;"data-transform_out="x:left;s:1000;e:Power2.easeIn;"data-splitin="none"data-splitout="none" style="color:">最专业的装修案例参考</div>
+						<div class="tp-caption sfb tp-resizeme" data-x="left" data-hoffset="['0','100','100','100']" data-y="center" data-voffset="['100','100','100','80']" data-fontsize="['16','16','16','14']" data-lineheight="['16','16','16','14']" data-start="2000" data-transform_idle="o:1;" data-transform_in="x:right;s:1500;e:Power3.easeOut;" data-transform_out="x:right;s:1000;e:Power2.easeIn;" data-splitin="none" data-splitout="none" >
+							<a href="{{url('/productos')}}" style="color:; border-color:;" class="banner-btn">查看案例<i class="fa fa-arrow-circle-right"></i></a>
+						</div>
 					</li>
 				</ul>
 				<div class="tp-bannertimer" style="height: 6px; background-color: rgba(0, 0, 0, 0.14902);top:0px;"></div>
