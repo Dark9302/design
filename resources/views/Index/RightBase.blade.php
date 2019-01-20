@@ -17,13 +17,13 @@
 </head>
 <body class="minWidth bgw">
 <nav id="mobileNav" style="display:none;">
-    <ul class="daohang">
-        <li class="active"><a href="{{url('/')}}" title="首页">首页</a></li>
+    <ul class="daohang_m">
+        <li><a href="{{url('/')}}" title="首页">首页</a></li>
         <li><span>关于我们</span>
             <ul>
                 <li><a href="{{url('/company')}}" title="公司简介">公司简介</a></li>
                 <li><a href="{{url('/cutural')}}" title="企业文化">企业文化</a></li>
-                <li><a href="{{url('/company')}}" title="装修流程">装修流程</a></li>
+                <li><a href="{{url('/process')}}" title="装修流程">装修流程</a></li>
                 <li><a href="{{url('/feedback')}}" title="在线反馈">在线反馈</a></li>
                 <li><a href="{{url('/contact')}}" title="联系我们">联系我们</a></li>
             </ul>
@@ -39,6 +39,7 @@
                     </ul>
                 </li>
                 <li><a href="{{url('/news/3')}}" title="装修小常识">装修小常识</a></li>
+                <li><a href="{{url('/activity')}}" title="项目活动">项目活动</a></li>
             </ul>
         </li>
         <li><a href="{{url('/team')}}" title="设计团队">设计团队</a></li>
@@ -73,13 +74,13 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-collapse-toolbar" id="example-navbar-default-collapse">
                     <ul class="nav navbar-nav navbar-right navlist daohang">
-                        <li><a href="{{url('/')}}" title="首页" class="link active">首页</a></li>
+                        <li><a href="{{url('/')}}" title="首页" class="link">首页</a></li>
                         <li class="dropdown margin-left-0 ecodropdown">
                             <a class="dropdown-toggle link " data-toggle="dropdown" href='#' aria-expanded="false" role="button" title="关于我们">关于我们 <span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-menu-right bullet" role="menu">
                                 <li><a href="{{url('/company')}}" class="" title="公司简介">公司简介</a></li>
                                 <li><a href="{{url('/cutural')}}" class="" title="企业文化">企业文化</a></li>
-                                <li><a href="{{url('/company')}}" class="" title="装修流程">装修流程</a></li>
+                                <li><a href="{{url('/process')}}" class="" title="装修流程">装修流程</a></li>
                                 <li><a href="{{url('/feedback')}}" class="" title="在线反馈">在线反馈</a></li>
                                 <li><a href="{{url('/contact')}}" class="" title="联系我们">联系我们</a></li>
                             </ul>
@@ -97,6 +98,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{url('/news/3')}}" class="" title="装修小常识">装修小常识</a></li>
+                                <li><a href="{{url('/activity')}}" class="" title="项目活动">项目活动</a></li>
                             </ul>
                         </li>
                         <li class="margin-left-0"><a href="{{url('/team')}}" title="设计团队" class="link ">设计团队</a></li>
@@ -119,14 +121,14 @@
 
             <div class="met-news-bar">
 
-                <form method='get' action="search.html">
-                    <input type='hidden' name='lang' value='cn'/>
-                    <input type='hidden' name='class1' value='2'/>
+                <form method='get' action="{{url('/search')}}">
+                    <input type='hidden' name='lang' value='cn' autocomplete="off"/>
+                    <input type='hidden' name='class1' value='2' autocomplete="off"/>
                     <div class="form-group">
                         <div class="input-search">
                             <button type="submit" class="input-search-btn"><i class="icon wb-search" aria-hidden="true"></i>
                             </button>
-                            <input type="text" class="form-control" name="searchword" placeholder="Search">
+                            <input type="text" class="form-control" name="searchword" placeholder="Search" autocomplete="off">
                         </div>
                     </div>
                 </form>
@@ -164,22 +166,18 @@
                     <a href="{{url('/company')}}" title="底部简介" target='_self' class="read-more">查看更多<i class="fa fa-arrow-circle-right"></i></a>
                     <ul class="social">
                         <li>
-                            <a href="#" rel="nofollow" target="_blank" class="hvr-radial-out">
+                            <a href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes" rel="nofollow" target="_blank" class="hvr-radial-out">
                                 <i class="fa fa-qq"></i>
                             </a>
                         </li>
-                        <li><a href="#" rel="nofollow" target="_blank" class="hvr-radial-out"><i class="fa fa-weibo"></i></a></li>
-
-                        <li><a href="#" rel="nofollow" target="_blank" class="hvr-radial-out"><i class="icon fa-twitter"></i></a></li>
-
-                        <li><a href="#" rel="nofollow" target="_blank" class="hvr-radial-out"><i class="icon fa-google-plus"></i></a></li>
-
                         <li>
                             <a id="met-weixin"><i class="fa fa-weixin "></i></a>
                             <div id="met-weixin-content" class="hide">
-                                <div class="text-center met-weixin-img"><img src={{url('/upload/1464081530.jpg')}}/></div>
+                                <div class="text-center met-weixin-img"><img src="{{asset('upload/1464081530.jpg')}}"/></div>
                             </div>
                         </li>
+                        <li><a href="tel:86-12345678901" rel="nofollow" target="_blank" class="hvr-radial-out"><i class="fa pe-call"></i></a></li>
+                        <li><a href="#" rel="nofollow" target="_blank" class="hvr-radial-out"><i class="fa fa-weibo"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 list ecoinfo text-left masonry-item">
@@ -263,7 +261,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="search">
-                            <form role="search" action="search.html">
+                            <form role="search" action="{{url('/search')}}">
                                 <input type='hidden' name='lang' value='cn'/>
                                 <div class="form-group ">
                                     <div class="input-search">
@@ -291,7 +289,7 @@
 <script src="{{asset('app/system/include/static/js/classList.min.js')}}"></script>
 <![endif]-->
 <script type="text/javascript" src="{{asset('js/jquery-2.2.1.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/web/daohang.js')}}"></script>
+<!--<script type="text/javascript" src="{{asset('js/web/daohang.js')}}"></script>-->
 <script type="text/javascript" src="{{asset('templates/zstyle/cache/052ddd225bb8ca71.min.js')}}"></script>
 @show
 {{--私有js--}}

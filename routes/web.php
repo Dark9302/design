@@ -79,10 +79,14 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
 Route::group(['namespace'=>'Index'],function (){
     //前台主页
     Route::get('/','IndexController@Index');
+    //搜索页面
+    Route::get('/search','IndexController@Search');
     //公司简介
     Route::get('/company','IndexController@Company');
     //公司文化
     Route::get('/cutural','IndexController@Cutural');
+    //装修流程
+    Route::get('/process','IndexController@Process');
     //在线反馈
     Route::get('/feedback','IndexController@FeedBack');
     //联系我们
@@ -101,6 +105,10 @@ Route::group(['namespace'=>'Index'],function (){
     Route::get('/showproduct','IndexController@ShowProduct');
      //装修小常识
     Route::get('/know','IndexController@Know');
+     //项目活动
+    Route::get('/activity','IndexController@Activity');
+    //项目活动详情
+    Route::get('/activityinf','IndexController@ActivityInf');
     //设计团队
     Route::get('/team','IndexController@Team');
     //设计师详情

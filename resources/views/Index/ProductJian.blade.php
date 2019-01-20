@@ -12,7 +12,10 @@
 					<h1>服务项目</h1>
 				</div>
 				<div class="breadcumb">
-					<i class="fa fa-home"></i> <a href="index.html" title="首页">装修案例</a> &gt; <a href="product.html" >简装</a>
+					<i class="fa fa-home"></i>
+					<a href="{{url('/')}}" title="首页">首页</a> &gt;
+					<a href="{{url('/productos')}}">装修案例</a> >
+					<a href="{{url('/productjian')}}">简装装修</a>
 				</div>
 			</div>
 		</div>
@@ -22,31 +25,35 @@
 @section('eontent')
 <ul class="met-column-nav-ul">
 	<li class="dropdown">
-		<a href="/product" title="装修案例" class="link active" data-toggle="dropdown">装修案例 <span class="caret"></span></a>
+		<a href="{{url('/productos')}}" title="装修案例" class="link active" data-toggle="dropdown">装修案例 <span class="caret"></span></a>
 		<ul class="dropdown-menu bullet">
-			<li><a href="/productOs" class="active" title="欧式装修">欧式装修</a></li>
-			<li><a href="/productZs"  title="中式装修">中式装修</a></li>
-			<li><a href="/productJz"  title="精装装修">精装装修</a></li>
-			<li><a href="/productJian"  title="简装装修">简装装修</a></li>
+			<li><a href="{{url('/productos')}}" class="active" title="欧式装修">欧式装修</a></li>
+			<li><a href="{{url('/productzs')}}"  title="中式装修">中式装修</a></li>
+			<li><a href="{{url('/productjz')}}"  title="精装装修">精装装修</a></li>
+			<li><a href="{{url('/productjian')}}"  title="简装装修">简装装修</a></li>
 		</ul>
 	</li>
 	<li class="dropdown">
-		<a href="/konw" title="装修小常识" class="link ">装修小常识</a>
+		<a href="{{url('/news/3')}}" title="装修小常识" class="link ">装修小常识</a>
+	</li>
+	<li class="dropdown">
+		<a href="{{url('/activity')}}" title="项目活动" class="link ">项目活动</a>
 	</li>
 </ul>
 @endsection
 @section('dontent')
 <h4>服务项目<span class="sidebaran glyphicon glyphicon-th-list"></span></h4>
   <ul class="category_item met_aside_list" >
-    <li><a href="/productJian" class='active' title="装修案例" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;装修案例</a> 
+    <li><a href="{{url('/productos')}}" class='active' title="装修案例" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;装修案例</a> 
       <ul>
-        <li><a   href="/productOs" title="欧式装修" target='_self'>欧式装修</a></li>
-        <li><a   href="/productZs" title="中式装修" target='_self'>中式装修</a></li>
-        <li><a   href="/productJz" title="精装装修" target='_self'>精装装修</a></li>
-        <li><a   class="active" href="/productJian" title="简装装修" target='_self'>简装装修</a></li>
+        <li><a   href="{{url('/productos')}}" title="欧式装修" target='_self'>欧式装修</a></li>
+        <li><a   href="{{url('/productzs')}}" title="中式装修" target='_self'>中式装修</a></li>
+        <li><a   href="{{url('/productjz')}}" title="精装装修" target='_self'>精装装修</a></li>
+        <li><a   class="active" href="{{url('/productjian')}}" title="简装装修" target='_self'>简装装修</a></li>
       </ul>
     </li>
-        <li><a href="/konw"  title="装修小常识" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;装修小常识</a></li>
+    <li><a href="{{url('/news/3')}}"  title="装修小常识" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;装修小常识</a></li>
+    <li><a href="{{url('/activity')}}"  title="项目活动" target='_self'><i class="fa fa-angle-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;项目活动</a></li>
 </ul>
 @endsection
 @section('bontent')
