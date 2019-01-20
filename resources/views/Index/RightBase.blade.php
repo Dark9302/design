@@ -17,8 +17,8 @@
 </head>
 <body class="minWidth bgw">
 <nav id="mobileNav" style="display:none;">
-    <ul class="daohang">
-        <li class="active"><a href="{{url('/')}}" title="首页">首页</a></li>
+    <ul class="daohang_m">
+        <li><a href="{{url('/')}}" title="首页">首页</a></li>
         <li><span>关于我们</span>
             <ul>
                 <li><a href="{{url('/company')}}" title="公司简介">公司简介</a></li>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-collapse-toolbar" id="example-navbar-default-collapse">
                     <ul class="nav navbar-nav navbar-right navlist daohang">
-                        <li><a href="{{url('/')}}" title="首页" class="link active">首页</a></li>
+                        <li><a href="{{url('/')}}" title="首页" class="link">首页</a></li>
                         <li class="dropdown margin-left-0 ecodropdown">
                             <a class="dropdown-toggle link " data-toggle="dropdown" href='#' aria-expanded="false" role="button" title="关于我们">关于我们 <span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-menu-right bullet" role="menu">
@@ -289,7 +289,7 @@
 <script src="{{asset('app/system/include/static/js/classList.min.js')}}"></script>
 <![endif]-->
 <script type="text/javascript" src="{{asset('js/jquery-2.2.1.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/web/daohang.js')}}"></script>
+<!--<script type="text/javascript" src="{{asset('js/web/daohang.js')}}"></script>-->
 <script type="text/javascript" src="{{asset('templates/zstyle/cache/052ddd225bb8ca71.min.js')}}"></script>
 @show
 {{--私有js--}}
