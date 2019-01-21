@@ -2,33 +2,33 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\Service\ArticleService;
+use App\Model\Service\TeamService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Input;
 
-class ArticleController extends Controller
+class DesignerController extends Controller
 {
-    /**文章主页面
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+    /**设计师列表页面
+     * @return $this
      */
     public function index(){
-        $article = new ArticleService();
-        //获取文章列表
-        $artList = $article->getAdminArticleList();
-        //获取文章数量
-        $num = count($artList);
+        $des = new TeamService();
 
-        return view('Admin.Article.Index')
-            ->with('list',$artList)
+        //获取设计师列表
+        $list = $des->getDesList();
+
+        $num = count($list);
+
+        return view('Admin.Designer.index')
+            ->with('list',$list)
             ->with('num',$num);
     }
 
-    /**文章添加页面
+    /**设计师添加页面
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function add(){
-        return view('Admin.Article.add');
+        return view('Admin.Designer.add');
     }
 
     /**执行文章添加
@@ -36,11 +36,12 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function doAdd(Request $request){
-        $article = new ArticleService();
+        $des = new TeamService();
+
         //获取传递过来的输入内容
         $inf = $request->all();
         //获取上传图片
-        $pic = $request->file('artPic');
+        $pic = $request->file('photo');
 
         if($pic){
             //得到图片名
@@ -54,7 +55,7 @@ class ArticleController extends Controller
             //返回文件路径存贮在数据库
             $picUrl='storage/upload/'.$fileName;
 
-            $addRes = $article->addArticle($inf['title'],$inf['introduction'],$inf['content'],$inf['type'],$picUrl);
+            $addRes = $des->addDes($inf['name'],$inf['post'],$inf['work_year'],$inf['brief'],$picUrl,$inf['design_concept'],$inf['style']);
 
             if($addRes !== false && $bool){
                 return response()->json('添加成功');
@@ -66,30 +67,31 @@ class ArticleController extends Controller
         }
     }
 
-    /**文章编辑页面
+    /**设计师编辑页面
      * @param $id
      * @return $this
      */
     public function edit($id){
-        $article = new ArticleService();
+        $des = new TeamService();
 
-        $article = $article->getSingleArticle($id);
+        $res = $des->getSingleDes($id);
 
-        return view('Admin.Article.edit')
-            ->with('art',$article);
+        return view('Admin.Designer.edit')
+            ->with('res',$res);
     }
 
-    /**执行文章编辑
+    /**设计师信息修改
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function doEdit(Request $request){
-        $article = new ArticleService();
-        //获取传递过来的内容
-        $param = $request->all();
+        $des = new TeamService();
 
+        //获取传递过来的输入内容
+        $inf = $request->all();
         //获取上传图片
-        $pic = $request->file('artPic');
+        $pic = $request->file('photo');
+
         if($pic){
             //得到图片名
             $name=$pic->getClientOriginalName();
@@ -101,13 +103,13 @@ class ArticleController extends Controller
             $bool=\Storage::disk('pic')->put($fileName,file_get_contents($pic->getRealPath()));
             //返回文件路径存贮在数据库
             $picUrl='storage/upload/'.$fileName;
+
         }else{
-            $picUrl = '';
-            $bool = 1;
+            $picUrl='';
+            $bool= 1;
         }
 
-
-        $res = $article->editArticle($param['id'],$param['title'],$param['introduction'],$param['content'],$param['type'],$picUrl);
+        $res = $des->editDesign($inf['id'],$inf['name'],$inf['post'],$inf['work_year'],$inf['brief'],$picUrl,$inf['design_concept'],$inf['style']);
 
         if($res !== false && $bool){
             return response()->json('修改成功');
@@ -116,16 +118,15 @@ class ArticleController extends Controller
         }
     }
 
-    /**删除单条文章
+    /**删除设计师
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function delSingleArticle(Request $request){
-        $article = new ArticleService();
-        //获取传递过来的id
-        $id = $request->get('id');
+    public function delSingleDes(Request $request){
+        $des = new TeamService();
 
-        $res = $article->delSingle($id);
+        $id = $request->get('id');
+        $res = $des->delDes($id);
 
         if($res !== false){
             return response()->json('删除成功');
@@ -134,16 +135,16 @@ class ArticleController extends Controller
         }
     }
 
-    /**删除多条文章
+    /**批量删除
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function delMoreArticle(Request $request){
-        $article = new ArticleService();
+    public function delMoreDes(Request $request){
+        $des = new TeamService();
         //获取传递过来的id
         $id = $request->get('ids');
 
-        $res = $article->delMore($id);
+        $res = $des->delMoreDes($id);
 
         if($res !== false){
             return response()->json('删除成功');

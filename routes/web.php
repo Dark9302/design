@@ -38,12 +38,42 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::get('case','CaseController@index');
     //案例添加页面
     Route::get('addCase','CaseController@add');
+    //案例添加选择设计师
+    Route::get('selectDes','CaseController@selectDesigner');
+    //执行案例添加页面
+    Route::post('doAddCase','CaseController@doAdd');
     //案例编辑页面
     Route::get('editCase/{id}','CaseController@edit');
-    //案例分类页面
+    //执行案例编辑
+    Route::post('doEditCase','CaseController@doEdit');
+    //删除单条案例
+    Route::post('delCase','CaseController@delSingleCase');
+    //删除多条案例
+    Route::post('delMoreCase','CaseController@delMoreCase');
+    //分类页面
     Route::get('type','CaseController@type');
-    //案例添加页面
+    //分类添加页面
     Route::get('addType','CaseController@addType');
+    //执行分类添加
+    Route::post('doAddType','CaseController@doAddType');
+    //删除单条分类
+    Route::post('delType','CaseController@delType');
+    //删除多条分类
+    Route::post('delMoreType','CaseController@delMoreType');
+    //设计师页面
+    Route::get('designer','DesignerController@index');
+    //设计师添加页面
+    Route::get('addDesigner','DesignerController@add');
+    //执行设计师添加
+    Route::post('doAddDesigner','DesignerController@doAdd');
+    //设计师编辑页面
+    Route::get('editDesigner/{id}','DesignerController@edit');
+    //执行设计师编辑页面
+    Route::post('doEditDesigner','DesignerController@doEdit');
+    //删除设计师
+    Route::post('delDes','DesignerController@delSingleDes');
+    //删除多个设计师
+    Route::post('delMoreDes','DesignerController@delMoreDes');
 });
 /**前台页面**/
 Route::group(['namespace'=>'Index'],function (){
