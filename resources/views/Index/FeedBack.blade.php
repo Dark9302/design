@@ -92,28 +92,15 @@
                                         <div class="form-group">
 
                                             <div>
-                                                <input name='para32' class='form-control' type='text' placeholder='Email ' autocomplete='off'  />
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <div>
-                                                <input name='para33' class='form-control' type='text' placeholder='其他联系方式 ' autocomplete='off'  />
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <div>
-                                                <textarea name='para34' class='form-control' data-fv-notempty="true" data-fv-message="不能为空" placeholder='留言内容 ' rows='5'></textarea>
+                                                <textarea name='para34' class='form-control' data-fv-notempty="true" data-fv-message="不能为空" placeholder='留言内容 ' rows='5' style="resize: none;"></textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group margin-bottom-0">
                                             <button type="submit" class="btn btn-primary btn-block btn-squared">提交</button>
                                         </div>
-                                    </form>			</div>
+                                    </form>
+                       			</div>
                             </div>
                         </div>
                     </section>

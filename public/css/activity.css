@@ -9,3 +9,28 @@
 	line-height: 21px;
 	font-size: 14px;
 }
+.met-index-service .services-box{
+	width: 100%;
+}
+.met-index-service .services-box img{
+	width: 166px;
+	height: 154px;
+}
+.des{
+	color: #666;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:3; 
+}
+.one{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:1; 
+}
+.des:hover{
+	color: #fff;
+}

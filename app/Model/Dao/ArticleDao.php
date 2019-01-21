@@ -38,7 +38,7 @@ class ArticleDao extends Model
     public function getTypeArticle(array $con){
         return $this->where($con)
             ->select('id','title','content','type','introduction',
-            DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked')
+            DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked','pic')
             ->get();
     }
     /**获取单条文章
