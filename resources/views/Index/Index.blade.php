@@ -671,7 +671,7 @@
 					<h3 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false"><a href="news.html"  title="公司地址"  target='_self'>公司地址</a></h3>
 					<p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false"> 欢迎更多的公司成为我们的合作伙伴</p>
 					<div class="row">
-						<iframe src="/map" style="border: none;width: 100%;height: 500px;"></iframe>
+						<iframe src="/map" style="border: none;width: 100%;height: 311px;"></iframe>
 					</div>
 				</div>
 
@@ -699,48 +699,9 @@
 						<div class="form-group">
 
 							<div>
-								<input name='para32' class='form-control' type='text' placeholder='Email ' autocomplete='off'  />
+								<textarea name='para34' class='form-control' data-fv-notempty="true" data-fv-message="不能为空" placeholder='留言内容 ' rows='5' style="resize: none;"></textarea>
 							</div>
 						</div>
-
-						<div class="form-group">
-
-							<div>
-								<input name='para33' class='form-control' type='text' placeholder='其他联系方式 ' autocomplete='off'  />
-							</div>
-						</div>
-
-						<div class="form-group">
-
-							<div>
-								<textarea name='para34' class='form-control' data-fv-notempty="true" data-fv-message="不能为空" placeholder='留言内容 ' rows='5'></textarea>
-							</div>
-						</div>
-
-
-						<div class="form-group">
-
-							<div class="input-group input-group-icon">
-								<input
-										name='code'
-										type="text"
-										class="form-control"
-										placeholder = "验证码"
-										data-fv-notempty = "true"
-										data-fv-message = "不能为空"
-								>
-								<span class="input-group-addon">
-							<img
-									src="upload/yzm.png"
-									data-url="upload/yzm.png"
-									class="met-form-codeimg"
-									alt="看不清？点击更换验证码"
-									title="看不清？点击更换验证码"
-							/>
-						</span>
-							</div>
-						</div>
-
 
 						<div class="clear"></div>
 						<button type="submit" class="submit btn-squared">提交留言<i class="fa fa-arrow-circle-right"></i></button>
