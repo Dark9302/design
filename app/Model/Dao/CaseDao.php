@@ -38,10 +38,10 @@ class CaseDao extends Model
 
     /**添加案例
      * @param array $data
-     * @return bool
+     * @return int
      */
     public function addCase(array $data){
-        return $this->insert($data);
+        return $this->insertGetId($data);
     }
 
     /**更新案例

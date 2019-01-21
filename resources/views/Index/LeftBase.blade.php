@@ -30,19 +30,17 @@
         </li>
         <li><span>装修案例</span>
             <ul>
-                <li><a href="{{url('/productos')}}" title="欧式">欧式</a></li>
-                <li><a href="{{url('/productzs')}}" title="中式">中式</a></li>
-                <li><a href="{{url('/productjz')}}" title="精装">精装</a></li>
-                <li><a href="{{url('/productjian')}}" title="简装">简装</a></li>
+                @foreach($caseMenu as $val)
+                    <li><a href="{{url('/product',array('id'=>$val->id))}}" class="" title="{{$val->title}}">{{$val->title}}</a></li>
+                @endforeach
             </ul>
         </li>
         <li><a href="{{url('/team')}}" title="设计团队">设计团队</a></li>
         <li><span>新闻资讯</span>
             <ul>
-                <li><a href="{{url('/news/1')}}" title="公司新闻">公司新闻</a></li>
-                <li><a href="{{url('/news/2')}}" title="行业动态">行业动态</a></li>
-                <li><a href="{{url('/news/3')}}" title="装修小常识">装修小常识</a></li>
-                <li><a href="{{url('/activity')}}" title="项目活动">项目活动</a></li>
+                @foreach($artMenu as $val)
+                    <li><a href="{{url('/news',array('id'=>$val->id))}}" class="" title="{{$val->title}}">{{$val->title}}</a></li>
+                @endforeach
             </ul>
         </li>
         <li><a href="{{url('/job')}}" title="在线招聘">在线招聘</a></li>
@@ -84,20 +82,18 @@
                         <li class="dropdown margin-left-0 ecodropdown">
                             <a class="dropdown-toggle link " data-toggle="dropdown" href="#" aria-expanded="false" role="button" title="装修案例">装修案例 <span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-menu-right bullet" role="menu">
-                                <li><a href="{{url('/productos')}}" class="" title="欧式">欧式</a></li>
-                                <li><a href="{{url('/productzs')}}" class="" title="中式">中式</a></li>
-                                <li><a href="{{url('/productjz')}}" class="" title="精装">精装</a></li>
-                                <li><a href="{{url('/productjian')}}" class="" title="简装">简装</a></li>
+                                @foreach($caseMenu as $val)
+                                    <li><a href="{{url('/product',array('id'=>$val->id))}}" class="" title="{{$val->title}}">{{$val->title}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="margin-left-0"><a href="{{url('/team')}}" title="设计团队" class="link ">设计团队</a></li>
                         <li class="dropdown margin-left-0 ecodropdown">
                             <a class="dropdown-toggle link " data-toggle="dropdown" href="#" aria-expanded="false" role="button" title="新闻资讯">新闻资讯 <span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-menu-right bullet" role="menu">
-                                <li><a href="{{url('/news/1')}}" class="" title="公司新闻">公司新闻</a></li>
-                                <li><a href="{{url('/news/2')}}" class="" title="行业动态">行业动态</a></li>
-                                <li><a href="{{url('/news/3')}}" class="" title="装修小常识">装修小常识</a></li>
-                                <li><a href="{{url('/activity')}}" class="" title="项目活动">项目活动</a></li>
+                                @foreach($artMenu as $val)
+                                    <li><a href="{{url('/news',array('id'=>$val->id))}}" class="" title="{{$val->title}}">{{$val->title}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="margin-left-0"><a href="{{url('/job')}}" title="在线招聘" class="link ">在线招聘</a></li>

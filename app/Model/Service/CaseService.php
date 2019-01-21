@@ -2,7 +2,9 @@
 
 namespace App\Model\Service;
 
+use App\Model\Dao\ArticleDao;
 use App\Model\Dao\CaseDao;
+use App\Model\Dao\CaseTeamDao;
 use App\Model\Dao\DictDictDao;
 use Illuminate\Database\Eloquent\Model;
 
@@ -43,7 +45,7 @@ class CaseService extends Model
      * @param $pic1
      * @param $pic2
      * @param $pic3
-     * @return bool
+     * @return int
      */
     public function addCase($title,$type,$content,$information,$area,$pic1,$pic2,$pic3){
         $case = new CaseDao();
@@ -139,6 +141,17 @@ class CaseService extends Model
         return $res;
     }
 
+    /**获取所有分类
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getAllType(){
+        $dict = new DictDictDao();
+
+        $res = $dict->getAll();
+
+        return $res;
+    }
+
     /**添加分类
      * @param $title
      * @param $type
@@ -163,16 +176,19 @@ class CaseService extends Model
     public function delSingleType($id){
         $dict = new DictDictDao();
         $case = new CaseDao();
+        $art = new ArticleDao();
 
         //组合删除条件
-        $con['id'] = $id;
+        $con['type'] = $id;
 
         //判断该类型下是否有对应案例
         $case = $case->getSingleCase($con);
-        if($case){
+        $article = $art->getSingleArticle($con);
+        if($case || $article){
             $delRes = false;
         }else{
-            $delRes = $dict->delDict($con);
+            $delCon['id'] = $id;
+            $delRes = $dict->delDict($delCon);
         }
 
         return $delRes;
@@ -195,5 +211,74 @@ class CaseService extends Model
         }
 
         return $delRes;
+    }
+
+    /**添加案例和设计师关系
+     * @param $caseId
+     * @param $desIds
+     * @return bool
+     */
+    public function addCaseAndDes($caseId,$desIds){
+        $case = new CaseTeamDao();
+        //将设计师id转数组
+        $desArray = explode(',',$desIds);
+        //组合新数组
+        $caseAndDesArray = [];
+
+        foreach ($desArray as $key=>$val){
+            $caseAndDesArray[$key]['case_id'] = $caseId;
+            $caseAndDesArray[$key]['team_id'] = $val;
+        }
+
+        $addRes = $case->add($caseAndDesArray);
+
+        return $addRes;
+    }
+
+    /**更新设计师和案例关系表
+     * @param $caseId
+     * @param $desIds
+     * @return bool
+     */
+    public function upCaseAndDes($caseId,$desIds){
+        $case = new CaseTeamDao();
+        //组合查询条件
+        $con['case_id'] = $caseId;
+        $caseRes = $case->getInf($con);
+        if(!$caseRes->isEmpty()){
+            $delRes = $case->del($con);
+        }else{
+            $delRes = 1;
+        }
+        $addRes = $this->addCaseAndDes($caseId,$desIds);
+
+        if($delRes && $addRes !== false){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**获取设计师id
+     * @param $caseId
+     * @return string
+     */
+    public function getCaseDesigner($caseId){
+        $case = new CaseTeamDao();
+
+        $con['case_id'] = $caseId;
+        $res = $case->getInf($con);
+
+        $teamId = '';
+        //组合设计师id
+        foreach ($res as $val){
+            if($teamId){
+                $teamId .= ','.$val->team_id;
+            }else{
+                $teamId = $val->team_id;
+            }
+        }
+
+        return $teamId;
     }
 }

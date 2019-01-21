@@ -23,9 +23,9 @@
                 <div class="formControls col-xs-8 col-sm-9">
 				<span class="select-box">
                     <select name="artType" id="artType" class="select">
-                        <option value="1">公司新闻</option>
-                        <option value="2">行业动态</option>
-                        <option value="3">装修小常识</option>
+                        @foreach($list as $val)
+                        <option value="{{$val->id}}">{{$val->title}}</option>
+                        @endforeach
                     </select>
 				</span>
                 </div>

@@ -120,7 +120,7 @@ Route::group(['namespace'=>'Index'],function (){
     //案例详情
     Route::get('/caseInf','IndexController@CaseInf');
     //新闻资讯列表
-    Route::get('/news/{type?}','IndexController@NewsList');
+    Route::get('/news/{type}','IndexController@NewsList');
     //新闻资讯详情
     Route::get('/newsInf/{id}','IndexController@NewsInf');
 });

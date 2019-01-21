@@ -16,8 +16,9 @@ class ArticleDao extends Model
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getAdminArticleList(){
-        return $this->select('id','title','type',
+        return $this->select('article.id','article.title','dict_dict.title as type_name',
             DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked')
+            ->join('dict_dict','dict_dict.id','=','article.type')
             ->get();
     }
 

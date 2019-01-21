@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Model\Service\ArticleService;
+use App\Model\Service\CaseService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
@@ -28,7 +29,11 @@ class ArticleController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function add(){
-        return view('Admin.Article.add');
+        $type = new CaseService();
+
+        $list = $type->getTypeList(2);
+        return view('Admin.Article.add')
+            ->with('list',$list);
     }
 
     /**执行文章添加
@@ -72,11 +77,15 @@ class ArticleController extends Controller
      */
     public function edit($id){
         $article = new ArticleService();
+        $type = new CaseService();
+
+        $list = $type->getTypeList(2);
 
         $article = $article->getSingleArticle($id);
 
         return view('Admin.Article.edit')
-            ->with('art',$article);
+            ->with('art',$article)
+            ->with('list',$list);
     }
 
     /**执行文章编辑

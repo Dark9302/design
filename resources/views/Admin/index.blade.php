@@ -71,7 +71,6 @@
             <dd>
                 <ul>
                     <li><a data-href="case" data-title="案例列表" href="javascript:void(0)">案例列表</a></li>
-                    <li><a data-href="type" data-title="案例分类" href="javascript:void(0)">案例分类</a></li>
                 </ul>
             </dd>
         </dl>
@@ -84,11 +83,10 @@
             </dd>
         </dl>
         <dl id="menu-active">
-            <dt><i class="Hui-iconfont">&#xe60d;</i>活动管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe60d;</i>分类管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="member-list.html" data-title="活动列表" href="javascript:;">活动列表</a></li>
-                    <li><a data-href="member-list.html" data-title="参与人员" href="javascript:;">参与人员</a></li>
+                    <li><a data-href="type" data-title="分类列表" href="javascript:;">分类列表</a></li>
                 </ul>
             </dd>
         </dl>

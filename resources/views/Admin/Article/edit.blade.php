@@ -24,19 +24,13 @@
                 <div class="formControls col-xs-8 col-sm-9">
 				<span class="select-box">
                     <select name="artType" id="artType" class="select">
-                        @if($art->type == 1)
-                            <option value="1" selected>公司新闻</option>
-                            <option value="2">行业动态</option>
-                            <option value="3">装修小常识</option>
-                        @elseif($art->type == 2)
-                            <option value="1">公司新闻</option>
-                            <option value="2" selected>行业动态</option>
-                            <option value="3">装修小常识</option>
-                        @else
-                            <option value="1">公司新闻</option>
-                            <option value="2">行业动态</option>
-                            <option value="3" selected>装修小常识</option>
-                        @endif
+                        @foreach($list as $val)
+                            @if($art->type == $val->id)
+                            <option value="{{$val->id}}" selected>{{$val->title}}</option>
+                            @else
+                            <option value="{{$val->id}}">{{$val->title}}</option>
+                            @endif
+                        @endforeach
                     </select>
 				</span>
                 </div>

@@ -29,6 +29,7 @@
                     <th width="25"><input type="checkbox" name="" value=""></th>
                     <th width="80">ID</th>
                     <th width="100">分类名称</th>
+                    <th width="100">类型</th>
                     <th width="120">操作</th>
                 </tr>
                 </thead>
@@ -39,6 +40,11 @@
                             <td><input type="checkbox" value="" class="chec" name=""></td>
                             <td>{{$val->id}}</td>
                             <td class="text-c">{{$val->title}}</td>
+                            @if($val->type == 1)
+                            <td>装修风格</td>
+                            @else
+                            <td>文章分类</td>
+                            @endif
                             <td class="f-14 td-manage">
                                 <a style="text-decoration:none" class="ml-5" onClick="del(this,'{{$val->id}}','delType')" href="javascript:;" title="删除">
                                     <i class="Hui-iconfont">&#xe6e2;</i>

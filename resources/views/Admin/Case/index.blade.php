@@ -35,10 +35,9 @@
                     <th width="25"><input type="checkbox" name="" value=""></th>
                     <th width="80">ID</th>
                     <th width="100">标题</th>
-                    <th width="100">简介</th>
+                    <th width="100" class="over">简介</th>
                     <th width="80">风格</th>
                     <th width="75">面积</th>
-                    <th width="120">相关设计师</th>
                     <th width="120">操作</th>
                 </tr>
                 </thead>
@@ -52,7 +51,6 @@
                             <td class="over">{{$val->content}}</td>
                             <td>{{$val->type_name}}</td>
                             <td>{{$val->area}}</td>
-                            <td>{{$val->looked}}</td>
                             <td class="f-14 td-manage">
                                 <a style="text-decoration:none" class="ml-5" onClick="edit('案列编辑','editCase/{{$val->id}}','10001')" href="javascript:;" title="编辑">
                                     <i class="Hui-iconfont">&#xe6df;</i>
