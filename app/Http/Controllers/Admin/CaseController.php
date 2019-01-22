@@ -6,6 +6,7 @@ use App\Model\Service\CaseService;
 use App\Model\Service\TeamService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class CaseController extends Controller
 {
@@ -71,10 +72,21 @@ class CaseController extends Controller
             $picUrl2='storage/upload/'.$fileName2;
             $picUrl3='storage/upload/'.$fileName3;
 
-            $addRes = $case->addCase($inf['title'],$inf['type'],$inf['content'],$inf['information'],$inf['area'],$picUrl1,$picUrl2,$picUrl3);
-            if($addRes !== false && $bool1 && $bool2 && $bool3){
-                return response()->json('添加成功');
+            DB::beginTransaction();
+
+            $addId = $case->addCase($inf['title'],$inf['type'],$inf['content'],$inf['information'],$inf['area'],$picUrl1,$picUrl2,$picUrl3);
+
+            if($addId && $bool1 && $bool2 && $bool3){
+                $addRes = $case->addCaseAndDes($addId,$inf['caseTeam']);
+                if($addRes !== false){
+                    DB::commit();
+                    return response()->json('添加成功');
+                }else{
+                    DB::rollBack();
+                    return response()->json('添加失败');
+                }
             }else{
+                DB::rollBack();
                 return response()->json('添加失败');
             }
         }else{
@@ -103,8 +115,11 @@ class CaseController extends Controller
         $inf = $case->getSingleCase($id);
         //获取案例分类列表
         $type = $case->getTypeList('1');
+
+        $desId = $case->getCaseDesigner($id);
         return view('Admin.Case.edit')
-            ->with('type',$type)->with('inf',$inf);
+            ->with('type',$type)->with('inf',$inf)
+            ->with('des',$desId);
     }
 
     /**执行案例编辑
@@ -160,11 +175,20 @@ class CaseController extends Controller
             $bool3= 1;
         }
 
+        DB::beginTransaction();
         $res = $case->editCase($inf['id'],$inf['title'],$inf['type'],$inf['content'],$inf['information'],$inf['area'],$picUrl1,$picUrl2,$picUrl3);
 
         if($res !== false && $bool1 && $bool2 && $bool3){
-            return response()->json('修改成功');
+            $upRes = $case->upCaseAndDes($inf['id'],$inf['caseTeam']);
+            if($upRes !== false){
+                DB::commit();
+                return response()->json('修改成功');
+            }else{
+                DB::rollBack();
+                return response()->json('修改失败');
+            }
         }else{
+            DB::rollBack();
             return response()->json('修改失败！');
         }
     }
@@ -211,7 +235,7 @@ class CaseController extends Controller
     public function type(){
         $case = new CaseService();
         //获取分类列表
-        $type = $case->getTypeList('1');
+        $type = $case->getAllType();
         //获取分类条数
         $num = count($type);
         return view('Admin.Case.type')
@@ -260,7 +284,7 @@ class CaseController extends Controller
         if($res !== false){
             return response()->json('删除成功');
         }else{
-            return response()->json('删除失败,请检查该分类下是否存在对应案例！');
+            return response()->json('删除失败,请检查该分类下是否存在对应内容！');
         }
     }
 

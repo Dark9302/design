@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>相关设计师：</label>
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>设计师ID：</label>
                 <div class="formControls col-xs-8 col-sm-9">
                     <input type="text" class="input-text" value="" readonly name="caseTeam" placeholder="请点击该框选择设计师" id="caseTeam">
                 </div>
@@ -96,6 +96,8 @@
                     required : true
                 },caseInf:{
                     required : true
+                },caseTeam:{
+                    required : true
                 }
             },
             onkeyup:false,
@@ -106,12 +108,13 @@
                 var caseType = $("#caseType").val();
                 var area = $("#area").val();
                 var caseInf = $("#caseInf").val();
+                var caseTeam = $("#caseTeam").val();
                 $(form).ajaxSubmit({
                     url:"doAddCase",
                     type:"post",
                     data:{
                         'title':caseName,'information':caseInf,'content':caseIntro,'type':caseType,
-                        'area':area
+                        'area':area,'caseTeam':caseTeam
                     },
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

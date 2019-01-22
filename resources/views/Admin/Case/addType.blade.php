@@ -17,6 +17,7 @@
 				<span class="select-box">
                     <select name="type" id="type" class="select">
                         <option value="1">装修风格</option>
+                        <option value="2">文章分类</option>
                     </select>
 				</span>
                 </div>

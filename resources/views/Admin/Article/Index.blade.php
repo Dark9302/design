@@ -48,13 +48,7 @@
                             <td><input type="checkbox" value="" class="chec" name=""></td>
                             <td>{{$val->id}}</td>
                             <td class="text-c">{{$val->title}}</td>
-                            @if($val->type == 1)
-                                <td>公司新闻</td>
-                            @elseif($val->type == 2)
-                                <td>行业动态</td>
-                            @elseif($val->type == 3)
-                                <td>装修小常识</td>
-                            @endif
+                            <td class="text-c">{{$val->type_name}}</td>
                             <td>{{$val->time}}</td>
                             <td>{{$val->looked}}</td>
                             <td class="f-14 td-manage">
