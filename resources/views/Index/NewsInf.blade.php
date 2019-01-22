@@ -74,7 +74,7 @@
                     </p>
                     <div>
                     	<p>
-                    		<span class="teaminfo_text">活动内容活动内容本院设计在功能布局上清晰合理，突显出"以人为本，以病人为中心"的宗旨。采用现代简约的设计手法、简单的色彩搭配，塑造出健康温馨的医疗环境。大厅及各功能科室采用石材及瓷砖等装饰材料，经久耐用、易清洁同时也满足卫生及消防要求，绿色以点缀的形式贯穿整个空间，在视觉上给人以宽敞明亮，清新自然的感觉。</span>
+                    		<span class="teaminfo_text">{!!$inf->content!!}</span>
                     	</p>
                     	<div id="metinfo_additional"></div>
                     </div>

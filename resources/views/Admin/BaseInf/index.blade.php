@@ -16,6 +16,7 @@
                 <div class="tabBar cl">
                     <span>公司信息</span>
                     <span>联系我们</span>
+                    <span>关于我们</span>
                 </div>
                 <div class="tabCon">
                     <div class="row cl">
@@ -117,6 +118,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="tabCon">
+                    <div class="row cl">
+		                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>维护类型：</label>
+		                <div class="formControls col-xs-8 col-sm-9">
+						<span class="select-box">
+		                    <select name="artType" id="artType" class="select">
+		                        <option value="1">公司简介</option>
+		                        <option value="2">公司文化</option>
+		                        <option value="3">装修流程</option>
+		                    </select>
+						</span>
+		                </div>
+		            </div>
+		            <div class="row cl">
+		                <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
+		                <div class="formControls col-xs-8 col-sm-9">
+		                    <textarea name="artInf" id="artInf" cols="" rows="" class="textarea" style="height:400px;width:100%;"></textarea>
+		                </div>
+		            </div>
+                </div>
             </div>
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
@@ -135,6 +156,18 @@
         $(function(){
             $("#tab-system").Huitab({
                 index:0
+            });
+        });
+    </script>
+    <script charset="utf-8" src="{{asset('kindeditor/kindeditor-min.js')}}"></script>
+    <script charset="utf-8" src="{{asset('kindeditor/lang/zh_CN.js')}}"></script>
+    <script>
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="artInf"]', {
+                allowFileManager : true,
+                resizeType:0,
+                afterBlur: function(){this.sync();}
             });
         });
     </script>
