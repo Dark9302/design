@@ -1,6 +1,7 @@
 @extends('Index.Base')
 @section('css')
 	@parent
+	<link rel="stylesheet" href="{{asset('css/showproduct.css')}}" />
 @endsection
 @section('content')
 	<div class="met-position  pattern-show">
@@ -88,6 +89,10 @@
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
 							风格 : 现代
 						</div>
+						
+						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
+							地址: 万达金马小区
+						</div>
 	
 					</div>
 				</div>
@@ -119,8 +124,24 @@
 
 							</div>
 						</div>
-					</div>
+						<div class="met-shownews-footer upnext">
 
+		                    <ul class="pager pager-round">
+		                        <li class="previous ">
+		                            <a href="showcase.html" title="医院大厅">
+		                                上一篇
+		                                <span aria-hidden="true" class='hidden-xs hidden-sm'>：医院大厅</span>
+		                            </a>
+		                        </li>
+		                        <li class="next disabled">
+		                            <a href="#" title="没有了">
+		                                下一篇
+		                                <span aria-hidden="true" class='hidden-xs hidden-sm'>：没有了</span>
+		                            </a>
+		                        </li>
+		                    </ul>
+		                </div>
+					</div>
 					</div>
 				</div>
 

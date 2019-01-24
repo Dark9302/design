@@ -94,7 +94,7 @@ Route::group(['namespace'=>'Index'],function (){
      //地图
     Route::get('/map','IndexController@Map');
      //欧式装修
-    Route::get('/productos','IndexController@ProductOs');
+    Route::get('/product/{id}','IndexController@ProductOs');
      //中式装修
     Route::get('/productzs','IndexController@ProductZs');
      //精装装修
