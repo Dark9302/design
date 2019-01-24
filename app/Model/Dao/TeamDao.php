@@ -40,4 +40,26 @@ class TeamDao extends Model
     public function delMoreDesigner(array $data){
         return $this->whereIn('id',$data)->delete();
     }
+
+    /**上一条
+     * @param $id
+     * @return Model|null|static
+     */
+    public function perOne($id){
+        return $this->select('id','name')
+            ->where('id','<',$id)
+            ->orderBy('id','desc')->limit('1')
+            ->first();
+    }
+
+    /**下一条
+     * @param $id
+     * @return Model|null|static
+     */
+    public function nextOne($id){
+        return $this->select('id','name')
+            ->where('id','>',$id)
+            ->orderBy('id')->limit('1')
+            ->first();
+    }
 }

@@ -113,4 +113,18 @@ class TeamService extends Model
 
         return $delRes;
     }
+
+    /**上一条和下一条
+     * @param $id
+     * @return array
+     */
+    public function getPreAndNext($id){
+        $des = new TeamDao();
+
+        $per = $des->perOne($id);
+
+        $next = $des->nextOne($id);
+
+        return array('per'=>$per,'next'=>$next);
+    }
 }

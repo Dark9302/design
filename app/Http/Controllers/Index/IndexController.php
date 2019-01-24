@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Index;
 
+use App\Model\Dao\CaseTeamDao;
 use App\Model\Dao\DictDictDao;
 use App\Model\Service\ArticleService;
 use App\Model\Service\CaseService;
+use App\Model\Service\TeamService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -85,43 +87,51 @@ class IndexController extends Controller
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
-    /**欧式装修
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+
+    /**装修案例列表
+     * @param $type
+     * @return $this
      */
-    public function ProductOs(){
+    public function Product($type){
+        $case = new CaseService();
+        $caseRes = $case->getCaseListQt($type);
+
         return view('Index.ProductOs')
+            ->with('list',$caseRes['list'])
+            ->with('type',$caseRes['type'])
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
-    /**中式装修
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function ProductZs(){
-        return view('Index.ProductZs')
-            ->with('caseMenu',$this->caseMenu)
-            ->with('artMenu',$this->artMenu);
-    }
-    /**精装装修
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function ProductJz(){
-        return view('Index.ProductJz')
-            ->with('caseMenu',$this->caseMenu)
-            ->with('artMenu',$this->artMenu);
-    }
-    /**简装装修
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function ProductJian(){
-        return view('Index.ProductJian')
-            ->with('caseMenu',$this->caseMenu)
-            ->with('artMenu',$this->artMenu);
-    }
+
     /**装修展示
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param $id
+     * @return $this
      */
-    public function ShowProduct(){
+    public function ShowProduct($id){
+        $case = new CaseService();
+        $dict = new DictDictDao();
+        $ct = new CaseTeamDao();
+        //获取单个案例信息
+        $caseInf = $case->getSingleCase($id);
+
+        $type = $caseInf->type;
+
+        //获取上一条和下一条
+        $preAndNext = $case->getPreAndNext($id,$type);
+
+        //获取类型信息
+        $con['id'] = $type;
+        $type = $dict->getSingleDict($con);
+
+        //获取相关设计师
+        $designer = $ct->getDesignerByCase($id);
+
         return view('Index.ShowProduct')
+            ->with('inf',$caseInf)
+            ->with('des',$designer)
+            ->with('pre',$preAndNext['pre'])
+            ->with('next',$preAndNext['next'])
+            ->with('type',$type)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -153,15 +163,37 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function Team(){
+        $team = new TeamService();
+        //获取设计师列表
+        $list = $team->getDesList();
+
         return view('Index.Team')
+            ->with('list',$list)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
+
     /**设计师详情
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param $id
+     * @return $this
      */
-    public function TeamInf(){
+    public function TeamInf($id){
+        $team = new TeamService();
+        $ct = new CaseTeamDao();
+        //获取单个设计师
+        $des = $team->getSingleDes($id);
+
+        //获取设计师相关作品
+        $case = $ct->getCaseByDes($id);
+
+        //获取上一条和下一条
+        $perAndNext = $team->getPreAndNext($id);
+
         return view('Index.TeamInf')
+            ->with('des',$des)
+            ->with('case',$case)
+            ->with('per',$perAndNext['per'])
+            ->with('next',$perAndNext['next'])
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }

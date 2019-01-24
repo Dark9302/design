@@ -21,6 +21,25 @@ class CaseService extends Model
         return $list;
     }
 
+    /**获取前台案例列表
+     * @param $type
+     * @return array
+     */
+    public function getCaseListQt($type){
+        $case = new CaseDao();
+        $dict = new DictDictDao();
+        //组合查询条件
+        $con['type'] = $type;
+        //获取案例列表
+        $list = $case->getCaseListByCon($con);
+
+        //获取案例类型
+        $dictCon['id'] = $type;
+        $typeRes = $dict->getSingleDict($dictCon);
+
+        return array('list'=>$list,'type'=>$typeRes);
+    }
+
     /**获取单个案例
      * @param $id
      * @return Model|null|static
@@ -123,6 +142,21 @@ class CaseService extends Model
         $del = $case->delMoreCase($data);
 
         return $del;
+    }
+
+    /**装修案例上一条和下一条
+     * @param $id
+     * @param $type
+     * @return array
+     */
+    public function getPreAndNext($id,$type){
+        $case = new CaseDao();
+
+        $pre = $case->perOne($id,$type);
+
+        $next = $case->nextOne($id,$type);
+
+        return array('pre'=>$pre,'next'=>$next);
     }
 
 

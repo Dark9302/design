@@ -36,6 +36,17 @@ class CaseDao extends Model
             ->get();
     }
 
+    /**根据条件获取案例列表
+     * @param array $con
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getCaseListByCon(array $con){
+        return $this->select('id','title','pic1')
+            ->where($con)
+            ->orderBy('id')
+            ->get();
+    }
+
     /**添加案例
      * @param array $data
      * @return int

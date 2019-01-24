@@ -9,26 +9,21 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li>
-					<a href="index.html" title="首页">
+					<a href="{{url('/')}}" title="首页">
 						<i class="icon wb-home" aria-hidden="true"></i>首页
 					</a>
 				</li>
 				<li class="dropdown">
-					<a href="product.html" title="服务项目" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">服务项目 <i class="caret"></i></a>
+					<a href="#" title="服务项目" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">服务项目 <i class="caret"></i></a>
 					<ul class="dropdown-menu bullet">
-
-						<li><a href="product.html" title="装修案例">装修案例</a></li>
-
-						<li><a href="product.html" title="装修小常识">装修小常识</a></li>
-
+						@foreach($caseMenu as $val)
+						<li><a href="{{url('/product',array('id'=>$val->id))}}" title="{{$val->title}}">{{$val->title}}</a></li>
+						@endforeach
 					</ul>
 				</li>
 				<li>
-					<a href="product.html" title="欧式装修">
-						欧式装修
-					</a>
+					<a href="{{url('/product',array('id'=>$type->id))}}" title="{{$type->title}}">{{$type->title}}</a>
 				</li>
-
 			</ol>
 		</div>
 	</div>
@@ -45,83 +40,74 @@
 					<div class="ad-controls"></div> 
 					<div class="ad-nav"> 
 						<div class="ad-thumbs"> 
-							<ul class="ad-thumb-list" id="lightgallery"> 
-								<li data-src="upload/1389847371.jpg" data-exthumbimage="upload/1389847371.jpg">
-									<a href="upload/1389847371.jpg"> 
-										<img src="upload/1389847371x.jpg" class="img-responsive" alt="会议室" />
+							<ul class="ad-thumb-list" id="lightgallery">
+								{{--三张切换图--}}
+								<li data-src="{{url($inf->pic1)}}" data-exthumbimage="{{url($inf->pic1)}}">
+									<a href="{{url($inf->pic1)}}">
+										<img src="{{asset($inf->pic1)}}" class="img-responsive" alt="{{$inf->title}}" />
 									</a> 
 								</li> 
-
-								<li data-src="upload/1389847473.jpg" data-exthumbimage="upload/1389847473.jpg">
-									<a href="upload/1389847473.jpg"> 
-										<img src="upload/1389847473x.jpg" class="img-responsive" alt="会议室" />
+								<li data-src="{{url($inf->pic2)}}" data-exthumbimage="{{url($inf->pic2)}}">
+									<a href="{{url($inf->pic2)}}">
+										<img src="{{asset($inf->pic2)}}" class="img-responsive" alt="{{$inf->title}}" />
 									</a> 
 								</li> 
-
-								<li data-src="upload/1389847723.jpg" data-exthumbimage="upload/1389847723.jpg">
-									<a href="upload/1389847723.jpg"> 
-										<img src="upload/1389847723x.jpg" class="img-responsive" alt="会议室" />
+								<li data-src="{{url($inf->pic3)}}" data-exthumbimage="{{url($inf->pic3)}}">
+									<a href="{{url($inf->pic3)}}">
+										<img src="{{asset($inf->pic3)}}" class="img-responsive" alt="{{$inf->title}}" />
 									</a> 
 								</li> 
-
-							</ul> 
+							</ul>
 						</div> 
 					</div> 
 				</div>
 			</div>
 			<div class="visible-xs-block visible-sm-block height-20"></div>
 			<div class="col-md-5 product-intro">
-				<h1>会议室</h1>
+				<h1>{{$inf->title}}</h1>
 
-				<p class="description">现代多媒体会议室已成为现代新型办公建筑越来越重要的设计范畴，要求功能与氛围的统一,设计出开阔、大气，整洁，能够提供稳定、便捷、生动的高效率视频会议服务同时注重多媒体视讯功能以及其它IT设备的集成功能。</p>
+				<p class="description">{{$inf->content}}</p>
 	
 				<div class="para">
 					<div class="row">
-						
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
-							面积 : 140m²
+							面积 : {{$inf->area}}
 						</div>
-						
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
 							报价 : 3200元
 						</div>
-						
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
-							风格 : 现代
+							风格 : {{$type->title}}
 						</div>
-						
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
 							地址: 万达金马小区
 						</div>
-	
 					</div>
 				</div>
-
 				<div class="tools"></div>
-
 			</div>
 		</div>
 	</div>
 </div>
-
 	<div class="met-showproduct-body">
 		<div class="container">
 			<div class="row no-space">
 				<div class="col-md-9 product-content-body">
 					<div class="row">
-
 					<div class="panel product-detail">
 						<div class="panel-body">
 							<ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
 								<li class="active"><a data-toggle="tab" href="#product-details" data-get="product-details">详细信息</a></li>
-
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane met-editor lazyload clearfix animation-fade active" id="product-details">
-									<div><p>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现代多媒体会议室已成为现代新型办公建筑越来越重要的设计范畴，要求功能与氛围的统一,设计出开阔、大气，整洁，能够提供稳定、便捷、生动的高效率视频会议服务同时注重多媒体视讯功能以及其它IT设备的集成功能。</p><div id="metinfo_additional"></div></div>
+									<div>
+										<p>
+											{!! $inf->information !!}
+										</p>
+										<div id="metinfo_additional"></div>
+									</div>
 								</div>
-
 							</div>
 						</div>
 						<div class="met-shownews-footer upnext">
@@ -152,62 +138,20 @@
 						<div class="panel-body">
 						<h4 class="example-title">相关设计师</h4>
 							<div class="row">
-
+								@foreach($des as $val)
 								<div class="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10">
-									<a href="/showproduct" target="_blank" class="img" title="商务会所">
-										<img data-original="upload/1389849064.jpg" class="img-responsive" style='height:250px' alt="商务会所">
+									<a href="{{url('/teaminf',array('id'=>$val->id))}}" target="_blank" class="img" title="{{$val->name}}">
+										<img data-original="{{asset($val->photo)}}" class="img-responsive" style='height:250px' alt="{{$val->name}}">
 									</a>
-									<a href="/showproduct" target="_blank" class="txt" title="商务会所">商务会所</a>
-									
+									<a href="{{url('/teaminf',array('id'=>$val->id))}}" target="_blank" class="txt" title="商务会所">{{$val->name}}</a>
 								</div>
-
-								<div class="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10">
-									<a href="/showproduct" target="_blank" class="img" title="商务会所">
-										<img data-original="upload/1389849617.jpg" class="img-responsive" style='height:250px' alt="商务会所">
-									</a>
-									<a href="/showproduct" target="_blank" class="txt" title="商务会所">商务会所</a>
-									
-								</div>
-
-								<div class="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10">
-									<a href="/showproduct" target="_blank" class="img" title="客厅">
-										<img data-original="upload/1389850762.jpg" class="img-responsive" style='height:250px' alt="客厅">
-									</a>
-									<a href="/showproduct" target="_blank" class="txt" title="客厅">客厅</a>
-									
-								</div>
-
-								<div class="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10">
-									<a href="/showproduct" target="_blank" class="img" title="卧室">
-										<img data-original="upload/1389852216.jpg" class="img-responsive" style='height:250px' alt="卧室">
-									</a>
-									<a href="/showproduct" target="_blank" class="txt" title="卧室">卧室</a>
-									
-								</div>
-
-								<div class="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10">
-									<a href="/showproduct" target="_blank" class="img" title="别墅">
-										<img data-original="upload/1389852083.jpg" class="img-responsive" style='height:250px' alt="别墅">
-									</a>
-									<a href="/showproduct" target="_blank" class="txt" title="别墅">别墅</a>
-									
-								</div>
-
-								<div class="product-hot-list col-md-12 col-sm-4 col-xs-4 text-center margin-bottom-10">
-									<a href="/showproduct" target="_blank" class="img" title="公寓">
-										<img data-original="upload/1389852374.jpg" class="img-responsive" style='height:250px' alt="公寓">
-									</a>
-									<a href="/showproduct" target="_blank" class="txt" title="公寓">公寓</a>
-									
-								</div>
-
+								@endforeach
 							</div>
 						</div>
 					</div>
 				</div>
 				</div>
 				<!--右侧结束-->
-
 			</div>
 		</div>
 	</div>

@@ -94,7 +94,7 @@ Route::group(['namespace'=>'Index'],function (){
      //地图
     Route::get('/map','IndexController@Map');
      //欧式装修
-    Route::get('/product/{id}','IndexController@ProductOs');
+    Route::get('/product/{type}','IndexController@Product');
      //中式装修
     Route::get('/productzs','IndexController@ProductZs');
      //精装装修
@@ -102,7 +102,7 @@ Route::group(['namespace'=>'Index'],function (){
      //简装装修
     Route::get('/productjian','IndexController@ProductJian');
      //装修展示
-    Route::get('/showproduct','IndexController@ShowProduct');
+    Route::get('/showproduct/{id}','IndexController@ShowProduct');
      //装修小常识
     Route::get('/know','IndexController@Know');
      //项目活动
@@ -112,7 +112,7 @@ Route::group(['namespace'=>'Index'],function (){
     //设计团队
     Route::get('/team','IndexController@Team');
     //设计师详情
-    Route::get('/teaminf','IndexController@TeamInf');
+    Route::get('/teaminf/{id}','IndexController@TeamInf');
     //招聘
     Route::get('/job','IndexController@Job');
     //案例列表
