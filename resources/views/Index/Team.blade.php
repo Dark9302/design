@@ -31,75 +31,22 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="blocks space-100 blocks-xlg-4 blocks-md-3 blocks-sm-2 met-page-ajax">
-
+					@foreach($list as $val)
 					<li class="widget ">
 						<div class="cover overlay overlay-hover">
-							<img class="cover-image overlay-scale" src="upload/x1474449984.jpg" style='height:299px;' alt="首席设计师" />
+							<img class="cover-image overlay-scale" src="{{asset($val->photo)}}" style='height:299px;' alt="{{$val->post}}" />
 							<div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
 								<div class="vertical-align-middle">
 									<div class="widget-time widget-divider">
-										<span>首席设计师</span>
+										<span>{{$val->post}}</span>
 									</div>
-									<h3 class="widget-title margin-bottom-20">梁超</h3>
-
-									<a href={{url('/teaminf')}} title='首席设计师' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
-
+									<h3 class="widget-title margin-bottom-20">{{$val->name}}</h3>
+									<a href={{url('/teaminf',array('id'=>$val->id))}} title='{{$val->post}}' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
 								</div>
 							</div>
 						</div>
 					</li>
-
-					<li class="widget ">
-						<div class="cover overlay overlay-hover">
-							<img class="cover-image overlay-scale" src="upload/x1474449696.jpg" style='height:299px;' alt="首席设计师" />
-							<div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
-								<div class="vertical-align-middle">
-									<div class="widget-time widget-divider">
-										<span>首席设计师</span>
-									</div>
-									<h3 class="widget-title margin-bottom-20">玛卡嘉怡</h3>
-
-									<a href={{url('/teaminf')}} title='首席设计师' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
-
-								</div>
-							</div>
-						</div>
-					</li>
-					
-					<li class="widget ">
-						<div class="cover overlay overlay-hover">
-							<img class="cover-image overlay-scale" src="upload/x1474449689.jpg" style='height:299px;' alt="专家设计师" />
-							<div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
-								<div class="vertical-align-middle">
-									<div class="widget-time widget-divider">
-										<span>专家设计师</span>
-									</div>
-									<h3 class="widget-title margin-bottom-20">李启胜</h3>
-
-									<a href={{url('/teaminf')}} title='专家设计师' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
-
-								</div>
-							</div>
-						</div>
-					</li>
-					
-					<li class="widget ">
-						<div class="cover overlay overlay-hover">
-							<img class="cover-image overlay-scale" src="upload/x1474450852.jpg" style='height:299px;' alt="专家设计师" />
-							<div class="overlay-panel overlay-fade overlay-background overlay-background-fixed text-center vertical-align">
-								<div class="vertical-align-middle">
-									<div class="widget-time widget-divider">
-										<span>专家设计师</span>
-									</div>
-									<h3 class="widget-title margin-bottom-20">张恒伟</h3>
-
-									<a href={{url('/teaminf')}} title='专家设计师' class="btn btn-outline btn-inverse" target='_self'>查看详情</a>
-
-								</div>
-							</div>
-						</div>
-					</li>
-
+					@endforeach
 				</div>
 				<div class='met_pager'>
 					<span class='PreSpan'>上一页</span>

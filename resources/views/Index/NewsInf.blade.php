@@ -85,10 +85,20 @@
                             <a href="{{url('newsInf',['id'=>$pre->id])}}" title="{{$pre->title}}"> 上一篇<span aria-hidden="true" class='hidden-xs hidden-sm'>：{{$pre->title}}</span>
                             </a>
                         </li>
+                        @else
+                        <li class="previous disabled">
+                            <a href="#" title="没有了"> 上一篇<span aria-hidden="true" class='hidden-xs hidden-sm'>：没有了</span>
+                            </a>
+                        </li>
                         @endif
                         @if($next)
                         <li class="next ">
                             <a href="{{url('newsInf',['id'=>$next->id])}}" title="{{$next->title}}">下一篇<span aria-hidden="true" class='hidden-xs hidden-sm'>：{{$next->title}}</span>
+                            </a>
+                        </li>
+                        @else
+                        <li class="next disabled">
+                            <a href="#" title="没有了">下一篇<span aria-hidden="true" class='hidden-xs hidden-sm'>：没有了</span>
                             </a>
                         </li>
                         @endif

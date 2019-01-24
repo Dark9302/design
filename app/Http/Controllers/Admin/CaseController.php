@@ -45,8 +45,8 @@ class CaseController extends Controller
         $inf = $request->all();
         //获取上传图片
         $pic1 = $request->file('casePic1');
-        $pic2 = $request->file('casePic1');
-        $pic3 = $request->file('casePic1');
+        $pic2 = $request->file('casePic2');
+        $pic3 = $request->file('casePic3');
 
         if($pic1 && $pic2 && $pic3){
             //得到图片名
@@ -132,8 +132,8 @@ class CaseController extends Controller
         $inf = $request->all();
         //获取上传图片
         $pic1 = $request->file('casePic1');
-        $pic2 = $request->file('casePic1');
-        $pic3 = $request->file('casePic1');
+        $pic2 = $request->file('casePic2');
+        $pic3 = $request->file('casePic3');
 
         if($pic1){
             //得到图片名
