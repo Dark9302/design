@@ -90,7 +90,6 @@ class ArticleService extends Model
         $data['introduction'] = $intr;
         $data['content'] = $content;
         $data['type'] = $type;
-        $data['time'] = time();
         if($picture){
             $data['pic'] = $picture;
         }
@@ -156,12 +155,27 @@ class ArticleService extends Model
     }
 
     /**获取文章推荐
+     * @param $num
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function getTopFive(){
+    public function getTopN($num){
         $article = new ArticleDao();
 
-        $topFive = $article->getTopFive();
+        $topFive = $article->getTopN($num);
+
+        return $topFive;
+    }
+
+    /**文章推荐
+     * @param $num
+     * @param $type
+     * @return mixed
+     */
+    public function getTopNByType($num,$type){
+        $article = new ArticleDao();
+
+
+        $topFive = $article->getTopNByType($num,$type);
 
         return $topFive;
     }

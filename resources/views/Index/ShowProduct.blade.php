@@ -73,10 +73,13 @@
 							面积 : {{$inf->area}}
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
-							报价 : 3200元
+							报价 : {{$inf->price}}
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
 							风格 : {{$type->title}}
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6 margin-bottom-15 blue-grey-500">
+							地址 : {{$inf->address}}
 						</div>
 					</div>
 				</div>

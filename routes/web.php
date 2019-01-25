@@ -20,6 +20,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::get('welcome','AdminController@welcome');
     //公司信息页面
     Route::get('company','AdminController@companyInf');
+    //更新公司信息
+    Route::post('upCom','AdminController@upCompany');
     //文章信息页面
     Route::get('article','ArticleController@index');
     //文章添加页面

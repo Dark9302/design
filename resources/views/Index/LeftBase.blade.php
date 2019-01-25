@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="generator" content="" data-variable=",,,,,zstyle"/>
-    <meta name="description" content="装修"/>
-    <meta name="keywords" content="保定喜迎门装饰工程有限公司"/>
+    <meta name="description" content="{{$com->web_description}}"/>
+    <meta name="keywords" content="{{$com->web_keyword}}"/>
     @section('css')
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
         <link rel="stylesheet" href="{{asset('templates/zstyle/cache/7fa082e0a5a19929.min.css')}}">
     @show
-    <title>保定喜迎门装饰工程有限公司</title>
+    <title>{{$com->web_title}}</title>
 </head>
 <body class="minWidth bgw">
 <nav id="mobileNav" style="display:none;">
@@ -166,23 +166,23 @@
 							<ul class="post_item" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
 
 								<li>Sep 17, 2016
-									<a href={{url('/NewsInf')}} title="低碳建筑首选天然石材 环保健康受欢迎" target='_self'>低碳建筑首选天然石材 环保健康受欢迎</a>
+									<a href="{{url('/NewsInf')}}" title="低碳建筑首选天然石材 环保健康受欢迎" target='_self'>低碳建筑首选天然石材 环保健康受欢迎</a>
 								</li>
 
 								<li>Sep 17, 2016
-									<a href={{url('/NewsInf')}} title="装修旺季促销建材家居景气指数回升" target='_self'>装修旺季促销建材家居景气指数回升</a>
+									<a href="{{url('/NewsInf')}}" title="装修旺季促销建材家居景气指数回升" target='_self'>装修旺季促销建材家居景气指数回升</a>
 								</li>
 
 								<li>Sep 17, 2016
-									<a href={{url('/NewsInf')}} title="全球原木材原料严重紧缺危及建材行业" target='_self'>全球原木材原料严重紧缺危及建材行业</a>
+									<a href="{{url('/NewsInf')}}" title="全球原木材原料严重紧缺危及建材行业" target='_self'>全球原木材原料严重紧缺危及建材行业</a>
 								</li>
 
 								<li>Jan 14, 2014
-									<a href={{url('/NewsInf')}} title="将文化融入设计 以设计推动创新" target='_self'>将文化融入设计 以设计推动创新</a>
+									<a href="{{url('/NewsInf')}}" title="将文化融入设计 以设计推动创新" target='_self'>将文化融入设计 以设计推动创新</a>
 								</li>
 
 								<li>Jan 15, 2014
-									<a href={{url('/NewsInf')}} title="我国玻璃纤维产业规模居世界第一位" target='_self'>我国玻璃纤维产业规模居世界第一位</a>
+									<a href="{{url('/NewsInf')}}" title="我国玻璃纤维产业规模居世界第一位" target='_self'>我国玻璃纤维产业规模居世界第一位</a>
 								</li>
 
 							</ul>
@@ -267,15 +267,9 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 list  text-left masonry-item">
                     <h4>联系我们</h4>
                     <ul class="contact-info">
-
-                        <li><i class="icon pe-map-marker"></i>保定市喜迎门装饰工程有限公司</li>
-
-                        <li><i class="icon pe-call"></i><a href="tel:86-12345678901" title="86-12345678901">86-12345678901</a></li>
-
-                        <li><i class="icon pe-mail"></i>123456789@qq.com</li>
-
-                        <li><i class="icon pe-global"></i>www.spademo.com</li>
-
+                        <li><i class="icon pe-map-marker"></i>{{$com->name}}</li>
+                        <li><i class="icon pe-call"></i><a href="tel:{{$com->phone}}" title="{{$com->phone}}">{{$com->phone}}</a></li>
+                        <li><i class="icon pe-mail"></i>{{$com->email}}</li>
                     </ul>
                 </div>
 
@@ -284,8 +278,8 @@
     </div>
     <footer>
         <div class="container text-center">
-            <p>保定喜迎门工程装饰有限公司 版权所有 2008-2017 湘ICP备8888888 </p>
-            <p>电话：0731-12345678 12345678 QQ:88888888 999999 Email:admin@admin.com</p>
+            <p>{{$com->web_title}} 版权所有 {{$com->web_copyright}} {{$com->web_icp}} </p>
+            <p>电话：{{$com->phone}}  Email:{{$com->email}}</p>
         </div>
     </footer>
 </div>

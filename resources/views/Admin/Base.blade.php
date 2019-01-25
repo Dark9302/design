@@ -34,6 +34,8 @@
 <script type="text/javascript" src="{{asset('js/admin/lib/layer/2.4/layer.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/admin/static/h-ui/js/H-ui.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/admin/static/h-ui.admin/js/H-ui.admin.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/admin/lib/datatables/1.10.0/jquery.dataTables.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/admin/lib/laypage/1.2/laypage.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/admin/main.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/public.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/config.js')}}"></script>

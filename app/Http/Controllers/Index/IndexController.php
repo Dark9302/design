@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Index;
 
 use App\Model\Dao\CaseTeamDao;
+use App\Model\Dao\CompanyDao;
 use App\Model\Dao\DictDictDao;
 use App\Model\Service\ArticleService;
 use App\Model\Service\CaseService;
@@ -14,13 +15,17 @@ class IndexController extends Controller
 {
     private $caseMenu;
     private $artMenu;
+    private $com;
     public function __construct(){
         $dict = new CaseService();
+        $company = new CompanyDao();
 
         //案例导航
         $this->caseMenu = $dict->getTypeList('1');
         //文章导航
         $this->artMenu = $dict->getTypeList('2');
+        //公司基本信息
+        $this->com = $company->getSingleCom();
     }
 
     /**前台主页面
@@ -28,6 +33,7 @@ class IndexController extends Controller
      */
     public function Index(){
         return view('Index.Index')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -36,6 +42,7 @@ class IndexController extends Controller
      */
     public function search(){
         return view('Index.Search')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -44,6 +51,7 @@ class IndexController extends Controller
      */
     public function Company(){
         return view('Index.Company')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -52,6 +60,7 @@ class IndexController extends Controller
      */
     public function Cutural(){
         return view('Index.Cutural')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -60,6 +69,7 @@ class IndexController extends Controller
      */
     public function Process(){
         return view('Index.Process')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -68,6 +78,7 @@ class IndexController extends Controller
      */
     public function FeedBack(){
         return view('Index.FeedBack')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -76,6 +87,7 @@ class IndexController extends Controller
      */
     public function Contact(){
         return view('Index.Contact')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -84,6 +96,7 @@ class IndexController extends Controller
      */
     public function Map(){
         return view('Index.Map')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -99,6 +112,7 @@ class IndexController extends Controller
         return view('Index.ProductOs')
             ->with('list',$caseRes['list'])
             ->with('type',$caseRes['type'])
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -132,6 +146,7 @@ class IndexController extends Controller
             ->with('pre',$preAndNext['pre'])
             ->with('next',$preAndNext['next'])
             ->with('type',$type)
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -140,6 +155,7 @@ class IndexController extends Controller
      */
     public function Know(){
         return view('Index.Know')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -148,6 +164,7 @@ class IndexController extends Controller
      */
     public function activity(){
         return view('Index.Activity')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -156,6 +173,7 @@ class IndexController extends Controller
      */
     public function activityinf(){
         return view('Index.ActivityInf')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -169,6 +187,7 @@ class IndexController extends Controller
 
         return view('Index.Team')
             ->with('list',$list)
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -194,6 +213,7 @@ class IndexController extends Controller
             ->with('case',$case)
             ->with('per',$perAndNext['per'])
             ->with('next',$perAndNext['next'])
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -202,6 +222,7 @@ class IndexController extends Controller
      */
     public function Job(){
         return view('Index.Job')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -210,6 +231,7 @@ class IndexController extends Controller
      */
     public function CaseList(){
         return view('Index.CaseList')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -219,6 +241,7 @@ class IndexController extends Controller
      */
     public function CaseInf(){
         return view('Index.CaseInf')
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -233,14 +256,12 @@ class IndexController extends Controller
 
         $list = $article->getArticleList($type);
 
-        //文章推荐
-        $topFive = $article->getTopFive();
 
         $con['id'] = $type;
         $type = $dict->getSingleDict($con);
         return view('Index.NewsList')
-            ->with('topFive',$topFive)
             ->with('list',$list)
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu)
             ->with('typeName',$type->title)
@@ -263,16 +284,15 @@ class IndexController extends Controller
         //上一条和下一条
         $preAndNext = $article->getPreAndNext($id,$inf->type);
 
-        //文章推荐
-        $topFive = $article->getTopFive();
 
         $con['id'] = $inf->type;
         $type = $dict->getSingleDict($con);
 
         return view('Index.NewsInf')
-            ->with('inf',$inf)->with('topFive',$topFive)
+            ->with('inf',$inf)
             ->with('pre',$preAndNext['pre'])
             ->with('next',$preAndNext['next'])
+            ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu)
             ->with('typeName',$type->title)

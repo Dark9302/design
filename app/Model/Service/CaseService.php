@@ -64,9 +64,11 @@ class CaseService extends Model
      * @param $pic1
      * @param $pic2
      * @param $pic3
+     * @param $price
+     * @param $address
      * @return int
      */
-    public function addCase($title,$type,$content,$information,$area,$pic1,$pic2,$pic3){
+    public function addCase($title,$type,$content,$information,$area,$pic1,$pic2,$pic3,$price,$address){
         $case = new CaseDao();
         //组合添加条件
         $data['title'] = $title;
@@ -77,6 +79,8 @@ class CaseService extends Model
         $data['pic1'] = $pic1;
         $data['pic2'] = $pic2;
         $data['pic3'] = $pic3;
+        $data['price'] = $price;
+        $data['address'] = $address;
 
         $addRes = $case->addCase($data);
 
@@ -93,9 +97,11 @@ class CaseService extends Model
      * @param $pic1
      * @param $pic2
      * @param $pic3
+     * @param $price
+     * @param $address
      * @return bool
      */
-    public function editCase($id,$title,$type,$content,$information,$area,$pic1,$pic2,$pic3){
+    public function editCase($id,$title,$type,$content,$information,$area,$pic1,$pic2,$pic3,$price,$address){
         $case = new CaseDao();
         //组合添加条件
         $con['id'] = $id;
@@ -104,6 +110,8 @@ class CaseService extends Model
         $data['content'] = $content;
         $data['information'] = $information;
         $data['area'] = $area;
+        $data['price'] = $price;
+        $data['address'] = $address;
         if($pic1){
             $data['pic1'] = $pic1;
         }
@@ -159,6 +167,30 @@ class CaseService extends Model
         return array('pre'=>$pre,'next'=>$next);
     }
 
+    /**top
+     * @param $num
+     * @return mixed
+     */
+    public function getTopN($num){
+        $case = new CaseDao();
+
+        $res = $case->getTopN($num);
+
+        return $res;
+    }
+
+    /**top
+     * @param $num
+     * @param $type
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getTopNByType($num,$type){
+        $case = new CaseDao();
+
+        $res = $case->getTopNByType($num,$type);
+
+        return $res;
+    }
 
     /**********************分类***************************/
     /**分类列表
