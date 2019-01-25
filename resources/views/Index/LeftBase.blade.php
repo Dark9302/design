@@ -12,6 +12,7 @@
     @section('css')
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
         <link rel="stylesheet" href="{{asset('templates/zstyle/cache/7fa082e0a5a19929.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/base.css')}}">
     @show
     <title>保定喜迎门装饰工程有限公司</title>
 </head>
@@ -140,7 +141,7 @@
 								<ul>
 
 									<li class="single_product_item col-xs-4 col-sm-4">
-										<a href="showproduct.html" title="商务会所" target='_self'><img class="cover-image" src="upload/l1389849064.jpg" alt="商务会所" title="商务会所"></a>
+										<a href="showproduct.html" title="商务会所" target='_self'><img class="cover-image" src="upload/1474125322.jpg" alt="商务会所" title="商务会所"></a>
 										<p>商务会所</p>
 										<a href="showproduct.html" title="商务会所" target='_self'>MORE</a>
 									</li>

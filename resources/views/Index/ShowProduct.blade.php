@@ -14,7 +14,7 @@
 					</a>
 				</li>
 				<li class="dropdown">
-					<a href="#" title="服务项目" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">服务项目 <i class="caret"></i></a>
+					<a href="#" title="装修案例" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">装修案例 <i class="caret"></i></a>
 					<ul class="dropdown-menu bullet">
 						@foreach($caseMenu as $val)
 						<li><a href="{{url('/product',array('id'=>$val->id))}}" title="{{$val->title}}">{{$val->title}}</a></li>

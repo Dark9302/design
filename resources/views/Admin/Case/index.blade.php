@@ -82,5 +82,8 @@
                 index:0
             });
         });
+        $('.table-sort').dataTable({
+			"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+		});
     </script>
 @endsection
