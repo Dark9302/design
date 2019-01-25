@@ -1,6 +1,10 @@
 @extends('Admin.Base')
 @section('css')
     @parent
+    <style type="text/css">
+    	.mt-20{margin-top:7px;}
+    	.page-container{padding-top: 0px;padding-bottom: 0px;}
+    </style>
 @endsection
 @section('content')
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页

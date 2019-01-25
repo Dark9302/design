@@ -72,4 +72,10 @@ class AdminController extends Controller
             return response()->json('保存失败');
         }
     }
+    /**幻灯片更新页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function base(){
+        return view('Admin.Index.index');
+    }
 }

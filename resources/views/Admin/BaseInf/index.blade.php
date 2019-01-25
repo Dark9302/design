@@ -91,6 +91,13 @@
                 </div>
                 <div class="tabCon">
 		            <div class="row cl">
+		            	<label class="form-label col-xs-4 col-sm-2">公司简介摘要：</label>
+		            	<div class="formControls col-xs-8 col-sm-9">
+							<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...600个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,600)"></textarea>
+							<p class="textarea-numberbar"><em class="textarea-length">0</em>/600</p>
+						</div>
+					</div>
+					<div class="row cl">
 		                <label class="form-label col-xs-4 col-sm-2">公司简介：</label>
 		                <div class="formControls col-xs-8 col-sm-9">
 		                    <textarea name="comInf" id="comInf" cols="" rows="" class="textarea" style="height:400px;width:100%;">{{$comInf->brief}}</textarea>

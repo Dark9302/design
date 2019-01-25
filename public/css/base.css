@@ -1,0 +1,9 @@
+.cover-image{
+	width: 80px;
+	height: 67px;
+}
+.eco-leftnav .met-all-bar .post_item li a{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}

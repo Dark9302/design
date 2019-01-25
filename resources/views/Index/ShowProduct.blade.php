@@ -1,6 +1,7 @@
 @extends('Index.Base')
 @section('css')
 	@parent
+	<link rel="stylesheet" href="{{asset('css/showproduct.css')}}" />
 @endsection
 @section('content')
 	<div class="met-position  pattern-show">
@@ -13,7 +14,7 @@
 					</a>
 				</li>
 				<li class="dropdown">
-					<a href="#" title="服务项目" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">服务项目 <i class="caret"></i></a>
+					<a href="#" title="装修案例" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">装修案例 <i class="caret"></i></a>
 					<ul class="dropdown-menu bullet">
 						@foreach($caseMenu as $val)
 						<li><a href="{{url('/product',array('id'=>$val->id))}}" title="{{$val->title}}">{{$val->title}}</a></li>
@@ -109,6 +110,23 @@
 								</div>
 							</div>
 						</div>
+						<div class="met-shownews-footer upnext">
+
+		                    <ul class="pager pager-round">
+		                        <li class="previous ">
+		                            <a href="showcase.html" title="医院大厅">
+		                                上一篇
+		                                <span aria-hidden="true" class='hidden-xs hidden-sm'>：医院大厅</span>
+		                            </a>
+		                        </li>
+		                        <li class="next disabled">
+		                            <a href="#" title="没有了">
+		                                下一篇
+		                                <span aria-hidden="true" class='hidden-xs hidden-sm'>：没有了</span>
+		                            </a>
+		                        </li>
+		                    </ul>
+		                </div>
 					</div>
 					</div>
 				</div>
