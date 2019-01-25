@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Index;
 use App\Model\Dao\CaseTeamDao;
 use App\Model\Dao\CompanyDao;
 use App\Model\Dao\DictDictDao;
+use App\Model\Dao\JobDao;
 use App\Model\Service\ArticleService;
 use App\Model\Service\CaseService;
 use App\Model\Service\TeamService;
@@ -221,7 +222,11 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function Job(){
+        $job = new JobDao();
+
+        $list = $job->getJobList();
         return view('Index.Job')
+            ->with('job',$list)
             ->with('com',$this->com)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);

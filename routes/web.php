@@ -76,6 +76,18 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::post('delDes','DesignerController@delSingleDes');
     //删除多个设计师
     Route::post('delMoreDes','DesignerController@delMoreDes');
+    //招聘信息页面
+    Route::get('job','JobController@getJobList');
+    //添加招聘信息页面
+    Route::get('addJob','JobController@addJob');
+    //执行添加招聘信息
+    Route::post('doAddJob','JobController@doAddJob');
+    //编辑招聘信息页面
+    Route::get('editJob/{id}','JobController@editJob');
+    //删除招聘信息
+    Route::post('delJob','JobController@delJob');
+    //删除多条招聘信息
+    Route::post('delMoreJob','JobController@delMoreJob');
 });
 /**前台页面**/
 Route::group(['namespace'=>'Index'],function (){

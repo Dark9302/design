@@ -83,6 +83,14 @@
             </dd>
         </dl>
         <dl id="menu-active">
+            <dt><i class="Hui-iconfont">&#xe60d;</i>招聘信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="job" data-title="招聘信息列表" href="javascript:;">招聘信息列表</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-active">
             <dt><i class="Hui-iconfont">&#xe60d;</i>分类管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
