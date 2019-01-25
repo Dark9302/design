@@ -12,27 +12,32 @@
     </nav>
     <div class="page-container">
         <form class="form form-horizontal" id="form-article-add">
+            <span style="display: none;" id="id">{{$comInf->id}}</span>
             <div id="tab-system" class="HuiTab">
                 <div class="tabBar cl">
-                    <span>公司信息</span>
+                    <span>基本信息</span>
                     <span>联系我们</span>
-                    <span>关于我们</span>
+                    <span>公司简介</span>
+                    <span>公司文化</span>
+                    <span>装修流程</span>
                 </div>
                 <div class="tabCon">
                     <div class="row cl">
                         <label class="form-label col-xs-4 col-sm-2">
                             <span class="c-red">*</span>
-                            网站名称：</label>
+                            网站名称：
+                        </label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" id="website-title" placeholder="控制在25个字、50个字节以内" value="" class="input-text">
+                            <input type="text" id="webTitle" name="webTitle" placeholder="控制在25个字、50个字节以内" value="{{$comInf->web_title}}" class="input-text">
                         </div>
                     </div>
                     <div class="row cl">
                         <label class="form-label col-xs-4 col-sm-2">
                             <span class="c-red">*</span>
-                            关键词：</label>
+                            关键词：
+                        </label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" id="website-Keywords" placeholder="5个左右,8汉字以内,用英文,隔开" value="" class="input-text">
+                            <input type="text" id="webKeywords" name="webKeywords" placeholder="5个左右,8汉字以内,用英文,隔开" value="{{$comInf->web_keyword}}" class="input-text">
                         </div>
                     </div>
                     <div class="row cl">
@@ -40,23 +45,7 @@
                             <span class="c-red">*</span>
                             描述：</label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" id="website-description" placeholder="空制在80个汉字，160个字符以内" value="" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2">
-                            <span class="c-red">*</span>
-                            css、js、images路径配置：</label>
-                        <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" id="website-static" placeholder="默认为空，为相对路径" value="" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2">
-                            <span class="c-red">*</span>
-                            上传目录配置：</label>
-                        <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" id="website-uploadfile" placeholder="默认为uploadfile" value="" class="input-text">
+                            <input type="text" id="webDes" name="webDes" placeholder="空制在80个汉字，160个字符以内" value="{{$comInf->web_description}}" class="input-text">
                         </div>
                     </div>
                     <div class="row cl">
@@ -64,85 +53,78 @@
                             <span class="c-red">*</span>
                             底部版权信息：</label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" id="website-copyright" placeholder="&copy; 2016 H-ui.net" value="" class="input-text">
+                            <input type="text" id="webCopyright" name="webCopyright" placeholder="&copy; 2016 H-ui.net" value="{{$comInf->web_copyright}}" class="input-text">
                         </div>
                     </div>
                     <div class="row cl">
                         <label class="form-label col-xs-4 col-sm-2">备案号：</label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" id="website-icp" placeholder="京ICP备00000000号" value="" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2">统计代码：</label>
-                        <div class="formControls col-xs-8 col-sm-9">
-                            <textarea class="textarea"></textarea>
+                            <input type="text" id="webIcp" name="webIcp" placeholder="京ICP备00000000号" value="{{$comInf->web_icp}}" class="input-text">
                         </div>
                     </div>
                 </div>
                 <div class="tabCon">
                     <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2">邮件发送模式：</label>
+                        <label class="form-label col-xs-4 col-sm-2">公司名称：</label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text"  class="input-text" value="" name="">
+                            <input type="text" value="{{$comInf->name}}" name="name" id="name" class="input-text">
                         </div>
                     </div>
                     <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2">SMTP服务器：</label>
+                        <label class="form-label col-xs-4 col-sm-2">地址：</label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" value="" class="input-text">
+                            <input type="text" value="{{$comInf->address}}" name="address" id="address" class="input-text">
                         </div>
                     </div>
                     <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2">SMTP 端口：</label>
+                        <label class="form-label col-xs-4 col-sm-2">电话：</label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text" value="25" name="" >
+                            <input type="text" class="input-text" value="{{$comInf->phone}}" name="phone" id="phone">
                         </div>
                     </div>
                     <div class="row cl">
                         <label class="form-label col-xs-4 col-sm-2">邮箱帐号：</label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text" value="5" id="emailName" name="emailName" >
+                            <input type="text" class="input-text" value="{{$comInf->email}}" id="email" name="email" >
                         </div>
                     </div>
+                </div>
+                <div class="tabCon">
+		            <div class="row cl">
+		            	<label class="form-label col-xs-4 col-sm-2">公司简介摘要：</label>
+		            	<div class="formControls col-xs-8 col-sm-9">
+							<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...600个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,600)"></textarea>
+							<p class="textarea-numberbar"><em class="textarea-length">0</em>/600</p>
+						</div>
+					</div>
+					<div class="row cl">
+		                <label class="form-label col-xs-4 col-sm-2">公司简介：</label>
+		                <div class="formControls col-xs-8 col-sm-9">
+		                    <textarea name="comInf" id="comInf" cols="" rows="" class="textarea" style="height:400px;width:100%;">{{$comInf->brief}}</textarea>
+		                </div>
+		            </div>
+                </div>
+                <div class="tabCon">
                     <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2">邮箱密码：</label>
+                        <label class="form-label col-xs-4 col-sm-2">公司文化：</label>
                         <div class="formControls col-xs-8 col-sm-9">
-                            <input type="password" id="email-password" value="" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2">收件邮箱地址：</label>
-                        <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" id="email-address" value="" class="input-text">
+                            <textarea name="comCulture" id="comCulture" cols="" rows="" class="textarea" style="height:400px;width:100%;">{{$comInf->culture}}</textarea>
                         </div>
                     </div>
                 </div>
                 <div class="tabCon">
                     <div class="row cl">
-		                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>维护类型：</label>
-		                <div class="formControls col-xs-8 col-sm-9">
-						<span class="select-box">
-		                    <select name="artType" id="artType" class="select">
-		                        <option value="1">公司简介</option>
-		                        <option value="2">公司文化</option>
-		                        <option value="3">装修流程</option>
-		                    </select>
-						</span>
-		                </div>
-		            </div>
-		            <div class="row cl">
-		                <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
-		                <div class="formControls col-xs-8 col-sm-9">
-		                    <textarea name="artInf" id="artInf" cols="" rows="" class="textarea" style="height:400px;width:100%;"></textarea>
-		                </div>
-		            </div>
+                        <label class="form-label col-xs-4 col-sm-2">装修流程：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <textarea name="process" id="process" cols="" rows="" class="textarea" style="height:400px;width:100%;">{{$comInf->process}}</textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                    <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
-                    <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                    <button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+                    <button class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
                 </div>
             </div>
         </form>
@@ -159,16 +141,91 @@
             });
         });
     </script>
+    <script type="text/javascript" src="{{asset('js/admin/lib/layer/2.4/layer.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/admin/lib/jquery.validation/1.14.0/jquery.validate.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/admin/lib/jquery.validation/1.14.0/validate-methods.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/admin/lib/jquery.validation/1.14.0/messages_zh.js')}}"></script>
     <script charset="utf-8" src="{{asset('kindeditor/kindeditor-min.js')}}"></script>
     <script charset="utf-8" src="{{asset('kindeditor/lang/zh_CN.js')}}"></script>
     <script>
-        var editor;
+        var editor = [];
         KindEditor.ready(function(K) {
-            editor = K.create('textarea[name="artInf"]', {
+            editor[0] = K.create('textarea[name="comInf"]', {
+                allowFileManager : true,
+                resizeType:0,
+                afterBlur: function(){this.sync();}
+            });
+            editor[1] =  K.create('textarea[name="comCulture"]', {
+                allowFileManager : true,
+                resizeType:0,
+                afterBlur: function(){this.sync();}
+            });
+            editor[2] =  K.create('textarea[name="process"]', {
                 allowFileManager : true,
                 resizeType:0,
                 afterBlur: function(){this.sync();}
             });
         });
+
+        $("#form-article-add").validate({
+            rules:{
+                webTitle:{
+                    required : true
+                },webKeywords:{
+                    required : true
+                },webDes:{
+                    required : true
+                },webCopyright:{
+                    required : true
+                },webIcp:{
+                    required : true
+                },name:{
+                    required : true
+                },address:{
+                    required : true
+                },phone:{
+                    required : true
+                },email:{
+                    required : true
+                }
+            },
+            onkeyup:false,
+            success:"valid",
+            submitHandler:function(form){
+                var id = $("#id").html();
+                var webTitle = $("#webTitle").val();
+                var webKeywords = $("#webKeywords").val();
+                var webDes = $("#webDes").val();
+                var webCopyright = $("#webCopyright").val();
+                var webIcp = $("#webIcp").val();
+                var name = $("#name").val();
+                var address = $("#address").val();
+                var phone = $("#phone").val();
+                var email = $("#email").val();
+                var comInf = $("#comInf").val();
+                var comCulture = $("#comCulture").val();
+                var process = $("#process").val();
+                $(form).ajaxSubmit({
+                    url:"{{url('admin/upCom')}}",
+                    type:"post",
+                    data:{
+                        'id':id,'name':name,'brief':comInf,'address':address,'phone':phone,'email':email,
+                        'culture':comCulture,'process':process,'web_title':webTitle,'web_keyword':webKeywords,
+                        'web_description':webDes,'web_copyright':webCopyright,'web_icp':webIcp
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    dataType:"json",
+                    success:function(data){
+                        if(data=='保存成功'){
+                            layer.alert(data,{icon:1});
+                        }else{
+                            layer.alert(data,{icon:5});
+                        }
+                    }
+                })
+            }
+        })
     </script>
 @endsection

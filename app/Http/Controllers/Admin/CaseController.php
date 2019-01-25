@@ -74,7 +74,7 @@ class CaseController extends Controller
 
             DB::beginTransaction();
 
-            $addId = $case->addCase($inf['title'],$inf['type'],$inf['content'],$inf['information'],$inf['area'],$picUrl1,$picUrl2,$picUrl3);
+            $addId = $case->addCase($inf['title'],$inf['type'],$inf['content'],$inf['information'],$inf['area'],$picUrl1,$picUrl2,$picUrl3,$inf['price'],$inf['address']);
 
             if($addId && $bool1 && $bool2 && $bool3){
                 $addRes = $case->addCaseAndDes($addId,$inf['caseTeam']);
@@ -176,7 +176,7 @@ class CaseController extends Controller
         }
 
         DB::beginTransaction();
-        $res = $case->editCase($inf['id'],$inf['title'],$inf['type'],$inf['content'],$inf['information'],$inf['area'],$picUrl1,$picUrl2,$picUrl3);
+        $res = $case->editCase($inf['id'],$inf['title'],$inf['type'],$inf['content'],$inf['information'],$inf['area'],$picUrl1,$picUrl2,$picUrl3,$inf['price'],$inf['address']);
 
         if($res !== false && $bool1 && $bool2 && $bool3){
             $upRes = $case->upCaseAndDes($inf['id'],$inf['caseTeam']);

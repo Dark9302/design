@@ -103,8 +103,8 @@
 							@endif
 							@if($next)
                             <li class="next">
-                                <a href="{{url('teaminf',array('id'=>$next->id))}}" title="{{$per->name}}">下一篇
-                                    <span aria-hidden="true" class='hidden-xs hidden-sm'>：{{$per->name}}</span>
+                                <a href="{{url('teaminf',array('id'=>$next->id))}}" title="{{$next->name}}">下一篇
+                                    <span aria-hidden="true" class='hidden-xs hidden-sm'>：{{$next->name}}</span>
                                 </a>
                             </li>
 							@else

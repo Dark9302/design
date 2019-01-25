@@ -1,6 +1,10 @@
 @extends('Admin.Base')
 @section('css')
     @parent
+    <style type="text/css">
+    	.mt-20{margin-top:7px;}
+    	.page-container{padding-top: 0px;padding-bottom: 0px;}
+    </style>
 @endsection
 @section('content')
     <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
@@ -38,6 +42,8 @@
                     <th width="100" class="over">简介</th>
                     <th width="80">风格</th>
                     <th width="75">面积</th>
+                    <th width="75">价格</th>
+                    <th width="100">地址</th>
                     <th width="120">操作</th>
                 </tr>
                 </thead>
@@ -51,6 +57,8 @@
                             <td class="over">{{$val->content}}</td>
                             <td>{{$val->type_name}}</td>
                             <td>{{$val->area}}</td>
+                            <td>{{$val->price}}</td>
+                            <td>{{$val->address}}</td>
                             <td class="f-14 td-manage">
                                 <a style="text-decoration:none" class="ml-5" onClick="edit('案列编辑','editCase/{{$val->id}}','10001')" href="javascript:;" title="编辑">
                                     <i class="Hui-iconfont">&#xe6df;</i>
@@ -83,7 +91,7 @@
             });
         });
         $('.table-sort').dataTable({
-			"aaSorting": [[ 1, "desc" ]],//默认第几个排序
-		});
+            "aaSorting": [[ 1, "desc" ]]//默认第几个排序
+        });
     </script>
 @endsection

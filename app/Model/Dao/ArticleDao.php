@@ -119,13 +119,27 @@ class ArticleDao extends Model
             ->first();
     }
 
-    /**获取top5
+    /**获取top
+     * @param $num
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function getTopFive(){
-        return $this->select('id','title')
+    public function getTopN($num){
+        return $this->select('id','title',DB::raw('date(FROM_UNIXTIME(time)) as time'))
             ->orderBy('id','desc')
-            ->limit('5')
+            ->limit($num)
+            ->get();
+    }
+
+    /**获取top
+     * @param $num
+     * @param $type
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getTopNByType($num,$type){
+        return $this->select('id','title',DB::raw('date(FROM_UNIXTIME(time)) as time'))
+            ->where('type','=',$type)
+            ->orderBy('id','desc')
+            ->limit($num)
             ->get();
     }
 }

@@ -50,19 +50,11 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-article">
-            <dt><i class="Hui-iconfont">&#xe616;</i>文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a data-href="article" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
-                </ul>
-            </dd>
-        </dl>
         <dl id="menu-picture">
-            <dt><i class="Hui-iconfont">&#xe613;</i>图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dt><i class="Hui-iconfont">&#xe613;</i>首页管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="picture-list.html" data-title="首页幻灯片列表" href="javascript:void(0)">首页幻灯片列表</a></li>
+                    <li><a data-href="base" data-title="首页管理" href="javascript:void(0)">首页管理</a></li>
                 </ul>
             </dd>
         </dl>
@@ -79,6 +71,14 @@
             <dd>
                 <ul>
                     <li><a data-href="designer" data-title="设计师列表" href="javascript:;">设计师列表</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-article">
+            <dt><i class="Hui-iconfont">&#xe616;</i>文章管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="article" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
                 </ul>
             </dd>
         </dl>

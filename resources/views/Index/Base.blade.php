@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="generator" content="" data-variable=",,,,,zstyle"/>
-    <meta name="description" content="装修"/>
-    <meta name="keywords" content="保定喜迎门装饰工程有限公司"/>
+    <meta name="description" content="{{$com->web_description}}"/>
+    <meta name="keywords" content="{{$com->web_keyword}}"/>
     @section('css')
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
         <link rel="stylesheet" href="{{asset('templates/zstyle/cache/7fa082e0a5a19929.min.css')}}">
     @show
-    <title>保定喜迎门装饰工程有限公司</title>
+    <title>{{$com->web_title}}</title>
 </head>
 <body class="minWidth bgw">
 <nav id="mobileNav" style="display:none;">
@@ -38,10 +38,9 @@
         <li><a href="{{url('/team')}}" title="设计团队">设计团队</a></li>
         <li><span>新闻资讯</span>
             <ul>
-                <li><a href="{{url('/news/1')}}" title="公司新闻">公司新闻</a></li>
-                <li><a href="{{url('/news/2')}}" title="行业动态">行业动态</a></li>
-                <li><a href="{{url('/news/3')}}" title="装修小常识">装修小常识</a></li>
-                <li><a href="{{url('/activity')}}" title="项目活动">项目活动</a></li>
+                @foreach($artMenu as $val)
+                    <li><a href="{{url('/news',array('id'=>$val->id))}}" title="{{$val->title}}">{{$val->title}}</a></li>
+                @endforeach
             </ul>
         </li>
         <li><a href="{{url('/job')}}" title="在线招聘">在线招聘</a></li>
@@ -180,10 +179,9 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 list  text-left masonry-item">
                     <h4>联系我们</h4>
                     <ul class="contact-info">
-                        <li><i class="icon pe-map-marker"></i>保定市喜迎门装饰工程有限公司</li>
-                        <li><i class="icon pe-call"></i><a href="tel:86-12345678901" title="86-12345678901">86-12345678901</a></li>
-                        <li><i class="icon pe-mail"></i>123456789@qq.com</li>
-                        <li><i class="icon pe-global"></i>www.spademo.com</li>
+                        <li><i class="icon pe-map-marker"></i>{{$com->name}}</li>
+                        <li><i class="icon pe-call"></i><a href="tel:{{$com->phone}}" title="{{$com->phone}}">{{$com->phone}}</a></li>
+                        <li><i class="icon pe-mail"></i>{{$com->email}}</li>
                     </ul>
                 </div>
 
@@ -192,8 +190,8 @@
     </div>
     <footer>
         <div class="container text-center">
-            <p>保定喜迎门工程装饰有限公司 版权所有 2008-2017 湘ICP备8888888 </p>
-            <p>电话：0731-12345678 12345678 QQ:88888888 999999 Email:admin@admin.com</p>
+            <p>{{$com->web_title}} 版权所有 {{$com->web_copyright}} {{$com->web_icp}} </p>
+            <p>电话：{{$com->phone}}  Email:{{$com->email}}</p>
         </div>
     </footer>
 </div>

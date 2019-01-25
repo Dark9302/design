@@ -78,18 +78,9 @@
 
 							&nbsp;</p>
 						<div><strong>保定喜迎门装饰工程有限公司</strong></div>
-						<div>
-
-							地 &nbsp;址：河北省保定市</div>
-						<div>
-
-							电 &nbsp;话：0731-88888888</div>
-						<div>
-
-							Email：admin@admin.com</div>
-						<div>
-
-							网 &nbsp;址：www.admin123.com</div>
+						<div>地 &nbsp;址：河北省保定市</div>
+						<div>电 &nbsp;话：0731-88888888</div>
+						<div>Email：admin@admin.com</div>
 					</div>
 				</div>
 			</div>

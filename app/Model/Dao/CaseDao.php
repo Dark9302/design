@@ -30,7 +30,7 @@ class CaseDao extends Model
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getCaseList(){
-        return $this->select('case.id','case.title','dict_dict.title as type_name','case.content','area','recommend')
+        return $this->select('case.id','case.title','dict_dict.title as type_name','case.content','area','recommend','price','address')
             ->join('dict_dict','dict_dict.id','=','case.type')
             ->orderBy('case.id')
             ->get();
@@ -106,27 +106,29 @@ class CaseDao extends Model
             ->first();
     }
 
-    /**获取top3
+    /**获取top根据type
      * @param $type
+     * @param $num
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function getTopThree($type){
-        return $this->select('id','title')
+    public function getTopNByType($num,$type){
+        return $this->select('id','title','pic1')
             ->where('type','=',$type)
             ->where('recommend','=','1')
             ->orderBy('id','desc')
-            ->limit('3')
+            ->limit($num)
             ->get();
     }
 
-    /**获取top9
+    /**获取All
+     * @param $num
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function getTopNine(){
+    public function getTopN($num){
         return $this->select('id','title')
             ->where('recommend','=','1')
             ->orderBy('id','desc')
-            ->limit('9')
+            ->limit($num)
             ->get();
     }
 }

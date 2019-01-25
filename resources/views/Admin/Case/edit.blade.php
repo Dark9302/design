@@ -26,6 +26,18 @@
                 </div>
             </div>
             <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>价格：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{{$inf->price}}" placeholder="" name="price" id="price">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>地址：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="{{$inf->address}}" placeholder="" name="address" id="address">
+                </div>
+            </div>
+            <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>案例类型：</label>
                 <div class="formControls col-xs-8 col-sm-9">
 				<span class="select-box">
@@ -103,6 +115,10 @@
                     required : true
                 },caseTeam:{
                     required : true
+                },price:{
+                    required : true
+                },address:{
+                    required : true
                 }
             },
             onkeyup:false,
@@ -114,12 +130,14 @@
                 var area = $("#area").val();
                 var caseInf = $("#caseInf").val();
                 var caseTeam = $("#caseTeam").val();
+                var price = $("#price").val();
+                var address = $("#address").val();
                 $(form).ajaxSubmit({
                     url:"{{url('admin/doEditCase')}}",
                     type:"post",
                     data:{
                         'title':caseName,'information':caseInf,'content':caseIntro,'type':caseType,
-                        'area':area,'caseTeam':caseTeam
+                        'area':area,'caseTeam':caseTeam,'price':price,'address':address
                     },
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
