@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Dao\CaseTeamDao;
 use App\Model\Service\CaseService;
 use App\Model\Service\TeamService;
 use Illuminate\Http\Request;
@@ -199,14 +200,23 @@ class CaseController extends Controller
      */
     public function delSingleCase(Request $request){
         $case = new CaseService();
+        $ct = new CaseTeamDao();
         //获取传递过来的id
         $id = $request->get('id');
 
+        DB::beginTransaction();
         $res = $case->del($id);
 
-        if($res !== false){
+        //组合删除条件
+        $con['case_id'] = $id;
+
+        $delRes = $ct->del($con);
+
+        if($res !== false && $delRes !== false){
+            DB::commit();
             return response()->json('删除成功');
         }else{
+            DB::rollBack();
             return response()->json('删除失败！');
         }
     }
@@ -217,14 +227,19 @@ class CaseController extends Controller
      */
     public function delMoreCase(Request $request){
         $case = new CaseService();
+        $ct = new CaseTeamDao();
         //获取传递过来的id
         $id = $request->get('ids');
 
+        DB::beginTransaction();
         $res = $case->delMore($id);
 
-        if($res !== false){
+        $delRes = $ct->delMoreByCase($id);
+        if($res !== false && $delRes !== false){
+            DB::commit();
             return response()->json('删除成功');
         }else{
+            DB::rollBack();
             return response()->json('删除失败！');
         }
     }

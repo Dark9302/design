@@ -67,7 +67,7 @@
                     @endforeach
                 @else
                     <tr class="text-c">
-                        <td colspan="7">暂时没有记录！</td>
+                        <td colspan="9">暂时没有记录！</td>
                     </tr>
                 @endif
                 </tbody>

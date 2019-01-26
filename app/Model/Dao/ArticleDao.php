@@ -124,7 +124,7 @@ class ArticleDao extends Model
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getTopN($num){
-        return $this->select('id','title',DB::raw('date(FROM_UNIXTIME(time)) as time'))
+        return $this->select('id','title','introduction','pic','looked',DB::raw('date(FROM_UNIXTIME(time)) as time'))
             ->orderBy('id','desc')
             ->limit($num)
             ->get();

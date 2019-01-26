@@ -30,8 +30,17 @@ class CaseDao extends Model
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getCaseList(){
-        return $this->select('case.id','case.title','dict_dict.title as type_name','case.content','area','recommend','price','address')
+        return $this->select('case.id','case.title','dict_dict.title as type_name','case.content','area','recommend','price','address','case.type')
             ->join('dict_dict','dict_dict.id','=','case.type')
+            ->orderBy('case.id')
+            ->get();
+    }
+
+    /**主页案例
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getQtCaseList(){
+        return $this->select('id','title','content','pic1','type')
             ->orderBy('case.id')
             ->get();
     }
@@ -114,7 +123,6 @@ class CaseDao extends Model
     public function getTopNByType($num,$type){
         return $this->select('id','title','pic1')
             ->where('type','=',$type)
-            ->where('recommend','=','1')
             ->orderBy('id','desc')
             ->limit($num)
             ->get();
@@ -125,8 +133,7 @@ class CaseDao extends Model
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getTopN($num){
-        return $this->select('id','title')
-            ->where('recommend','=','1')
+        return $this->select('id','title','pic1')
             ->orderBy('id','desc')
             ->limit($num)
             ->get();

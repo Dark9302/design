@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Index;
 
+use App\Model\Dao\CaseDao;
 use App\Model\Dao\CaseTeamDao;
 use App\Model\Dao\CompanyDao;
+use App\Model\Dao\CustomerDao;
 use App\Model\Dao\DictDictDao;
 use App\Model\Dao\JobDao;
+use App\Model\Dao\PictureDao;
+use App\Model\Dao\ServiceDao;
 use App\Model\Service\ArticleService;
 use App\Model\Service\CaseService;
 use App\Model\Service\TeamService;
@@ -17,24 +21,65 @@ class IndexController extends Controller
     private $caseMenu;
     private $artMenu;
     private $com;
+    private $caseDb;
+    private $artDb;
+    private $artBt;
+    private $caseBt;
     public function __construct(){
-        $dict = new CaseService();
         $company = new CompanyDao();
+        $this->caseDb = new CaseService();
+        $this->artDb = new ArticleService();
 
         //案例导航
-        $this->caseMenu = $dict->getTypeList('1');
+        $this->caseMenu = $this->caseDb->getTypeList('1');
         //文章导航
-        $this->artMenu = $dict->getTypeList('2');
+        $this->artMenu = $this->caseDb->getTypeList('2');
         //公司基本信息
         $this->com = $company->getSingleCom();
+        //底部新闻
+        $this->artBt = $this->artDb->getTopN('5');
+        //底部案例
+        $this->caseBt = $this->caseDb->getTopN('9');
     }
 
     /**前台主页面
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function Index(){
+        //首页幻灯片
+        $pic = new PictureDao();
+        $case = new CaseDao();
+        $hdp = $pic->getPicList();
+        //我们的服务
+        $ser = new ServiceDao();
+        $service = $ser->getServiceList();
+
+        //获取案例分类
+        $dict = new DictDictDao();
+
+        $con['type'] = '1';
+        $caseType = $dict->getDictList($con);
+
+        //获取案例列表
+        $caseList = $case->getQtCaseList();
+
+        //获取文章
+        $indexArt = $this->artDb->getTopN('3');
+
+        $team = new TeamService();
+
+        $teamList = $team->getDesList();
+
         return view('Index.Index')
+            ->with('pic',$hdp)
+            ->with('ser',$service)
+            ->with('caseType',$caseType)
+            ->with('caseList',$caseList)
+            ->with('artList',$indexArt)
+            ->with('teamList',$teamList)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -44,6 +89,8 @@ class IndexController extends Controller
     public function search(){
         return view('Index.Search')
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -51,8 +98,20 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function Company(){
+        $com = new CompanyDao();
+
+        $inf = $com->getComInf();
+
+        //获取推荐信息
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopN('5');
         return view('Index.Company')
+            ->with('inf',$inf)
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -60,8 +119,20 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function Cutural(){
+        $com = new CompanyDao();
+
+        $cul = $com->getComCulture();
+
+        //获取推荐信息
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopN('5');
         return view('Index.Cutural')
+            ->with('cul',$cul)
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -69,8 +140,20 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function Process(){
+        $com = new CompanyDao();
+
+        $pro = $com->getProcess();
+
+        //获取推荐信息
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopN('5');
         return view('Index.Process')
+            ->with('pro',$pro)
             ->with('com',$this->com)
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -78,8 +161,15 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function FeedBack(){
+        //获取推荐信息
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopN('5');
         return view('Index.FeedBack')
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -87,8 +177,20 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function Contact(){
+        $com = new CompanyDao();
+
+        $inf = $com->getSingleCom();
+
+        //获取推荐信息
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopN('5');
         return view('Index.Contact')
+            ->with('inf',$inf)
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -98,6 +200,8 @@ class IndexController extends Controller
     public function Map(){
         return view('Index.Map')
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -107,13 +211,18 @@ class IndexController extends Controller
      * @return $this
      */
     public function Product($type){
-        $case = new CaseService();
-        $caseRes = $case->getCaseListQt($type);
+        $caseRes = $this->caseDb->getCaseListQt($type);
 
+        $topCase = $this->caseDb->getTopNByType('3',$type);
+        $topArt = $this->artDb->getTopN('5');
         return view('Index.ProductOs')
             ->with('list',$caseRes['list'])
             ->with('type',$caseRes['type'])
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -148,6 +257,8 @@ class IndexController extends Controller
             ->with('next',$preAndNext['next'])
             ->with('type',$type)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -157,6 +268,8 @@ class IndexController extends Controller
     public function Know(){
         return view('Index.Know')
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -166,6 +279,8 @@ class IndexController extends Controller
     public function activity(){
         return view('Index.Activity')
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -175,6 +290,8 @@ class IndexController extends Controller
     public function activityinf(){
         return view('Index.ActivityInf')
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -186,9 +303,16 @@ class IndexController extends Controller
         //获取设计师列表
         $list = $team->getDesList();
 
+        //获取推荐信息
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopN('5');
         return view('Index.Team')
             ->with('list',$list)
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -215,6 +339,8 @@ class IndexController extends Controller
             ->with('per',$perAndNext['per'])
             ->with('next',$perAndNext['next'])
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -228,6 +354,8 @@ class IndexController extends Controller
         return view('Index.Job')
             ->with('job',$list)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -237,6 +365,8 @@ class IndexController extends Controller
     public function CaseList(){
         return view('Index.CaseList')
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -247,6 +377,8 @@ class IndexController extends Controller
     public function CaseInf(){
         return view('Index.CaseInf')
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
@@ -256,17 +388,23 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function NewsList($type){
-        $article = new ArticleService();
         $dict = new DictDictDao();
 
-        $list = $article->getArticleList($type);
+        $list = $this->artDb->getArticleList($type);
 
+        //获取推荐
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopNByType('5',$type);
 
         $con['id'] = $type;
         $type = $dict->getSingleDict($con);
         return view('Index.NewsList')
             ->with('list',$list)
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu)
             ->with('typeName',$type->title)
@@ -293,14 +431,45 @@ class IndexController extends Controller
         $con['id'] = $inf->type;
         $type = $dict->getSingleDict($con);
 
+        //获取推荐
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopNByType('5',$inf->type);
+
         return view('Index.NewsInf')
             ->with('inf',$inf)
             ->with('pre',$preAndNext['pre'])
             ->with('next',$preAndNext['next'])
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
+            ->with('artBt',$this->artBt)
+            ->with('caseBt',$this->caseBt)
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu)
             ->with('typeName',$type->title)
             ->with('typeId',$type->id);
+    }
+
+    /**添加用户反馈
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addCus(Request $request){
+        $cus = new CustomerDao();
+
+        $inf=$request->all();
+        //组合添加条件
+
+        $data['name'] = $inf['name'];
+        $data['phone'] = $inf['phone'];
+        $data['mark'] = $inf['mark'];
+        $data['time'] = time();
+        $res = $cus->addCus($data);
+
+        if($res !== false){
+            return response()->json('添加成功');
+        }else{
+            return response()->json('操作失败！');
+        }
     }
 }

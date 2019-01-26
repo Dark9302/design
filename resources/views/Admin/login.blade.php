@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<!--[if lt IE 9]>
@@ -70,14 +71,29 @@
 <script type="text/javascript" src="{{asset('js/admin/lib/jquery.validation/1.14.0/messages_zh.js')}}"></script>
 </body>
 </html>
+<script type="text/javascript" src="{{asset('js/admin/lib/layer/2.4/layer.js')}}"></script>
 <script>
 	$("#confirm").click(function () {
 		//获取输入的用户名和密码
 		var name = $("#loginName").val();
 		var pwd = $("#loginPwd").val();
-		console.log(pwd);
-		if(name == 'admin' && pwd == 'admin'){
-			$("form").submit();
-		}
+        $.ajax({
+            url:"{{url('admin/checkLogin')}}",
+            type:"post",
+            data:{
+                'name':name,'pwd':pwd
+            },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType:"json",
+            success:function(data){
+                if(data=='success'){
+                    $("form").submit();
+                }else{
+                    layer.alert('账号或密码错误！',{icon:5});
+                }
+            }
+        })
     });
 </script>

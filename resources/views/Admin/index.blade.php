@@ -32,7 +32,7 @@
                     <li class="dropDown dropDown_hover">
                         <a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
-                            <li><a href="#">退出</a></li>
+                            <li><a href="{{url('admin')}}">退出</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -54,7 +54,8 @@
             <dt><i class="Hui-iconfont">&#xe613;</i>首页管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="base" data-title="首页管理" href="javascript:void(0)">首页管理</a></li>
+                    <li><a data-href="picture" data-title="首页幻灯片" href="javascript:void(0)">首页幻灯片</a></li>
+                    <li><a data-href="service" data-title="首页服务" href="javascript:void(0)">首页服务</a></li>
                 </ul>
             </dd>
         </dl>
@@ -95,6 +96,14 @@
             <dd>
                 <ul>
                     <li><a data-href="type" data-title="分类列表" href="javascript:;">分类列表</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-active">
+            <dt><i class="Hui-iconfont">&#xe60d;</i>用户反馈<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="customer" data-title="用户反馈" href="javascript:;">用户反馈</a></li>
                 </ul>
             </dd>
         </dl>

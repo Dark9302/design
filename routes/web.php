@@ -14,6 +14,8 @@
 Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     //后台登录页面
     Route::get('/','AdminController@login');
+    //登录验证
+    Route::post('checkLogin','AdminController@checkLogin');
     //后台主页面
     Route::post('index','AdminController@index');
     //后台欢迎页面
@@ -22,9 +24,25 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::get('company','AdminController@companyInf');
     //更新公司信息
     Route::post('upCom','AdminController@upCompany');
-    //首页信息页面
-    Route::get('base','AdminController@base');
-    //文章信息页面
+    //首页幻灯片页面
+    Route::get('picture','PictureController@index');
+    //添加幻灯片页面
+    Route::get('addPic','PictureController@addPic');
+    //执行添加幻灯片操作
+    Route::post('doAddPic','PictureController@doAddPic');
+    //编辑幻灯片页面
+    Route::get('editPic/{id}','PictureController@editPic');
+    //执行幻灯片编辑
+    Route::post('doEditPic','PictureController@doEditPic');
+    //删除单个幻灯片
+    Route::post('delPic','PictureController@delSinglePic');
+    //删除多个幻灯片
+    Route::post('delMorePic','PictureController@delMorePic');
+    //首页服务页面
+    Route::get('service','AdminController@baseService');
+    //执行首页服务更新
+    Route::post('doEditSer','AdminController@upService');
+    //文章信息页面'
     Route::get('article','ArticleController@index');
     //文章添加页面
     Route::get('addArticle','ArticleController@add');
@@ -86,10 +104,14 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function (){
     Route::post('doAddJob','JobController@doAddJob');
     //编辑招聘信息页面
     Route::get('editJob/{id}','JobController@editJob');
+    //执行招聘信息编辑
+    Route::post('doEditJob','JobController@doEditJob');
     //删除招聘信息
     Route::post('delJob','JobController@delJob');
     //删除多条招聘信息
     Route::post('delMoreJob','JobController@delMoreJob');
+    //用户反馈内容
+    Route::get('customer','AdminController@customer');
 });
 /**前台页面**/
 Route::group(['namespace'=>'Index'],function (){
@@ -139,4 +161,6 @@ Route::group(['namespace'=>'Index'],function (){
     Route::get('/news/{type}','IndexController@NewsList');
     //新闻资讯详情
     Route::get('/newsInf/{id}','IndexController@NewsInf');
+    //添加用户反馈
+    Route::post('addCus','IndexController@addCus');
 });

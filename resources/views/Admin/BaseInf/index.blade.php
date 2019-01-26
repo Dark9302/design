@@ -93,7 +93,7 @@
 		            <div class="row cl">
 		            	<label class="form-label col-xs-4 col-sm-2">公司简介摘要：</label>
 		            	<div class="formControls col-xs-8 col-sm-9">
-							<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...600个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,600)"></textarea>
+							<textarea name="indBrief" id="indBrief" cols="" rows="" class="textarea"  placeholder="说点什么...600个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,600)">{{$comInf->index_brief}}</textarea>
 							<p class="textarea-numberbar"><em class="textarea-length">0</em>/600</p>
 						</div>
 					</div>
@@ -202,6 +202,7 @@
                 var address = $("#address").val();
                 var phone = $("#phone").val();
                 var email = $("#email").val();
+                var indBrief = $("#indBrief").val();
                 var comInf = $("#comInf").val();
                 var comCulture = $("#comCulture").val();
                 var process = $("#process").val();
@@ -209,7 +210,7 @@
                     url:"{{url('admin/upCom')}}",
                     type:"post",
                     data:{
-                        'id':id,'name':name,'brief':comInf,'address':address,'phone':phone,'email':email,
+                        'id':id,'name':name,'index_brief':indBrief,'brief':comInf,'address':address,'phone':phone,'email':email,
                         'culture':comCulture,'process':process,'web_title':webTitle,'web_keyword':webKeywords,
                         'web_description':webDes,'web_copyright':webCopyright,'web_icp':webIcp
                     },

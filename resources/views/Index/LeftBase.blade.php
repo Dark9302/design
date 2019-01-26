@@ -139,25 +139,15 @@
 							<h4 data-plugin="appear" data-animate="slide-bottom" data-repeat="false">推荐产品</h4>
 							<div class="row product_item" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
 								<ul>
-
+                                    @foreach($topCase as $val)
 									<li class="single_product_item col-xs-4 col-sm-4">
-										<a href="showproduct.html" title="商务会所" target='_self'><img class="cover-image" src="upload/1474125322.jpg" alt="商务会所" title="商务会所"></a>
-										<p>商务会所</p>
-										<a href="showproduct.html" title="商务会所" target='_self'>MORE</a>
+										<a href="{{url('showproduct',array('id'=>$val->id))}}" title="{{$val->title}}" target='_self'>
+                                            <img class="cover-image" src="{{asset($val->pic1)}}" alt="{{$val->title}}" title="{{$val->title}}">
+                                        </a>
+										<p>{{$val->title}}</p>
+										<a href="{{url('showproduct',array('id'=>$val->id))}}" title="{{$val->title}}" target='_self'>MORE</a>
 									</li>
-
-									<li class="single_product_item col-xs-4 col-sm-4">
-										<a href="showproduct.html" title="商务会所" target='_self'><img class="cover-image" src="upload/l1389849617.jpg" alt="商务会所" title="商务会所"></a>
-										<p>商务会所</p>
-										<a href="showproduct.html" title="商务会所" target='_self'>MORE</a>
-									</li>
-
-									<li class="single_product_item col-xs-4 col-sm-4">
-										<a href="showproduct.html" title="客厅" target='_self'><img class="cover-image" src="upload/l1389850762.jpg" alt="客厅" title="客厅"></a>
-										<p>客厅</p>
-										<a href="showproduct.html" title="客厅" target='_self'>MORE</a>
-									</li>
-
+                                    @endforeach
 								</ul>
 							</div>
 
@@ -165,27 +155,11 @@
 
 							<h4 data-plugin="appear" data-animate="slide-bottom" data-repeat="false">推荐新闻</h4>
 							<ul class="post_item" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
-
-								<li>Sep 17, 2016
-									<a href="{{url('/NewsInf')}}" title="低碳建筑首选天然石材 环保健康受欢迎" target='_self'>低碳建筑首选天然石材 环保健康受欢迎</a>
+                                @foreach($topArt as $val)
+								<li>{{$val->time}}
+									<a href="{{url('/newsInf',array('id'=>$val->id))}}" title="{{$val->title}}" target='_self'>{{$val->title}}</a>
 								</li>
-
-								<li>Sep 17, 2016
-									<a href="{{url('/NewsInf')}}" title="装修旺季促销建材家居景气指数回升" target='_self'>装修旺季促销建材家居景气指数回升</a>
-								</li>
-
-								<li>Sep 17, 2016
-									<a href="{{url('/NewsInf')}}" title="全球原木材原料严重紧缺危及建材行业" target='_self'>全球原木材原料严重紧缺危及建材行业</a>
-								</li>
-
-								<li>Jan 14, 2014
-									<a href="{{url('/NewsInf')}}" title="将文化融入设计 以设计推动创新" target='_self'>将文化融入设计 以设计推动创新</a>
-								</li>
-
-								<li>Jan 15, 2014
-									<a href="{{url('/NewsInf')}}" title="我国玻璃纤维产业规模居世界第一位" target='_self'>我国玻璃纤维产业规模居世界第一位</a>
-								</li>
-
+                                @endforeach
 							</ul>
 						</div>
 					</div>
@@ -199,7 +173,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 list text-left masonry-item">
                     <h4>底部简介</h4>
                     <p>
-                    <p>&nbsp; &nbsp; &nbsp;装饰有限公司成立于1997年，是以家装为主，涉足商装、建材等相关产业的专业性装饰公司。具有施工、设计双乙级资质。通过多年的努力，在业内外形....</p></p>
+                    <p>&nbsp; &nbsp; &nbsp;{{$com->bre}}</p></p>
                     <a href="{{url('/company')}}" title="底部简介" target='_self' class="read-more">查看更多<i class="fa fa-arrow-circle-right"></i></a>
                     <ul class="social">
                        <li>
@@ -220,49 +194,19 @@
                 <div class="col-md-3 col-sm-6 col-xs-12 list ecoinfo text-left masonry-item">
                     <h4>底部新闻</h4>
                     <ul>
-
-                        <li><a href="{{url('/newsInf')}}" target='_self' title="低碳建筑首选天然石材">低碳建筑首选天然石材</a></li>
-
-                        <li><a href="{{url('/newsInf')}}" target='_self' title="装修旺季促销建材家居">装修旺季促销建材家居</a></li>
-
-                        <li><a href="{{url('/newsInf')}}" target='_self' title="全球原木材原料严重紧">全球原木材原料严重紧</a></li>
-
-                        <li><a href="{{url('/newsInf')}}" target='_self' title="将文化融入设计 以设">将文化融入设计 以设</a></li>
-
-                        <li><a href="{{url('/newsInf')}}" target='_self' title="我国玻璃纤维产业规模">我国玻璃纤维产业规模</a></li>
-
+                        @foreach($artBt as $val)
+                        <li><a href="{{url('/newsInf',array('id'=>$val->id))}}" target='_self' title="{{$val->title}}">{{$val->title}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6  list col-xs-12 masonry-item">
                     <h4>底部案例</h4>
                     <div class="gallery">
-                        <a href="{{url('/ShowProduct')}}" title="商务会所" target='_self'>
-                            <img data-original="{{asset('upload/f1389849064.jpg')}}" alt="商务会所" title="商务会所">
+                        @foreach($caseBt as $val)
+                        <a href="{{url('/showproduct',array('id'=>$val->id))}}" title="{{$val->title}}" target='_self'>
+                            <img data-original="{{asset($val->pic1)}}" alt="{{$val->title}}" title="{{$val->title}}">
                         </a>
-                        <a href="{{url('/ShowProduct')}}" title="商务会所" target='_self'>
-                            <img data-original="{{asset('upload/f1389849617.jpg')}}" alt="商务会所" title="商务会所">
-                        </a>
-                        <a href="{{url('/ShowProduct')}}" title="客厅" target='_self'>
-                            <img data-original="{{asset('upload/f1389850762.jpg')}}" alt="客厅" title="客厅">
-                        </a>
-                        <a href="{{url('/ShowProduct')}}" title="卧室" target='_self'>
-                            <img data-original="{{asset('upload/f1389852216.jpg')}}" alt="卧室" title="卧室">
-                        </a>
-                        <a href="{{url('/ShowProduct')}}" title="别墅" target='_self'>
-                            <img data-original="{{asset('upload/f1389852083.jpg')}}" alt="别墅" title="别墅">
-                        </a>
-                        <a href="{{url('/ShowProduct')}}" title="公寓" target='_self'>
-                            <img data-original="{{asset('upload/f1389852374.jpg')}}" alt="公寓" title="公寓">
-                        </a>
-                        <a href={{url('/ShowProduct')}} title="医疗美容" target='_self'>
-                            <img data-original="{{asset('upload/f1389862805.jpg')}}" alt="医疗美容" title="医疗美容">
-                        </a>
-                        <a href={{url('/ShowProduct')}} title="医疗体检" target='_self'>
-                            <img data-original="{{asset('upload/f1389863570.jpg')}}" alt="医疗体检" title="医疗体检">
-                        </a>
-                        <a href={{url('/ShowProduct')}} title="体育中心-游泳馆" target='_self'>
-                            <img data-original="{{asset('upload/f1389720952.jpg')}}" alt="体育中心-游泳馆" title="体育中心-游泳馆">
-                        </a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12 list  text-left masonry-item">

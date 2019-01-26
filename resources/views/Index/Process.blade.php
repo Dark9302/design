@@ -72,41 +72,7 @@
 			<div class="row">
 				<div class="panel product-detail">
 					<div class="panel-body">
-						<ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
-							<li class="active"><a data-toggle="tab" href="#product-details" data-get="product-details">步骤一</a></li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane met-editor lazyload clearfix animation-fade active" id="product-details">
-								<div>
-									<img src="{{url('/upload/1474296568.jpg')}}" alt=''/>
-									<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现代多媒体会议室已成为现代新型办公建筑越来越重要的设计范畴，要求功能与氛围的统一,设计出开阔、大气，整洁，能够提供稳定、便捷、生动的高效率视频会议服务同时注重多媒体视讯功能以及其它IT设备的集成功能。</p>
-									<div id="metinfo_additional"></div>
-								</div>
-							</div>
-
-						</div>
-						<ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
-							<li class="active"><a data-toggle="tab" href="#product-details" data-get="product-details">步骤二</a></li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane met-editor lazyload clearfix animation-fade active" id="product-details">
-								<div>
-									<img src="{{url('/upload/1474125316.jpg')}}" alt=''/>
-									<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现代多媒体会议室已成为现代新型办公建筑越来越重要的设计范畴，要求功能与氛围的统一,设计出开阔、大气，整洁，能够提供稳定、便捷、生动的高效率视频会议服务同时注重多媒体视讯功能以及其它IT设备的集成功能。</p>
-									<div id="metinfo_additional"></div>
-								</div>
-							</div>
-
-						</div>
-						<ul class="nav nav-tabs nav-tabs-line met-showproduct-navtabs affix-nav">
-							<li class="active"><a data-toggle="tab" href="#product-details" data-get="product-details">步骤三</a></li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane met-editor lazyload clearfix animation-fade active" id="product-details">
-								<div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现代多媒体会议室已成为现代新型办公建筑越来越重要的设计范畴，要求功能与氛围的统一,设计出开阔、大气，整洁，能够提供稳定、便捷、生动的高效率视频会议服务同时注重多媒体视讯功能以及其它IT设备的集成功能。</p><div id="metinfo_additional"></div></div>
-							</div>
-
-						</div>
+						{!! $pro->process !!}
 					</div>
 				</div>
 			</div>

@@ -71,42 +71,28 @@
             <div class="container">
                 <div class="row">
                     <div class="met-feedback-body">
-                        <form method='POST' class="met-form met-form-validation" enctype="multipart/form-data"
-                              action='#'>
-                            <input type='hidden' name='lang' value='cn'/>
-                            <div class="form-group">
-                                <div>
-                                    <input name='para30' class='form-control' type='text' placeholder='姓名 '
-                                           autocomplete='off' data-fv-notempty="true" data-fv-message="不能为空"/>
-                                </div>
+                        <div class="form-group">
+                            <div>
+                                <input name='name' id="name" class='form-control' type='text' placeholder='姓名 ' autocomplete='off'/>
                             </div>
-
-                            <div class="form-group">
-
-                                <div>
-                                    <input name='para31' class='form-control' type='text' placeholder='电话 '
-                                           autocomplete='off'/>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input name='phone' id="phone" class='form-control' type='text' placeholder='电话 ' autocomplete='off'/>
                             </div>
-
-                            <div class="form-group">
-
-                                <div>
-                                    <textarea name='para34' class='form-control' data-fv-notempty="true"
-                                              data-fv-message="不能为空" placeholder='留言内容 ' rows='5'
-                                              style="resize: none;"></textarea>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <textarea name='mark' id="mark" class='form-control' data-fv-notempty="true" placeholder='留言内容 ' rows='5' style="resize: none;"></textarea>
                             </div>
-
-                            <div class="form-group margin-bottom-0">
-                                <button type="submit" class="btn btn-primary btn-block btn-squared">提交</button>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="form-group margin-bottom-0">
+                            <button type="button" id="add" class="btn btn-primary btn-block btn-squared">提交</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </div>
 @endsection
 @section('publicJs')
@@ -114,31 +100,21 @@
 @endsection
 @section('js')
     <script type="text/javascript" src="{{asset('js/admin/lib/layer/2.4/layer.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/admin/lib/jquery.validation/1.14.0/jquery.validate.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/admin/lib/jquery.validation/1.14.0/validate-methods.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/admin/lib/jquery.validation/1.14.0/messages_zh.js')}}"></script>
     <script>
         //表单验证
-        $("#article-add").validate({
-            rules:{
-                artName:{
-                    required : true
-                },artIntr:{
-                    required : true
-                }
-            },
-            onkeyup:false,
-            success:"valid",
-            submitHandler:function(form){
-                var artName = $("#artName").val();
-                var artIntr = $("#artIntr").val();
-                var artType = $("#artType").val();
-                var artInf = $("#artInf").val();
-                $(form).ajaxSubmit({
-                    url:"doAddArticle",
+        $("#add").click(function () {
+            var name = $("#name").val();
+            var phone = $("#phone").val();
+            var mark = $("#mark").val();
+
+            if(!name || !phone || !mark){
+                layer.alert('请完善信息！',{icon:5});
+            }else{
+                $.ajax({
+                    url:"{{url('addCus')}}",
                     type:"post",
                     data:{
-                        'title':artName,'introduction':artIntr,'content':artInf,'type':artType
+                        'name':name,'phone':phone,'mark':mark
                     },
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -146,7 +122,9 @@
                     dataType:"json",
                     success:function(data){
                         if(data=='添加成功'){
-                            parent.window.location.reload();
+                            layer.alert(data,{icon:1},function () {
+                                parent.window.location.reload();
+                            });
                         }else{
                             layer.alert(data,{icon:5});
                         }

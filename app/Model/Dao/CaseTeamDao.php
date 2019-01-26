@@ -26,6 +26,22 @@ class CaseTeamDao extends Model
         return $this->where($con)->delete();
     }
 
+    /**通过设计师删除多条记录
+     * @param array $teamId
+     * @return bool|null
+     */
+    public function delMoreByTeam(array $teamId){
+        return $this->whereIn('team_id',$teamId)->delete();
+    }
+
+    /**通过案例删除多条记录
+     * @param array $caseId
+     * @return bool|null
+     */
+    public function delMoreByCase(array $caseId){
+        return $this->whereIn('case_id',$caseId)->delete();
+    }
+
     /**获取记录
      * @param array $con
      * @return \Illuminate\Database\Eloquent\Collection|static[]

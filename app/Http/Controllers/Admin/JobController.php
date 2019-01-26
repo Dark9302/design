@@ -17,8 +17,10 @@ class JobController extends Controller
 
         $list = $job->getJobList();
 
+        $num = count($list);
         return view('Admin.Job.index')
-            ->with('list',$list);
+            ->with('list',$list)
+            ->with('num',$num);
     }
 
     /**添加招聘信息
@@ -50,7 +52,7 @@ class JobController extends Controller
         $addRes = $job->addJob($data);
 
         if($addRes !== false){
-            return response()->json('保存成功');
+            return response()->json('添加成功');
         }else{
             return response()->json('保存失败！');
         }
@@ -94,7 +96,7 @@ class JobController extends Controller
         $res = $job->editJob($con,$data);
 
         if($res!==false){
-            return response()->json('更新成功');
+            return response()->json('修改成功');
         }else{
             return response()->json('更新失败！');
         }

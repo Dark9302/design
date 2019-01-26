@@ -1,220 +1,91 @@
 @extends('Admin.Base')
 @section('css')
-    @parent
+	@parent
+	<style type="text/css">
+		.mt-20{margin-top:7px;}
+		.page-container{padding-top: 0px;padding-bottom: 0px;}
+	</style>
 @endsection
 @section('content')
-    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
-        <span class="c-gray en">&gt;</span>
-       首页管理
-        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
-    </nav>
-    <div class="page-container">
-        <form class="form form-horizontal" id="form-article-add">
-            <div id="tab-system" class="HuiTab">
-                <div class="tabBar cl">
-                    <span>幻灯片更换</span>
-                    <span>我们的服务</span>
-                </div>
-                <div class="tabCon">
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">大标题：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">小标题：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">背景图：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="file" value="" placeholder="">
-                    	</div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">链接：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="text" class="input-text">
-                    	</div>
-                    </div>
-                    <hr style="width: 91%; margin: 33px auto;" />
-                     <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">大标题：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">小标题：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">背景图：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="file" value="" placeholder="">
-                    	</div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">链接：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="text" class="input-text">
-                    	</div>
-                    </div>
-                    <hr style="width: 91%; margin: 33px auto;" />
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">大标题：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">小标题：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">背景图：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="file" value="" placeholder="">
-                    	</div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">链接：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="text" class="input-text">
-                    	</div>
-                    </div>
-                </div>
-                <div class="tabCon">
-                	<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务一名称：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                	<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务一简介：</label>
-		            	<div class="formControls col-xs-8 col-sm-9" style="margin-bottom: 10px;">
-							<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...100个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-							<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-						</div>
-					</div>
-					<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务一封图：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="file" value="" placeholder="">
-                    	</div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务一链接：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="text" class="input-text">
-                    	</div>
-                    </div>
-                    <hr style="width: 91%; margin: 33px auto;" />
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务二名称：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                	<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务二简介：</label>
-		            	<div class="formControls col-xs-8 col-sm-9" style="margin-bottom: 10px;">
-							<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...100个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-							<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-						</div>
-					</div>
-					<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务二封图：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="file" value="" placeholder="">
-                    	</div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务二链接：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="text" class="input-text">
-                    	</div>
-                    </div>
-                    <hr style="width: 91%; margin: 33px auto;" />
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务三名称：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                	<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务三简介：</label>
-		            	<div class="formControls col-xs-8 col-sm-9" style="margin-bottom: 10px;">
-							<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...100个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-							<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-						</div>
-					</div>
-					<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务三封图：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="file" value="" placeholder="">
-                    	</div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务三链接：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="text" class="input-text">
-                    	</div>
-                    </div>
-                    <hr style="width: 91%; margin: 33px auto;" />
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务四名称：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                            <input type="text" class="input-text">
-                        </div>
-                    </div>
-                	<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务四简介：</label>
-		            	<div class="formControls col-xs-8 col-sm-9" style="margin-bottom: 10px;">
-							<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...100个字符以内" dragonfly="true" onKeyUp="$.Huitextarealength(this,100)"></textarea>
-							<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-						</div>
-					</div>
-					<div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务四封图：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="file" value="" placeholder="">
-                    	</div>
-                    </div>
-                    <div class="row cl">
-	                    <label class="form-label col-xs-4 col-sm-2">服务四链接：</label>
-	                    <div class="formControls col-xs-8 col-sm-9">
-                    		<input type="text" class="input-text">
-                    	</div>
-                    </div>
-                </div>
-            </div>
-            <div class="row cl">
-                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-                    <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
-                    <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
-                </div>
-            </div>
-        </form>
-    </div>
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+		<span class="c-gray en">&gt;</span>
+		首页管理
+		<span class="c-gray en">&gt;</span>
+		首页幻灯片
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a>
+	</nav>
+	<div class="page-container">
+		{{--<div class="text-c">--}}
+		{{--<form action="#" method="get">--}}
+		{{--<input type="text" name="article" id="article" placeholder="请输入文章名称/ID/关键词" style="width:250px" class="input-text">--}}
+		{{--<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜文章</button>--}}
+		{{--</form>--}}
+		{{--</div>--}}
+		<div class="cl pd-5 bg-1 bk-gray mt-20">
+            <span class="l">
+                <a href="javascript:;" onclick="delMore('delMorePic','chec')" class="btn btn-danger radius">
+                    <i class="Hui-iconfont">&#xe6e2;</i> 批量删除
+                </a>
+                <a class="btn btn-primary radius" onClick="product_add('添加图片','addPic')" href="javascript:;">
+                    <i class="Hui-iconfont">&#xe600;</i> 添加图片
+                </a>
+            </span>
+			<span class="r">共有数据：<strong id="strong">{{$num}}</strong> 条</span>
+		</div>
+		<div class="mt-20">
+			<table class="table table-border table-bordered table-bg table-hover table-sort">
+				<thead>
+				<tr class="text-c">
+					<th width="25"><input type="checkbox" name="" value=""></th>
+					<th width="80">ID</th>
+					<th width="100">大标题</th>
+					<th width="100">小标题</th>
+					<th width="80">连接地址</th>
+					<th width="120">操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				@if($num != 0)
+					@foreach($list as $val)
+						<tr class="text-c">
+							<td><input type="checkbox" value="" class="chec" name=""></td>
+							<td>{{$val->id}}</td>
+							<td class="text-c">{{$val->title1}}</td>
+							<td class="text-c">{{$val->title2}}</td>
+							<td>{{$val->url}}</td>
+							<td class="f-14 td-manage">
+								<a style="text-decoration:none" class="ml-5" onClick="edit('图片编辑','editPic/{{$val->id}}','10001')" href="javascript:;" title="编辑">
+									<i class="Hui-iconfont">&#xe6df;</i>
+								</a>
+								<a style="text-decoration:none" class="ml-5" onClick="del(this,'{{$val->id}}','delPic')" href="javascript:;" title="删除">
+									<i class="Hui-iconfont">&#xe6e2;</i>
+								</a>
+							</td>
+						</tr>
+					@endforeach
+				@else
+					<tr class="text-c">
+						<td colspan="6">暂时没有记录！</td>
+					</tr>
+				@endif
+				</tbody>
+			</table>
+		</div>
+	</div>
+	</block>
 @endsection
 @section('publicJs')
-    @parent
+	@parent
 @endsection
 @section('js')
-    <script type="text/javascript">
+	<script type="text/javascript">
         $(function(){
             $("#tab-system").Huitab({
                 index:0
             });
         });
-    </script>
+        $('.table-sort').dataTable({
+            "aaSorting": [[ 1, "desc" ]]//默认第几个排序
+        });
+	</script>
 @endsection

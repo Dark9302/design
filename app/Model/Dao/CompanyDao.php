@@ -31,7 +31,7 @@ class CompanyDao extends Model
      */
     public function getSingleCom(){
         return $this->select('name','address','phone','email',
-            'web_title','web_keyword','web_description','web_copyright','web_icp','brief')->first();
+            'web_title','web_keyword','web_description','web_copyright','web_icp','index_brief as bre')->first();
     }
 
     /**获取文章简介
@@ -52,6 +52,6 @@ class CompanyDao extends Model
      * @return Model|null|static
      */
     public function getProcess(){
-        return $this->where('process')->first();
+        return $this->select('process')->first();
     }
 }

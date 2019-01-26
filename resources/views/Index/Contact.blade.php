@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="met-banner-econy" style="background-color:;">
-	<img src="upload/1474296568.jpg">
+	<img src="{{asset('upload/1474296568.jpg')}}">
 	<div class="econynr">
 		<div class="container">
 			<div class="row">
@@ -72,15 +72,15 @@
 			<div class="row">
 				<div class="met-editor lazyload clearfix">
 					<div>
-						<iframe src="/map" style="border: none;width: 100%;height: 500px;"></iframe>
+						<iframe src="{{url('/map')}}" style="border: none;width: 100%;height: 500px;"></iframe>
 						<!--<p><img data-original="upload/1474096450.jpg" style="width:100% " / alt="图片关键词"></p>-->
 						<p>
 
 							&nbsp;</p>
-						<div><strong>保定喜迎门装饰工程有限公司</strong></div>
-						<div>地 &nbsp;址：河北省保定市</div>
-						<div>电 &nbsp;话：0731-88888888</div>
-						<div>Email：admin@admin.com</div>
+						<div><strong>{{$inf->name}}</strong></div>
+						<div>地 &nbsp;址：{{$inf->address}}</div>
+						<div>电 &nbsp;话：{{$inf->phone}}</div>
+						<div>Email：{{$inf->email}}</div>
 					</div>
 				</div>
 			</div>

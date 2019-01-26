@@ -65,7 +65,7 @@
     <script>
         var editor;
         KindEditor.ready(function(K) {
-            editor = K.create('textarea[name="artInf"]', {
+            editor = K.create('textarea[name="jobInf"]', {
                 allowFileManager : true,
                 resizeType:0,
                 afterBlur: function(){this.sync();}
