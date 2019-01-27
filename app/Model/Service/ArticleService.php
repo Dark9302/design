@@ -17,6 +17,18 @@ class ArticleService extends Model
         return $list;
     }
 
+    /**首页活动
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getActive(){
+        $article = new ArticleDao();
+        //组合查询条件
+        $con['recommend'] = '1';
+        $res = $article->getArticle($con);
+
+        return $res;
+    }
+
     /**获取前台文章列表
      * @param string $type
      * @return \Illuminate\Database\Eloquent\Collection|static[]
@@ -26,9 +38,9 @@ class ArticleService extends Model
         if($type){
             //组合查询条件
             $con['type'] = $type;
-            $list = $article->getTypeArticle($con);
+            $list = $article->getTypeArticlePage($con);
         }else{
-            $list = $article->getArticleList();
+            $list = $article->getArticleListPage();
         }
 
         return $list;
@@ -40,9 +52,10 @@ class ArticleService extends Model
      * @param $content
      * @param $type
      * @param $picture
+     * @param $recommend
      * @return bool
      */
-    public function addArticle($title,$intr,$content,$type,$picture){
+    public function addArticle($title,$intr,$content,$type,$picture,$recommend){
         $article = new ArticleDao();
         //组合添加条件
         $data['title'] = $title;
@@ -51,6 +64,7 @@ class ArticleService extends Model
         $data['type'] = $type;
         $data['time'] = time();
         $data['pic'] = $picture;
+        $data['recommend'] = $recommend;
 
         $addRes = $article->addArticle($data);
 
@@ -79,9 +93,10 @@ class ArticleService extends Model
      * @param $content
      * @param $type
      * @param $picture
+     * @param $recommend
      * @return bool
      */
-    public function editArticle($id,$title,$intr,$content,$type,$picture){
+    public function editArticle($id,$title,$intr,$content,$type,$picture,$recommend){
         $article = new ArticleDao();
 
         //组合更新条件
@@ -90,6 +105,7 @@ class ArticleService extends Model
         $data['introduction'] = $intr;
         $data['content'] = $content;
         $data['type'] = $type;
+        $data['recommend'] = $recommend;
         if($picture){
             $data['pic'] = $picture;
         }
@@ -178,5 +194,20 @@ class ArticleService extends Model
         $topFive = $article->getTopNByType($num,$type);
 
         return $topFive;
+    }
+
+    /**文章搜索
+     * @param $val
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function searchArt($val){
+        $article = new ArticleDao();
+        if($val){
+            $res = $article->searchArt($val);
+        }else{
+            $res = $article->searchArtAll();
+        }
+
+        return $res;
     }
 }

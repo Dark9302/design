@@ -31,7 +31,7 @@ class CaseService extends Model
         //组合查询条件
         $con['type'] = $type;
         //获取案例列表
-        $list = $case->getCaseListByCon($con);
+        $list = $case->getCaseListByConPage($con);
 
         //获取案例类型
         $dictCon['id'] = $type;

@@ -55,6 +55,12 @@ class CaseDao extends Model
             ->orderBy('id')
             ->get();
     }
+    public function getCaseListByConPage(array $con){
+        return $this->select('id','title','pic1')
+            ->where($con)
+            ->orderBy('id')
+            ->paginate(9);
+    }
 
     /**添加案例
      * @param array $data

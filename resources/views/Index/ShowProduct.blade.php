@@ -113,18 +113,28 @@
 						<div class="met-shownews-footer upnext">
 
 		                    <ul class="pager pager-round">
-		                        <li class="previous ">
-		                            <a href="showcase.html" title="医院大厅">
-		                                上一篇
-		                                <span aria-hidden="true" class='hidden-xs hidden-sm'>：医院大厅</span>
-		                            </a>
-		                        </li>
-		                        <li class="next disabled">
-		                            <a href="#" title="没有了">
-		                                下一篇
-		                                <span aria-hidden="true" class='hidden-xs hidden-sm'>：没有了</span>
-		                            </a>
-		                        </li>
+								@if($pre)
+									<li class="previous ">
+										<a href="{{url('showproduct',['id'=>$pre->id])}}" title="{{$pre->title}}"> 上一篇<span aria-hidden="true" class='hidden-xs hidden-sm'>：{{$pre->title}}</span>
+										</a>
+									</li>
+								@else
+									<li class="previous disabled">
+										<a href="#" title="没有了"> 上一篇<span aria-hidden="true" class='hidden-xs hidden-sm'>：没有了</span>
+										</a>
+									</li>
+								@endif
+								@if($next)
+									<li class="next ">
+										<a href="{{url('showproduct',['id'=>$next->id])}}" title="{{$next->title}}">下一篇<span aria-hidden="true" class='hidden-xs hidden-sm'>：{{$next->title}}</span>
+										</a>
+									</li>
+								@else
+									<li class="next disabled">
+										<a href="#" title="没有了">下一篇<span aria-hidden="true" class='hidden-xs hidden-sm'>：没有了</span>
+										</a>
+									</li>
+								@endif
 		                    </ul>
 		                </div>
 					</div>

@@ -95,152 +95,19 @@
 			<div class="row">
 				<div class="col-md-12">
 					<ul class="owl-carousel">
+						@foreach($active as $val)
 						<li class="project-item ">
-							<a href="showproduct.html" title="商务会所" target='_self'>
+							<a href="{{url('newsInf',array('id'=>$val->id))}}" title="{{$val->title}}" target='_self'>
 								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389849064.jpg" alt="商务会所" class="cover-image">
+									<img class="owl-lazy" data-src="{{asset($val->pic)}}" alt="{{$val->title}}" class="cover-image">
 								</div>
 								<div class="project-intro">
-									<h4 class="project-title">商务会所</h4>
-									<div class="project-descr">本设计中推崇的是一种自然流露的作风，奢华的且略带优雅的贵族气质。整个设计定位较之</div>
+									<h4 class="project-title">{{$val->title}}</h4>
+									<div class="project-descr">{{$val->introduction}}</div>
 								</div>
 							</a>
 						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="商务会所" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389849617.jpg" alt="商务会所" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">商务会所</h4>
-									<div class="project-descr">本会所的设计从传统的英伦绅士俱乐部深沉而又丰富的色调中获得灵感。舒适，稍带些世故</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="客厅" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389850762.jpg" alt="客厅" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">客厅</h4>
-									<div class="project-descr">本设计从现在人的角度，以现在手法融合东方古典美学，天人合一的居住理念，结合客户审</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="卧室" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389852216.jpg" alt="卧室" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">卧室</h4>
-									<div class="project-descr">唯美设计 简约温馨 空间格局利用的恰到好处 给人在视觉上一个洗礼 完全忘乎外界的</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="别墅" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389852083.jpg" alt="别墅" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">别墅</h4>
-									<div class="project-descr">现代人快节奏的生活步调,缺乏一种"停下来"的姿态.本案中的轻古典,摒弃了现代风格</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="公寓" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389852374.jpg" alt="公寓" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">公寓</h4>
-									<div class="project-descr">本案为精装公寓交楼标准样板房展示，实用面积仅为45平方，一房一厅，一厨一卫，独立</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="医疗美容" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389862805.jpg" alt="医疗美容" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">医疗美容</h4>
-									<div class="project-descr">设计师运用模块式的方格勾勒出陈列的空间，天花图案的主题则是"大树为小动物的庇护所</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="医疗体检" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389863570.jpg" alt="医疗体检" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">医疗体检</h4>
-									<div class="project-descr">一、功能：主要负责医院的接待个人与团体体检的场所
-										二、氛围：温馨、和谐
-										三、</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="体育中心-游泳馆" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389720952.jpg" alt="体育中心-游泳馆" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">体育中心-游泳馆</h4>
-									<div class="project-descr">游泳馆的设计充分体现了可持续发展的思想，在节省能源和资源、固体废弃物处理、电子干</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="地铁站" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389720952.jpg" alt="地铁站" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">地铁站</h4>
-									<div class="project-descr">该地铁站的设计灵感来源于巴黎地铁站，充满独特装饰和艺术展品，颇具人文特色。与其他</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="工商银行" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389720952.jpg" alt="工商银行" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">工商银行</h4>
-									<div class="project-descr">银行位于城市的各个角落，属于国家的重点安全防范单位，它具有规模多样、重要设施繁多</div>
-								</div>
-							</a>
-						</li>
-
-						<li class="project-item ">
-							<a href="showproduct.html" title="大堂" target='_self'>
-								<div class="project-img">
-									<img class="owl-lazy" data-src="upload/x1389720952.jpg" alt="大堂" class="cover-image">
-								</div>
-								<div class="project-intro">
-									<h4 class="project-title">大堂</h4>
-									<div class="project-descr">本案设计含大堂、电梯间、过道、会议室、办公室、活动中心、娱乐室、食堂、包厢等功能</div>
-								</div>
-							</a>
-						</li>
-
+						@endforeach
 					</ul>
 				</div>
 			</div>

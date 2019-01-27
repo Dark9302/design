@@ -174,10 +174,9 @@
                     <div class="row">
                         <div class="search">
                             <form role="search" action="{{url('/search')}}">
-                                <input type='hidden' name='lang' value='cn'/>
                                 <div class="form-group ">
                                     <div class="input-search">
-                                        <input type="text" class="form-control" name="searchword" placeholder="搜索">
+                                        <input type="text" id="val" class="form-control" name="val" placeholder="搜索">
                                         <button type="submit" class="input-search-btn"><i class="icon wb-search" aria-hidden="true"></i></button>
                                     </div>
                                 </div>

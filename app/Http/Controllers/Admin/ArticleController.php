@@ -59,7 +59,7 @@ class ArticleController extends Controller
             //返回文件路径存贮在数据库
             $picUrl='storage/upload/'.$fileName;
 
-            $addRes = $article->addArticle($inf['title'],$inf['introduction'],$inf['content'],$inf['type'],$picUrl);
+            $addRes = $article->addArticle($inf['title'],$inf['introduction'],$inf['content'],$inf['type'],$picUrl,$inf['recommend']);
 
             if($addRes !== false && $bool){
                 return response()->json('添加成功');
@@ -116,7 +116,7 @@ class ArticleController extends Controller
         }
 
 
-        $res = $article->editArticle($param['id'],$param['title'],$param['introduction'],$param['content'],$param['type'],$picUrl);
+        $res = $article->editArticle($param['id'],$param['title'],$param['introduction'],$param['content'],$param['type'],$picUrl,$param['recommend']);
 
         if($res !== false && $bool){
             return response()->json('修改成功');

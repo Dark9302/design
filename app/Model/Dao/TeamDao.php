@@ -17,6 +17,10 @@ class TeamDao extends Model
         return $this->get();
     }
 
+    public function getDesignerListPage(){
+        return $this->paginate(9);
+    }
+
     /**获取单个设计师信息
      * @param array $con
      * @return Model|null|static

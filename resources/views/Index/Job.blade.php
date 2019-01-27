@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="met-banner-econy" style="background-color:;">
-        <img src="upload/1474296568.jpg">
+        <img src="{{asset('upload/1474296568.jpg')}}">
         <div class="econynr">
             <div class="container">
                 <div class="row">
@@ -67,14 +67,7 @@
                     </div>
 
                     <div>
-                        <div class='met_pager'>
-                            <span class='PreSpan'>上一页</span><a href=job.html class='Ahover'>1</a><a
-                                    href=job.html?lang=cn&page=2>2</a><a href=job.html?lang=cn&page=2
-                                                                         class='NextA'>下一页</a>
-                            <span class='PageText'>转至第</span>
-                            <input type='text' id='metPageT' data-pageurl='job.html?lang=cn&page=||2' value='1'/>
-                            <input type='button' id='metPageB' value='页'/>
-                        </div>
+                        {{$job->links('vendor/pagination/customPage')}}
                     </div>
 
                 </div>

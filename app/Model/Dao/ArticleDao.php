@@ -17,7 +17,7 @@ class ArticleDao extends Model
      */
     public function getAdminArticleList(){
         return $this->select('article.id','article.title','dict_dict.title as type_name',
-            DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked')
+            DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked','recommend')
             ->join('dict_dict','dict_dict.id','=','article.type')
             ->get();
     }
@@ -26,9 +26,26 @@ class ArticleDao extends Model
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getArticleList(){
-        return $this->whereIn('type',[1,2])
+        return $this
             ->select('id','title','content','type','introduction',
             DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked')
+            ->get();
+    }
+
+    public function getArticleListPage(){
+        return $this
+            ->select('id','title','content','type','introduction',
+                DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked')
+            ->paginate(5);
+    }
+
+    /**首页活动
+     * @param array $con
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getArticle(array $con){
+        return $this->where($con)
+            ->select('id','title','introduction','pic')
             ->get();
     }
 
@@ -42,13 +59,20 @@ class ArticleDao extends Model
             DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked','pic')
             ->get();
     }
+
+    public function getTypeArticlePage(array $con){
+        return $this->where($con)
+            ->select('id','title','content','type','introduction',
+                DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked','pic')
+            ->paginate(5);
+    }
     /**获取单条文章
      * @param array $con
      * @return Model|null|static
      */
     public function getSingleArticle(array $con){
         return $this->select('id','title','content','type','introduction',
-            DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked','pic')
+            DB::raw('date(FROM_UNIXTIME(time)) as time'),'looked','pic','recommend')
             ->where($con)->first();
     }
 
@@ -140,6 +164,26 @@ class ArticleDao extends Model
             ->where('type','=',$type)
             ->orderBy('id','desc')
             ->limit($num)
+            ->get();
+    }
+
+
+    /**文章搜索
+     * @param $val
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function searchArt($val){
+        return $this->where('title','like',"%".$val."%")
+            ->select('id','title','introduction')
+            ->get();
+    }
+
+    /**文章搜索
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function searchArtAll(){
+        return $this
+            ->select('id','title','introduction')
             ->get();
     }
 }

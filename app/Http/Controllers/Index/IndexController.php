@@ -10,6 +10,7 @@ use App\Model\Dao\DictDictDao;
 use App\Model\Dao\JobDao;
 use App\Model\Dao\PictureDao;
 use App\Model\Dao\ServiceDao;
+use App\Model\Dao\TeamDao;
 use App\Model\Service\ArticleService;
 use App\Model\Service\CaseService;
 use App\Model\Service\TeamService;
@@ -65,6 +66,8 @@ class IndexController extends Controller
 
         //获取文章
         $indexArt = $this->artDb->getTopN('3');
+        //获取首页活动
+        $active = $this->artDb->getActive();
 
         $team = new TeamService();
 
@@ -72,6 +75,7 @@ class IndexController extends Controller
 
         return view('Index.Index')
             ->with('pic',$hdp)
+            ->with('active',$active)
             ->with('ser',$service)
             ->with('caseType',$caseType)
             ->with('caseList',$caseList)
@@ -83,11 +87,20 @@ class IndexController extends Controller
             ->with('caseMenu',$this->caseMenu)
             ->with('artMenu',$this->artMenu);
     }
-	/**搜索页面
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+
+    /**搜索页面
+     * @param Request $request
+     * @return mixed
      */
-    public function search(){
+    public function search(Request $request){
+        //获取传递过来数据
+        $inf = $request->all();
+
+        $list = $this->artDb->searchArt($inf['val']);
+
         return view('Index.Search')
+            ->with('res',$list)
+            ->with('value',$inf['val'])
             ->with('com',$this->com)
             ->with('artBt',$this->artBt)
             ->with('caseBt',$this->caseBt)
@@ -299,9 +312,9 @@ class IndexController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function Team(){
-        $team = new TeamService();
+        $team = new TeamDao();
         //获取设计师列表
-        $list = $team->getDesList();
+        $list = $team->getDesignerListPage();
 
         //获取推荐信息
         $topCase = $this->caseDb->getTopN('3');
@@ -350,9 +363,14 @@ class IndexController extends Controller
     public function Job(){
         $job = new JobDao();
 
-        $list = $job->getJobList();
+        $list = $job->getJobListPage();
+        //获取推荐信息
+        $topCase = $this->caseDb->getTopN('3');
+        $topArt = $this->artDb->getTopN('5');
         return view('Index.Job')
             ->with('job',$list)
+            ->with('topCase',$topCase)
+            ->with('topArt',$topArt)
             ->with('com',$this->com)
             ->with('artBt',$this->artBt)
             ->with('caseBt',$this->caseBt)

@@ -78,15 +78,7 @@
                         </div>
                     @endforeach
 					<div class="hidden-xs">
-					    <div class='met_pager'>
-							<span class='PreSpan'>上一页</span>
-							<a href=# class='Ahover'>1</a>
-							<a href=# >2</a>
-							<a href=# class='NextA'>下一页</a>
-						    <span class='PageText'>转至第</span>
-						    <input type='text' id='metPageT' data-pageurl='product.html?lang=cn&class1=3&page=||2' value='1' />
-						    <input type='button' id='metPageB' value='页' />
-					    </div>
+						{{$list->links('vendor/pagination/customPage')}}
 					</div>
 					<div class="met-page-ajax-body visible-xs-block invisible" data-plugin="appear" data-animate="slide-bottom" data-repeat="false">
 						<button type="button" class="btn btn-default btn-block btn-squared ladda-button" id="met-page-btn" data-style="slide-left" data-url="product2.html?lang=cn&class1=3&class2=0&class3=0&mbpagelist=1" data-page="1"><i class="icon wb-chevron-down margin-right-5" aria-hidden="true"></i>更多产品</button>

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="met-banner-econy" style="background-color:;">
-	<img src="upload/1474296568.jpg">
+	<img src="{{asset('upload/1474296568.jpg')}}">
 	<div class="econynr">
 		<div class="container">
 			<div class="row">
@@ -49,13 +49,7 @@
 					@endforeach
 				</div>
 				<div class='met_pager'>
-					<span class='PreSpan'>上一页</span>
-					<a href=# class='Ahover'>1</a>
-					<a href=#>2</a>
-					<a href=# class='NextA'>下一页</a>
-					<span class='PageText'>转至第</span>
-					<input type='text' id='metPageT' data-pageurl='product.html?lang=cn&class1=3&page=||2' value='1' />
-					<input type='button' id='metPageB' value='页' />
+					{{$list->links('vendor/pagination/customPage')}}
 				</div>
 
 			</div>

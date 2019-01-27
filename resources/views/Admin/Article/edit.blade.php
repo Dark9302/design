@@ -36,6 +36,22 @@
                 </div>
             </div>
             <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>是否是推荐活动：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+                    <select name="recommend" id="recommend" class="select">
+                        @if($art->recommend == 0)
+                            <option value="0" selected>否</option>
+                            <option value="1">是</option>
+                        @else
+                            <option value="0">否</option>
+                            <option value="1" selected>是</option>
+                        @endif
+                    </select>
+				</span>
+                </div>
+            </div>
+            <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">文章大图：</label>
                 <div class="formControls col-xs-8 col-sm-9">
                     <input type="file" value="" placeholder="" name="artPic" id="artPic">
@@ -86,12 +102,13 @@
                 var artName = $("#artName").val();
                 var artIntr = $("#artIntr").val();
                 var artType = $("#artType").val();
+                var recommend = $("#recommend").val();
                 var artInf = $("#artInf").val();
                 $(form).ajaxSubmit({
                     url:"{{url('admin/doEdit')}}",
                     type:"post",
                     data:{
-                        'id':id,'title':artName,'introduction':artIntr,'content':artInf,'type':artType
+                        'id':id,'title':artName,'introduction':artIntr,'content':artInf,'type':artType,'recommend':recommend
                     },
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -42,6 +42,7 @@
                     <th width="80">分类</th>
                     <th width="120">发布时间</th>
                     <th width="75">浏览次数</th>
+                    <th width="75">推荐活动</th>
                     <th width="120">操作</th>
                 </tr>
                 </thead>
@@ -55,6 +56,11 @@
                             <td class="text-c">{{$val->type_name}}</td>
                             <td>{{$val->time}}</td>
                             <td>{{$val->looked}}</td>
+                            @if($val->recommend == 1)
+                                <td>是</td>
+                            @else
+                                <td>否</td>
+                            @endif
                             <td class="f-14 td-manage">
                                 <a style="text-decoration:none" class="ml-5" onClick="edit('文章编辑','editArticle/{{$val->id}}','10001')" href="javascript:;" title="编辑">
                                     <i class="Hui-iconfont">&#xe6df;</i>

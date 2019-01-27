@@ -22,6 +22,14 @@ class JobDao extends Model
             ->get();
     }
 
+    public function getJobListPage(){
+        return $this->select('id','position','number','address',
+            'salary','email','qq','infomation',
+            DB::raw('date(FROM_UNIXTIME(time)) as time'))
+            ->orderBy('time','desc')
+            ->paginate('5');
+    }
+
     /**获取单条招聘信息
      * @param array $con
      * @return Model|null|static
