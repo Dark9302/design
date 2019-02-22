@@ -36,7 +36,7 @@
 				<span class="select-box">
                     <select name="recommend" id="recommend" class="select">
                         <option value="0">否</option>
-                        <option value="0">是</option>
+                        <option value="1">是</option>
                     </select>
 				</span>
                 </div>
